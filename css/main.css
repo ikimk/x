@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+:root {
+  font-family: 'Lato', sans-serif;
+  /*-------------Colors------------- */
+  --ColorDark1: hsl(0, 0%, 0%);
+  --ColorDark2: hsl(0, 0%, 13%);
+  --ColorDark3: hsl(0, 0%, 22%);
+  /*-------------FontSize -- Perfect Fifth (1.500) Base Size 22px------------- */
+  --FontD: 375.89px;
+  --FontH1: 250.59px;
+  --FontH2: 167.06px;
+  --FontH3: 111.38px;
+  --FontH4: 74.25px;
+  --FontH5: 49.50px;
+  --FontParagraph: 33px;
+  --FontSubtitle: 22px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: hsl(0, 0%, 22%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f2f2f2;
+  color: #222;
+}
+
+#wrapper {
+  width: 100vw;
+  height: 100vh;
+  /* background: url(../img/DoraLayout.jpg); */
+  background-size: cover;
+}
+
+#logo {
+  position: absolute;
+  left: 5.5%;
+  top: 9.8%;
+  text-decoration: none;
+  font-size: var(--FontH5);
+  font-weight: 900;
+  background: url(../img/x1.jpg) no-repeat top;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 95%;
+  transition: all 0.31s ease-in-out;
+  transform-origin: left;
+}
+
+#logo:hover {
+  transform: scale(1.13);
+  background: url(../img/x1.jpg) no-repeat center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 100%;
+}
+
+nav {
+  position: absolute;
+  right: 5.5%;
+  top: 9.8%;
+  width: 23.6%;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: var(--FontSubtitle);
+  font-weight: 400;
+}
+
+section {
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  text-align: right;
+  right: 50%;
+}
+
+section h1 {
+  font-size: var(--FontH3);
+  font-weight: 700;
+}
+
+section p {
+  font-size: var(--FontParagraph);
+  font-weight: 400;
+}
+
+#d {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+#d p {
+  font-size: var(--FontD);
+  font-weight: 900;
+  background: url(../img/x1.jpg) no-repeat center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 100%;
+  transition: all 0.4s ease-in-out;
+  transform-origin: left;
+}
+
+#d p:hover {
+  transform: scale(1.13);
+  background: url(../img/x1.jpg) no-repeat top;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 130%;
+}
+
+#codeby {
+  position: absolute;
+  left: 5.5%;
+  bottom: 9.8%;
+}
+
+#codeby a {
+  text-decoration: none;
+  font-size: var(--FontSubtitle);
+  font-weight: 400;
+}
+
+#codeby a span {
+  font-weight: 700;
+}
+
+/*-------------@media (max-width: 1920px)------------- */
+
+@media (max-width: 1920px) {
+  :root {
+    --FontD: 24.472vw;
+    --FontH1: 16.314vw;
+    --FontH2: 10.876vw;
+    --FontH3: 7.251vw;
+    --FontH4: 4.834vw;
+    --FontH5: 3.223vw;
+    --FontParagraph: 2.148vw;
+    --FontSubtitle: 1.432vw;
+  }
+}
