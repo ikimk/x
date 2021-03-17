@@ -202,7 +202,7 @@ body {
   padding: var(--FontH5);
   font-size: var(--FontSubtitle);
   font-weight: 400;
-  color: var(--ColorDark22);  
+  color: var(--ColorDark22);
 }
 
 #wrapper #ImageContainer {
