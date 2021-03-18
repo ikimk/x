@@ -25,10 +25,6 @@
   color: hsl(0, 0%, 22%);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background: #f2f2f2;
 }
@@ -37,6 +33,7 @@ body {
   width: 100vw;
   height: 100vh;
   /* background: url(../img/DoraLayout.jpg); */
+  /* background: url(../img/SlideLayout.jpg); */
   background-size: cover;
 }
 
@@ -117,13 +114,13 @@ body {
   transform-origin: right center;
 }
 
-#wrapper section p:nth-child(3) {
-  transform-origin: right top;
-}
-
 #wrapper section p:hover {
   transform: scale(1.13);
   color: var(--ColorDark13);
+}
+
+#wrapper section p:nth-child(3) {
+  transform-origin: right top;
 }
 
 #wrapper #d {
@@ -152,6 +149,34 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 130%;
+}
+
+#wrapper #ScrollDown {
+  position: fixed;
+  right: 2.8%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+}
+
+#wrapper #ScrollDown p {
+  font-size: var(--FontSubtitle);
+  font-weight: 400;
+  color: var(--ColorDark22);
+  transform: rotate(-90deg);
+  transform-origin: center;
+  background: #f2f2f2;
+  white-space: pre;
+}
+
+#wrapper #ScrollDown #ProgressBar {
+  position: absolute;
+  right: 3.9vw;
+  height: 100vh;
+  width: 0.3vw;
+  border-radius: 1vw;
+  background: var(--ColorDark22);
 }
 
 #wrapper #codeby {
@@ -183,7 +208,7 @@ body {
   position: absolute;
   right: 50%;
   height: 100vh;
-  width: 40vw;
+  width: 40.2%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -194,30 +219,32 @@ body {
   font-size: var(--FontH5);
   font-weight: 700;
   color: var(--ColorDark22);
-  padding-right: var(--FontH5);
+  padding-right: var(--FontParagraph);
 }
 
 #wrapper #slide p {
-  text-align: right;
-  padding: var(--FontH5);
-  font-size: var(--FontSubtitle);
+  width: 94.5%;
+  padding-right: var(--FontParagraph);
+  padding-top: var(--FontSubtitle);
   font-weight: 400;
+  font-size: var(--FontSubtitle);
   color: var(--ColorDark22);
+  text-align: right;
 }
 
 #wrapper #ImageContainer {
   position: absolute;
-  left: 50%;
-  width: 40%;
   height: 100vh;
+  width: 40.2%;
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-flow: column;
+  left: 50%;
 }
 
 #wrapper #ImageContainer img {
-  width: 61%;
+  width: 58.8%;
+  margin-left: 13.9%;
 }
 
 /*-------------@media (max-width: 1920px)------------- */
