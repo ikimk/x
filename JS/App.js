@@ -8,48 +8,48 @@ function LandingPageScrollTrigger() {
             trigger: ".landingPage",
             toggleActions: "restart restart restart restart",
             start: "0% 100%",
-            end: "100% 0%",
+            end: "50% 0%",
             // markers: "true",
-            // scrub: 2.2,
         }
     })
     LandingPageScrollTrigger
         .from('.landingPage #logo', {
-            transform: 'translateY(22px)', opacity: 0, duration: 1.3,
+            opacity: 0, x: "-31%", duration: 2.2, ease: "sine.in",
         }, 0)
-        .from('.landingPage nav a', {
-            opacity: 0, x: "-22%", duration: 1.3, stagger: 0.31,
-        }, 0)
-        .from('.landingPage section h1', {
-            opacity: 0, x: "-22%", duration: 1.3,
-        }, 0)
-        .from('.landingPage section p', {
-            opacity: 0, x: "-22%", duration: 1.3, stagger: 0.31,
-        }, 0)
+        .from('.landingPage nav span', {
+            opacity: 0, x: "70%", duration: 2.2, stagger: 0.4, ease: "sine.inOut",
+        }, 0.2)
+        .from('.landingPage section h1 span', {
+            opacity: 0, x: "-22%", duration: 2.2, ease: "sine.inOut",
+        }, 0.4)
         .from('.landingPage #d', {
-            opacity: 0, x: "-22%", duration: 1.3,
-        }, 0)
-        .from('.landingPage #codeby', {
-            opacity: 0, x: "-22%", duration: 1.3,
-        }, 0)
+            opacity: 0, x: "22%", duration: 2.2, ease: "sine.inOut",
+        }, 0.4)
+        .from('.landingPage section p span', {
+            opacity: 0, x: "-31%", duration: 2.2, stagger: 0.4, ease: "sine",
+        }, 0.8)
+        .from('.landingPage #ScrollDown p', {
+            opacity: 0, y: "130%", duration: 2.2, ease: "sine.inOut",
+        }, 1.6)
+
+    let landingPageOnScroll = gsap.timeline({ // landingPageOnScroll---------------------
+        scrollTrigger: {
+            trigger: ".landingPage",
+            start: "100% 100%",
+            end: "100% 0%",
+            // markers: "true",
+            scrub: 2.2,
+        }
+    })
+    landingPageOnScroll
+        .to('.landingPage', {
+            opacity: 0, y: "-31%",
+        }) // landingPageOnScroll---------------------
 }
 //---------------------/Landing Page ScrollTrigger---------------------
 
 //---------------------Slider ScrollTrigger---------------------
 function SliderScrollTrigger() {
-    let ProgressBar = gsap.timeline({ // ProgressBar---------------------
-        scrollTrigger: {
-            trigger: ".landingPage",
-            start: "100% 100%",
-            end: "1300% 0%",
-            // markers: "true",
-            scrub: 2.2,
-        }
-    })
-    ProgressBar
-        .from('#wrapper #ScrollDown #ProgressBar', {
-            height: '0vh',
-        }) // ProgressBar---------------------
 
     let Slide1 = gsap.timeline({ // Slide1---------------------
         scrollTrigger: {
@@ -113,6 +113,20 @@ function SliderScrollTrigger() {
         .from('.slide3 #ImageContainer', {
             opacity: 0, y: "22%",
         }) // Slide3---------------------
+
+    let iCodeAyush = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#codeby",
+            toggleActions: "restart restart restart restart",
+            start: "48.618% 100%",
+            end: "100% 0%",
+            // markers: "true",
+        }
+    })
+    iCodeAyush
+        .from('#codeby a', {
+            opacity: 0, y: "220%", duration: 2.2, ease: "sine",
+        }) // iCodeAyush---------------------
 }
 //---------------------/Slider ScrollTrigger---------------------
 

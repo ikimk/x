@@ -2,8 +2,14 @@
 :root {
   font-family: 'Lato', sans-serif;
   /*-------------Colors------------- */
-  --ColorDark13: hsl(0, 0%, 13%);
-  --ColorDark22: hsl(0, 0%, 22%);
+  --ColorDarkA: hsl(0, 0%, 6.472%);
+  /* 1.618*4 */
+  --ColorDarkB: hsl(0, 0%, 3.236%);
+  /* 1.618*2 */
+  --ColorWhiteA: hsl(0, 0%, 93.528%);
+  /* 100-6.472 */
+  --ColorWhiteB: hsl(0, 0%, 96.764%);
+  /* 100-3.236 */
   /*-------------FontSize -- Perfect Fifth (1.500) Base Size 22px------------- */
   --FontD: 375.89px;
   --FontH1: 250.59px;
@@ -22,17 +28,18 @@
 * {
   margin: 0;
   padding: 0;
-  color: hsl(0, 0%, 22%);
+  color: var(--ColorDarkA);
 }
 
 body {
-  background: #f2f2f2;
+  background: var(--ColorWhiteA);
 }
 
 #wrapper {
   width: 100vw;
   height: 100vh;
   /* background: url(../img/DoraLayout.jpg); */
+  /* background: url(../img/iCodeAyushLayout.jpg); */
   /* background: url(../img/SlideLayout.jpg); */
   background-size: cover;
 }
@@ -41,6 +48,10 @@ body {
   position: absolute;
   left: 5.5%;
   top: 9.8%;
+  -webkit-text-fill-color: transparent;
+}
+
+#wrapper #logo h1 {
   font-size: var(--FontH5);
   font-weight: 900;
   background: url(../img/x1.jpg) no-repeat top;
@@ -51,7 +62,7 @@ body {
   transform-origin: left;
 }
 
-#wrapper #logo:hover {
+#wrapper #logo h1:hover {
   transform: scale(1.13);
   background: url(../img/x1.jpg) no-repeat center;
   -webkit-background-clip: text;
@@ -72,14 +83,17 @@ body {
   text-decoration: none;
   font-size: var(--FontSubtitle);
   font-weight: 400;
-  color: var(--ColorDark22);
-  transition: transform 0.31s ease, color 0.31s ease;
+  color: var(--ColorDarkA);
+  transition: transform 0.31s ease;
   transform-origin: center;
 }
 
 #wrapper nav a:hover {
   transform: scale(1.13);
-  color: var(--ColorDark13);
+}
+
+#wrapper nav a span {
+  display: block;
 }
 
 #wrapper section {
@@ -96,27 +110,33 @@ body {
 #wrapper section h1 {
   font-size: var(--FontH3);
   font-weight: 700;
-  color: var(--ColorDark22);
-  transition: transform 0.31s ease, color 0.31s ease;
+  color: var(--ColorDarkA);
+  transition: transform 0.31s ease;
   transform-origin: right bottom;
 }
 
 #wrapper section h1:hover {
   transform: scale(1.13);
-  color: var(--ColorDark13);
+}
+
+#wrapper section h1 span {
+  display: block;
 }
 
 #wrapper section p {
   font-size: var(--FontParagraph);
   font-weight: 400;
-  color: var(--ColorDark22);
-  transition: transform 0.31s ease, color 0.31s ease;
+  color: var(--ColorDarkA);
+  transition: transform 0.31s ease;
   transform-origin: right center;
 }
 
 #wrapper section p:hover {
   transform: scale(1.13);
-  color: var(--ColorDark13);
+}
+
+#wrapper section p span {
+  display: block;
 }
 
 #wrapper section p:nth-child(3) {
@@ -152,56 +172,17 @@ body {
 }
 
 #wrapper #ScrollDown {
-  position: fixed;
-  right: 2.8%;
-  height: 100vh;
+  position: absolute;
+  bottom: 9.8%;
+  width: 100vw;
   display: flex;
   justify-content: center;
-  flex-flow: column;
 }
 
 #wrapper #ScrollDown p {
   font-size: var(--FontSubtitle);
   font-weight: 400;
-  color: var(--ColorDark22);
-  transform: rotate(-90deg);
-  transform-origin: center;
-  background: #f2f2f2;
-  white-space: pre;
-}
-
-#wrapper #ScrollDown #ProgressBar {
-  position: absolute;
-  right: 3.9vw;
-  height: 100vh;
-  width: 0.3vw;
-  border-radius: 1vw;
-  background: var(--ColorDark22);
-}
-
-#wrapper #codeby {
-  position: absolute;
-  left: 5.5%;
-  bottom: 9.8%;
-}
-
-#wrapper #codeby a {
-  text-decoration: none;
-  font-size: var(--FontSubtitle);
-  font-weight: 400;
-  color: var(--ColorDark22);
-}
-
-#wrapper #codeby a span {
-  font-weight: 700;
-  display: inline-block;
-  transition: transform 0.31s ease, color 0.31s ease;
-  transform-origin: left center;
-}
-
-#wrapper #codeby a:hover span {
-  transform: scale(1.13);
-  color: var(--ColorDark13);
+  color: var(--ColorDarkA);
 }
 
 #wrapper #slide {
@@ -218,7 +199,7 @@ body {
 #wrapper #slide h1 {
   font-size: var(--FontH5);
   font-weight: 700;
-  color: var(--ColorDark22);
+  color: var(--ColorDarkA);
   padding-right: var(--FontParagraph);
 }
 
@@ -228,7 +209,7 @@ body {
   padding-top: var(--FontSubtitle);
   font-weight: 400;
   font-size: var(--FontSubtitle);
-  color: var(--ColorDark22);
+  color: var(--ColorDarkA);
   text-align: right;
 }
 
@@ -245,6 +226,34 @@ body {
 #wrapper #ImageContainer img {
   width: 58.8%;
   margin-left: 13.9%;
+}
+
+#codeby {
+  height: 41.8vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: hsl(0, 0%, 90%);
+}
+
+#codeby a {
+  text-decoration: none;
+  font-size: var(--FontSubtitle);
+  font-weight: 400;
+  color: var(--ColorDarkB);
+}
+
+#codeby a span {
+  font-weight: 700;
+  display: inline-block;
+  color: var(--ColorDarkB);
+  transition: transform 0.31s ease;
+  transform-origin: center;
+}
+
+#codeby a:hover span {
+  transform: scale(1.13);
 }
 
 /*-------------@media (max-width: 1920px)------------- */
