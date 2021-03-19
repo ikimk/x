@@ -125,7 +125,7 @@ function SliderScrollTrigger() {
     })
     iCodeAyush
         .from('#codeby a', {
-            opacity: 0, y: "220%", duration: 2.2, ease: "sine",
+            opacity: 0, y: "130%", duration: 2.2, ease: "sine",
         }) // iCodeAyush---------------------
 }
 //---------------------/Slider ScrollTrigger---------------------
