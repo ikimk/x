@@ -3,6 +3,10 @@ gsap.registerPlugin(ScrollTrigger);
 //---------------------Landing Page ScrollTrigger---------------------
 function LandingPageScrollTrigger() {
 
+    gsap.to('body', { // LoadingAnimation---------------------
+        opacity: 1, duration: 0,
+    }) // /LoadingAnimation---------------------
+
     let LandingPageScrollTrigger = gsap.timeline({
         scrollTrigger: {
             trigger: ".landingPage",

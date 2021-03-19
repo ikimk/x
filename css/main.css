@@ -31,8 +31,13 @@
   color: var(--ColorDarkA);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--ColorWhiteA);
+  opacity: 0;
 }
 
 #wrapper {
@@ -105,6 +110,7 @@ body {
   justify-content: center;
   text-align: right;
   right: 50%;
+  cursor: default;
 }
 
 #wrapper section h1 {
@@ -150,6 +156,7 @@ body {
   height: 100vh;
   display: flex;
   align-items: center;
+  cursor: default;
 }
 
 #wrapper #d p {
@@ -177,6 +184,7 @@ body {
   width: 100vw;
   display: flex;
   justify-content: center;
+  cursor: default;
 }
 
 #wrapper #ScrollDown p {
@@ -194,6 +202,7 @@ body {
   justify-content: center;
   align-items: flex-end;
   flex-flow: column;
+  cursor: default;
 }
 
 #wrapper #slide h1 {
