@@ -33,7 +33,7 @@ function LandingPageScrollTrigger() {
             opacity: 0, x: "-31%", duration: 2.2, stagger: 0.4, ease: "sine",
         }, 0.8)
         .from('.landingPage #ScrollDown p', {
-            opacity: 0, y: "130%", duration: 2.2, ease: "sine.inOut",
+            opacity: 0, y: "-61.8%", duration: 2.2, ease: "sine",
         }, 1.6)
 
     let landingPageOnScroll = gsap.timeline({ // landingPageOnScroll---------------------
