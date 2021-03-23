@@ -8,8 +8,8 @@
   /* 1.618*2 */
   --ColorWhiteA: hsl(0, 0%, 93.528%);
   /* 100-6.472 */
-  --ColorWhiteB: hsl(0, 0%, 96.764%);
-  /* 100-3.236 */
+  --ColorWhiteB: hsl(0, 0%, 90.292%);
+  /* 1.618*6-100  */
   /*-------------FontSize -- Perfect Fifth (1.500) Base Size 22px------------- */
   --FontD: 375.89px;
   --FontH1: 250.59px;
@@ -19,6 +19,17 @@
   --FontH5: 49.50px;
   --FontParagraph: 33px;
   --FontSubtitle: 22px;
+  /*-------------GoldenRatio (1.618) (Viewport Width 1920px)------------- */
+  --GoldenRatio1: 1920px;
+  --GoldenRatio2: 1186.65px;
+  --GoldenRatio3: 733.41px;
+  --GoldenRatio4: 453.28px;
+  --GoldenRatio5: 280.15px;
+  --GoldenRatio6: 173.15px;
+  --GoldenRatio7: 107.01px;
+  --GoldenRatio8: 66.14px;
+  --GoldenRatio9: 40.88px;
+  --GoldenRatio10: 25.27px;
 }
 
 ::-webkit-scrollbar {
@@ -43,16 +54,16 @@ body {
 #wrapper {
   width: 100vw;
   height: 100vh;
-  /* background: url(../img/DoraLayout.jpg); */
-  /* background: url(../img/iCodeAyushLayout.jpg); */
+  /* background: url(../img/LandingPageLayout.jpg); */
   /* background: url(../img/SlideLayout.jpg); */
+  /* background: url(../img/iCodeAyushLayout.jpg); */
   background-size: cover;
 }
 
 #wrapper #logo {
   position: absolute;
-  left: 5.5%;
-  top: 9.8%;
+  left: var(--GoldenRatio7);
+  top: var(--GoldenRatio7);
   -webkit-text-fill-color: transparent;
 }
 
@@ -77,9 +88,9 @@ body {
 
 #wrapper nav {
   position: absolute;
-  right: 5.5%;
-  top: 9.8%;
-  width: 23.6%;
+  right: var(--GoldenRatio7);
+  top: var(--GoldenRatio7);
+  width: var(--GoldenRatio4);
   display: flex;
   justify-content: space-between;
 }
@@ -180,7 +191,7 @@ body {
 
 #wrapper #ScrollDown {
   position: absolute;
-  bottom: 9.8%;
+  bottom: var(--GoldenRatio7);
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -197,7 +208,7 @@ body {
   position: absolute;
   right: 50%;
   height: 100vh;
-  width: 40.2%;
+  margin-right: var(--GoldenRatio9);
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -209,13 +220,11 @@ body {
   font-size: var(--FontH5);
   font-weight: 700;
   color: var(--ColorDarkA);
-  padding-right: var(--FontParagraph);
 }
 
 #wrapper #slide p {
-  width: 94.5%;
-  padding-right: var(--FontParagraph);
-  padding-top: var(--FontSubtitle);
+  margin-top: var(--GoldenRatio9);
+  width: var(--GoldenRatio3);
   font-weight: 400;
   font-size: var(--FontSubtitle);
   color: var(--ColorDarkA);
@@ -225,7 +234,6 @@ body {
 #wrapper #ImageContainer {
   position: absolute;
   height: 100vh;
-  width: 40.2%;
   display: flex;
   justify-content: center;
   flex-flow: column;
@@ -233,17 +241,17 @@ body {
 }
 
 #wrapper #ImageContainer img {
-  width: 58.8%;
-  margin-left: 13.9%;
+  width: var(--GoldenRatio4);
+  margin-left: var(--GoldenRatio7);
 }
 
 #codeby {
-  height: 41.8vh;
+  height: var(--GoldenRatio4);
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: hsl(0, 0%, 90%);
+  background: var(--ColorWhiteB);
 }
 
 #codeby a {
@@ -263,13 +271,24 @@ body {
 
 @media (max-width: 1920px) {
   :root {
-    --FontD: 24.472vw;
-    --FontH1: 16.314vw;
-    --FontH2: 10.876vw;
-    --FontH3: 7.251vw;
-    --FontH4: 4.834vw;
-    --FontH5: 3.223vw;
-    --FontParagraph: 2.148vw;
-    --FontSubtitle: 1.432vw;
+    --FontD: 19.578vw;
+    --FontH1: 13.052vw;
+    --FontH2: 8.701vw;
+    --FontH3: 5.801vw;
+    --FontH4: 3.867vw;
+    --FontH5: 2.578vw;
+    --FontParagraph: 1.719vw;
+    --FontSubtitle: 1.146vw;
+    /*-------------GoldenRatio (1.618) (Viewport Width 1920px)------------- */
+    --GoldenRatio1: 100vw;
+    --GoldenRatio2: 61.805vw;
+    --GoldenRatio3: 38.198vw;
+    --GoldenRatio4: 23.608vw;
+    --GoldenRatio5: 14.591vw;
+    --GoldenRatio6: 9.018vw;
+    --GoldenRatio7: 5.573vw;
+    --GoldenRatio8: 3.445vw;
+    --GoldenRatio9: 2.129vw;
+    --GoldenRatio10: 1.316vw;
   }
 }
