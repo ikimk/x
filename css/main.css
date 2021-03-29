@@ -204,6 +204,20 @@ body {
   color: var(--ColorDarkA);
 }
 
+#wrapper #ImageContainer {
+  position: absolute;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  left: 50%;
+}
+
+#wrapper #ImageContainer img {
+  width: var(--GoldenRatio4);
+  margin-left: var(--GoldenRatio7);
+}
+
 #wrapper #slide {
   position: absolute;
   right: 50%;
@@ -229,20 +243,6 @@ body {
   font-size: var(--FontSubtitle);
   color: var(--ColorDarkA);
   text-align: right;
-}
-
-#wrapper #ImageContainer {
-  position: absolute;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  flex-flow: column;
-  left: 50%;
-}
-
-#wrapper #ImageContainer img {
-  width: var(--GoldenRatio4);
-  margin-left: var(--GoldenRatio7);
 }
 
 #codeby {
@@ -292,3 +292,72 @@ body {
     --GoldenRatio10: 1.316vw;
   }
 }
+
+/*-------------/@media (max-width: 1920px)------------- */
+
+/*-------------@media (max-width: 400px)------------- */
+
+@media (max-width: 400px) {
+  :root {
+    --FontD: 29.900vw;
+    --FontH1: 19.933vw;
+    --FontH2: 13.290vw;
+    --FontH3: 8.860vw;
+    --FontH4: 5.907vw;
+    --FontH5: 3.938vw;
+    --FontParagraph: 2.625vw;
+    --FontSubtitle: 1.750vw;
+    /*-------------GoldenRatio (1.618) (Viewport Width 400px)------------- */
+    --GoldenRatio1: 100vw;
+    --GoldenRatio2: 61.805vw;
+    --GoldenRatio3: 38.197vw;
+    --GoldenRatio4: 23.608vw;
+    --GoldenRatio5: 14.590vw;
+    --GoldenRatio6: 9.018vw;
+    --GoldenRatio7: 5.572vw;
+    --GoldenRatio8: 3.445vw;
+    --GoldenRatio9: 2.130vw;
+    --GoldenRatio10: 1.317vw;
+  }
+  body {
+    background: rgb(163, 163, 163);
+  }
+  #wrapper #logo h1 {
+    font-size: var(--FontH3);
+  }
+  #wrapper nav {
+    top: var(--GoldenRatio3);
+    width: var(--GoldenRatio3);
+  }
+  #wrapper #ImageContainer {
+    position: unset;
+    height: auto;
+    width: 100vw;
+    padding-top: var(--GoldenRatio5);
+  }
+  #wrapper #ImageContainer img {
+    width: var(--GoldenRatio2);
+    margin: auto;
+  }
+  #wrapper #slide {
+    position: unset;
+    height: auto;
+    margin: var(--GoldenRatio5) auto;
+    align-items: flex-start;
+    width: var(--GoldenRatio2);
+  }
+  #wrapper #slide h1 {
+    font-size: var(--FontH4);
+  }
+  #wrapper #slide p {
+    margin-top: var(--GoldenRatio9);
+    width: var(--GoldenRatio2);
+    font-size: var(--FontParagraph);
+    text-align: left;
+  }
+  #codeby {
+    height: var(--GoldenRatio2);
+  }
+}
+
+/*-------------/@media (max-width: 400px)------------- */
