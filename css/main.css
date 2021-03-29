@@ -88,13 +88,6 @@ body {
 
 #wrapper #Navbar {
   display: none;
-  position: absolute;
-  right: var(--GoldenRatio7);
-  top: var(--GoldenRatio7);
-  text-decoration: none;
-  font-size: var(--FontParagraph);
-  font-weight: 400;
-  color: var(--ColorDarkA);
 }
 
 #wrapper nav {
@@ -330,14 +323,20 @@ body {
     --GoldenRatio9: 2.130vw;
     --GoldenRatio10: 1.317vw;
   }
-  #wrapper #Navbar {
-    top: var(--GoldenRatio6);
-    display: block;
-    z-index: 3;
-    cursor: pointer;
-  }
   #wrapper #logo h1 {
     font-size: var(--FontH3);
+  }
+  #wrapper #Navbar {
+    display: block;
+    position: absolute;
+    right: var(--GoldenRatio7);
+    top: var(--GoldenRatio6);
+    z-index: 3;
+    font-size: var(--FontParagraph);
+    font-weight: 700;
+    color: var(--ColorDarkA);
+    text-decoration: none;
+    cursor: pointer;
   }
   #wrapper nav {
     top: var(--GoldenRatio5);
