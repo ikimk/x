@@ -20,6 +20,9 @@ function LandingPageScrollTrigger() {
         .from('.landingPage #logo', {
             opacity: 0, x: "-31%", duration: 2.2, ease: "sine.in",
         }, 0)
+        .from('#wrapper #Navbar', {
+            opacity: 0, x: "40%", duration: 2.2, ease: "sine.in",
+        }, 0)
         .from('.landingPage nav span', {
             opacity: 0, x: "70%", duration: 2.2, stagger: 0.4, ease: "sine.inOut",
         }, 0.2)
@@ -134,11 +137,28 @@ function SliderScrollTrigger() {
 }
 //---------------------/Slider ScrollTrigger---------------------
 
-function OnLoad() {
-    LandingPageScrollTrigger()
-    SliderScrollTrigger()
+/*-------------Navbar (max-width: 400px)------------- */
+function Navbar() {
+    gsap.from('#wrapper #Navbar', {
+        opacity: 0, x: "40%", duration: 2.2, ease: "sine.in",
+    })
+    var NavAni = gsap.timeline();
+    NavAni.from('#wrapper nav', {
+        opacity: 0, y: "13%", duration: 0.5, ease: "sine",
+    })
+        .reverse();
+    $("#wrapper #Navbar").click(function () {
+        $("#wrapper nav").toggleClass("DisplayNone");
+        NavAni.reversed(!NavAni.reversed());
+    });
 }
+/*-------------/Navbar (max-width: 400px)------------- */
 
 window.onload = () => {
-    OnLoad()
+    LandingPageScrollTrigger()
+    SliderScrollTrigger()
+    if (window.matchMedia("(max-width: 400px)").matches) {
+        Navbar()
+    } else {
+    }
 }

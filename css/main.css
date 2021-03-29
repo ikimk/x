@@ -86,6 +86,17 @@ body {
   background-size: 100%;
 }
 
+#wrapper #Navbar {
+  display: none;
+  position: absolute;
+  right: var(--GoldenRatio7);
+  top: var(--GoldenRatio7);
+  text-decoration: none;
+  font-size: var(--FontParagraph);
+  font-weight: 400;
+  color: var(--ColorDarkA);
+}
+
 #wrapper nav {
   position: absolute;
   right: var(--GoldenRatio7);
@@ -319,15 +330,32 @@ body {
     --GoldenRatio9: 2.130vw;
     --GoldenRatio10: 1.317vw;
   }
-  body {
-    background: rgb(163, 163, 163);
+  #wrapper #Navbar {
+    top: var(--GoldenRatio6);
+    display: block;
+    z-index: 3;
+    cursor: pointer;
   }
   #wrapper #logo h1 {
     font-size: var(--FontH3);
   }
   #wrapper nav {
-    top: var(--GoldenRatio3);
-    width: var(--GoldenRatio3);
+    top: var(--GoldenRatio5);
+    flex-flow: column;
+    z-index: 3;
+    border-radius: 6.18%;
+    background: var(--ColorWhiteB);
+  }
+  #wrapper nav.DisplayNone {
+    pointer-events: none;
+  }
+  #wrapper nav a {
+    height: var(--GoldenRatio7);
+    font-size: var(--FontParagraph);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-self: center;
   }
   #wrapper #ImageContainer {
     position: unset;
