@@ -303,14 +303,15 @@ body {
 
 @media (max-width: 400px) {
   :root {
-    --FontD: 29.900vw;
-    --FontH1: 19.933vw;
-    --FontH2: 13.290vw;
-    --FontH3: 8.860vw;
-    --FontH4: 5.907vw;
-    --FontH5: 3.938vw;
-    --FontParagraph: 2.625vw;
-    --FontSubtitle: 1.750vw;
+    /*-------------FontSize -- Perfect Fifth (1.500) Base Size 13px------------- */
+    --FontD: 55.530vw;
+    --FontH1: 37.020vw;
+    --FontH2: 24.680vw;
+    --FontH3: 16.453vw;
+    --FontH4: 10.970vw;
+    --FontH5: 7.313vw;
+    --FontParagraph: 4.875vw;
+    --FontSubtitle: 3.250vw;
     /*-------------GoldenRatio (1.618) (Viewport Width 400px)------------- */
     --GoldenRatio1: 100vw;
     --GoldenRatio2: 61.805vw;
