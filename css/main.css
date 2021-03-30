@@ -341,14 +341,13 @@ body {
     flex-flow: column;
     z-index: 3;
     border-radius: 6.18%;
-    width: var(--GoldenRatio3);
     background: var(--ColorWhiteB);
   }
   #wrapper nav.DisplayNone {
     pointer-events: none;
   }
   #wrapper nav a {
-    height: var(--GoldenRatio6);
+    height: var(--GoldenRatio7);
     display: flex;
     flex-flow: column;
     justify-content: center;
