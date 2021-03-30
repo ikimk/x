@@ -10,7 +10,7 @@
   /* 100-6.472 */
   --ColorWhiteB: hsl(0, 0%, 90.292%);
   /* 1.618*6-100  */
-  /*-------------FontSize -- Perfect Fifth (1.500) Base Size 22px------------- */
+  /*-------------Perfect Fifth (1.500) Base Size 22px------------- */
   --FontD: 375.89px;
   --FontH1: 250.59px;
   --FontH2: 167.06px;
@@ -303,7 +303,7 @@ body {
 
 @media (max-width: 400px) {
   :root {
-    /*-------------FontSize -- Perfect Fifth (1.500) Base Size 10px------------- */
+    /*-------------Perfect Fifth (1.500) (Viewport Width 400px) Base Size 10px------------- */
     --FontD: 42.715vw;
     --FontH1: 28.477vw;
     --FontH2: 18.985vw;
@@ -324,16 +324,13 @@ body {
     --GoldenRatio9: 2.130vw;
     --GoldenRatio10: 1.317vw;
   }
-  #wrapper #logo h1 {
-    font-size: var(--FontH3);
-  }
   #wrapper #Navbar {
     display: block;
     position: absolute;
     right: var(--GoldenRatio7);
     top: var(--GoldenRatio6);
     z-index: 3;
-    font-size: var(--FontParagraph);
+    font-size: var(--FontSubtitle);
     font-weight: 700;
     color: var(--ColorDarkA);
     text-decoration: none;
@@ -344,14 +341,14 @@ body {
     flex-flow: column;
     z-index: 3;
     border-radius: 6.18%;
+    width: var(--GoldenRatio3);
     background: var(--ColorWhiteB);
   }
   #wrapper nav.DisplayNone {
     pointer-events: none;
   }
   #wrapper nav a {
-    height: var(--GoldenRatio7);
-    font-size: var(--FontParagraph);
+    height: var(--GoldenRatio6);
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -374,13 +371,9 @@ body {
     align-items: flex-start;
     width: var(--GoldenRatio2);
   }
-  #wrapper #slide h1 {
-    font-size: var(--FontH4);
-  }
   #wrapper #slide p {
     margin-top: var(--GoldenRatio9);
     width: var(--GoldenRatio2);
-    font-size: var(--FontParagraph);
     text-align: left;
   }
   #codeby {
