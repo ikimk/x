@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+:root {
+  font-family: 'Lato', sans-serif;
+  /*-------------Colors------------- */
+  --ColorDarkA: hsl(0, 0%, 0%);
+  --ColorDarkB: hsl(0, 0%, 18%);
+  --ColorWhiteA: hsl(0, 0%, 94%);
+  /*-------------Perfect Fifth (1.500) Base Size 22px------------- */
+  --FontD: 375.89px;
+  --FontH1: 250.59px;
+  --FontH2: 167.06px;
+  --FontH3: 111.38px;
+  --FontH4: 74.25px;
+  --FontH5: 49.50px;
+  --FontParagraph: 33px;
+  --FontSubtitle: 22px;
+  /*-------------GoldenRatio (1.618) (Viewport Width 1920px)------------- */
+  --GoldenRatio1: 1920px;
+  --GoldenRatio2: 1186.65px;
+  --GoldenRatio3: 733.41px;
+  --GoldenRatio4: 453.28px;
+  --GoldenRatio5: 280.15px;
+  --GoldenRatio6: 173.15px;
+  --GoldenRatio7: 107.01px;
+  --GoldenRatio8: 66.14px;
+  --GoldenRatio9: 40.88px;
+  --GoldenRatio10: 25.27px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: var(--ColorDarkA);
+  color: var(--ColorWhiteA);
+}
+
+body {
+  background: var(--ColorWhiteA);
+  background: var(--ColorDarkA);
+  /* opacity: 0; */
+}
+
+#wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+#wrapper img {
+  position: absolute;
+  height: 100vh;
+  box-shadow: 0 0 31px black;
+}
+
+.ImgWrapper {
+  overflow: hidden;
+  background: var(--ColorDarkA);
+}
+
+#wrapper #img1 {
+  z-index: 1;
+  height: 50vh;
+  bottom: 15%;
+  left: 5%;
+}
+
+#wrapper #img2 {
+  z-index: 2;
+  height: 45vh;
+  bottom: 40%;
+  right: 5%;
+}
+
+#wrapper #img3 {
+  z-index: 3;
+  height: 40vh;
+  bottom: 22%;
+  right: 25%;
+}
+
+#wrapper #img4 {
+  z-index: 4;
+  height: 31vh;
+  bottom: 55%;
+  left: 13%;
+}
+
+#wrapper #img5 {
+  z-index: 5;
+  height: 50vh;
+  bottom: 22%;
+  left: 36%;
+}
+
+#wrapper #img6 {
+  z-index: 6;
+  height: 31vh;
+  bottom: 13%;
+  left: 13%;
+}
+
+#wrapper #img7 {
+  z-index: 7;
+  height: 31vh;
+  bottom: 10%;
+  right: 13%;
+}
+
+#wrapper h1 {
+  font-size: var(--FontH1);
+}
+
+#codeby {
+  height: var(--GoldenRatio4);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--ColorWhiteA);
+}
+
+#codeby a {
+  text-decoration: none;
+  font-size: var(--FontSubtitle);
+  font-weight: 400;
+  color: var(--ColorDarkB);
+}
+
+#codeby a span {
+  font-weight: 700;
+  display: inline-block;
+  color: var(--ColorDarkA);
+}
+
+/*-------------@media (max-width: 1920px)------------- */
+
+@media (max-width: 1920px) {
+  :root {
+    --FontD: 19.578vw;
+    --FontH1: 13.052vw;
+    --FontH2: 8.701vw;
+    --FontH3: 5.801vw;
+    --FontH4: 3.867vw;
+    --FontH5: 2.578vw;
+    --FontParagraph: 1.719vw;
+    --FontSubtitle: 1.146vw;
+    /*-------------GoldenRatio (1.618) (Viewport Width 1920px)------------- */
+    --GoldenRatio1: 100vw;
+    --GoldenRatio2: 61.805vw;
+    --GoldenRatio3: 38.198vw;
+    --GoldenRatio4: 23.608vw;
+    --GoldenRatio5: 14.591vw;
+    --GoldenRatio6: 9.018vw;
+    --GoldenRatio7: 5.573vw;
+    --GoldenRatio8: 3.445vw;
+    --GoldenRatio9: 2.129vw;
+    --GoldenRatio10: 1.316vw;
+  }
+}
+
+/*-------------/@media (max-width: 1920px)------------- */
