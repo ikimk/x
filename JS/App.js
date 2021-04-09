@@ -14,8 +14,8 @@ function LandingPageScrollTrigger() {
             end: "100% 0%",
             pin: ".ImgWrapper",
             // scrub: 1.5,
-            scrub: "true",
-            markers: "true",
+            // scrub: "true",
+            // markers: "true",
         }
     })
     LandingPageScrollTrigger
