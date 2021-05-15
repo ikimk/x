@@ -1,21 +1,26 @@
 gsap.registerPlugin(ScrollTrigger);
 
-//---------------------Landing Page ScrollTrigger---------------------
-function LandingPageScrollTrigger() {
-
-    //Elements
-    var card = document.querySelector("#card");
-
-    //MouseMove Event
-    $('#wrapper').mousemove(function (e) {
-        let x = ((-113 * (window.innerWidth / 2 - e.pageX)) / window.innerWidth / 2);
-        let y = ((113 * (window.innerHeight / 2 - e.pageY)) / window.innerHeight / 2);
-
-        card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
-    });
+//---------------------Parallax---------------------
+function Parallax() {
+    let tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".SectionB",
+            start: "100% 100%",
+            end: () => `+=${document.querySelector("footer").offsetHeight}`,
+            scrub: 0,
+            // markers: true,
+        }
+    })
+    tl
+        .from('footer', {
+            y: "-50%", ease: "none",
+        }, 0)
 }
-//---------------------/Landing Page ScrollTrigger---------------------
+//---------------------/Parallax---------------------
 
 window.onload = () => {
-    LandingPageScrollTrigger()
+    if (window.matchMedia("(max-width: 480px)").matches) {
+    } else {
+        Parallax()
+    }
 }

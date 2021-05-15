@@ -1,97 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 :root {
-  font-family: Helvetica;
-  /*-------------Colors------------- */
-  --ColorDarkA: hsl(0, 0%, 0%);
-  --ColorDarkB: hsl(0, 0%, 18%);
-  --ColorWhiteA: hsl(0, 0%, 94%);
-  --ColorWhiteB: hsl(0, 0%, 90%);
-  /*-------------FontSize -- Golden Ratio (1.618) Base Size 13px------------- */
-  --FontH1: 233.25px;
-  --FontH2: 144.16px;
-  --FontH3: 89.10px;
-  --FontH4: 55.07px;
-  --FontH5: 34.03px;
-  --FontParagraph: 21.03px;
-  --FontSubtitle: 13px;
-  /*-------------GoldenRatio (1.618) (Viewport Width 1920px)------------- */
-  --GoldenRatio1: 1920px;
-  --GoldenRatio2: 1186.65px;
-  --GoldenRatio3: 733.41px;
-  --GoldenRatio4: 453.28px;
-  --GoldenRatio5: 280.15px;
-  --GoldenRatio6: 173.15px;
-  --GoldenRatio7: 107.01px;
-  --GoldenRatio8: 66.14px;
-  --GoldenRatio9: 40.88px;
-  --GoldenRatio10: 25.27px;
-}
-
-::-webkit-scrollbar {
-  display: none;
+  font-family: 'Lato', sans-serif;
+  --ColorDarkA: hsl(0, 0%, 6.472%);
+  --ColorDarkB: hsl(0, 0%, 3.236%);
+  --ColorWhiteA: hsl(0, 0%, 93.528%);
+  --ColorWhiteB: hsl(0, 0%, 90.292%);
 }
 
 * {
   margin: 0;
-  padding: 0;
-  color: var(--ColorDarkA);
+  margin: 0;
+  color: var(--ColorWhiteA);
 }
 
 body {
-  background: var(--ColorDarkB);
+  background: var(--ColorDarkA);
 }
 
 #wrapper {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  perspective: 2200px;
+  align-items: flex-start;
+  flex-flow: column;
+  position: relative;
+  z-index: 1;
 }
 
-#wrapper #card {
-  width: var(--GoldenRatio4);
-  height: var(--GoldenRatio4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url(../img/img.jpeg) center no-repeat white;
-  background-size: contain;
-  perspective: 1300px;
-  transform-style: preserve-3d;
-  transition: transform 0.22s 0s ease;
+#wrapper #logo {
+  position: absolute;
+  left: 3vw;
+  top: 3vw;
 }
 
-#wrapper #card h1 {
+#wrapper #logo h1 {
   color: var(--ColorWhiteA);
-  font-size: var(--FontH4);
-  transform: translateZ(50px);
+  font-size: 2vw;
+  font-weight: 900;
 }
 
-/*-------------@media (max-width: 1920px)------------- */
-
-@media (max-width: 1920px) {
-  :root {
-    /*-------------FontSize (PX to VW Conversion With Viewport Width 1920px)------------- */
-    --FontH1: 12.148vw;
-    --FontH2: 7.508vw;
-    --FontH3: 4.641vw;
-    --FontH4: 2.868vw;
-    --FontH5: 1.772vw;
-    --FontParagraph: 1.095vw;
-    --FontSubtitle: 0.677vw;
-    /*-------------GoldenRatio (1.618) (Viewport Width 1920px)------------- */
-    --GoldenRatio1: 100vw;
-    --GoldenRatio2: 61.805vw;
-    --GoldenRatio3: 38.198vw;
-    --GoldenRatio4: 23.608vw;
-    --GoldenRatio5: 14.591vw;
-    --GoldenRatio6: 9.018vw;
-    --GoldenRatio7: 5.573vw;
-    --GoldenRatio8: 3.445vw;
-    --GoldenRatio9: 2.129vw;
-    --GoldenRatio10: 1.316vw;
-  }
+#wrapper h2 {
+  font-size: 4vw;
+  font-weight: 600;
+  margin-left: 6vw;
+  color: var(--ColorDarkB);
+  padding: 2vw;
+  background: var(--ColorWhiteA);
 }
 
-/*-------------/@media (max-width: 1920px)------------- */
+#wrapper p {
+  font-size: 1.5vw;
+  font-weight: 600;
+  margin: 1vw 6vw;
+  width: 70%;
+  padding: 2vw;
+  color: var(--ColorDarkB);
+  background: var(--ColorWhiteA);
+}
+
+.SectionA {
+  background: rgb(168, 168, 168);
+}
+
+.SectionB {
+  background: rgb(105, 105, 105);
+}
+
+footer {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  background: var(--ColorWhiteA);
+}
+
+footer section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: column;
+  width: 100%;
+  height: 100%;
+}
+
+footer h2, p {
+  font-size: 2vw;
+  padding: 1.5vw 10vw;
+  color: var(--ColorDarkA);
+}
+
+footer p {
+  font-size: 1.3vw;
+  color: var(--ColorDarkA);
+}
