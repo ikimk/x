@@ -81,6 +81,8 @@ footer section {
   flex-flow: column;
   width: 100%;
   height: 100%;
+  background: url(https://source.unsplash.com/random/1080x720) center;
+  background-size: cover;
 }
 
 footer h2, p {

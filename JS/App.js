@@ -12,7 +12,7 @@ function Parallax() {
         }
     })
     tl
-        .from('footer', {
+        .from('footer section', {
             y: "-50%", ease: "none",
         }, 0)
 }
@@ -30,8 +30,8 @@ function ParallaxMobile() {
         }
     })
     tlB
-        .from('footer', {
-            y: "-45%", ease: "none",
+        .from('footer section', {
+            y: "-50%", ease: "none",
         }, 0)
 }
 //---------------------/Parallax (max-width: 480px)---------------------
