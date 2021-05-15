@@ -12,7 +12,7 @@ function Parallax() {
         }
     })
     tl
-        .from('footer section', {
+        .from('footer', {
             y: "-50%", ease: "none",
         }, 0)
 }
@@ -30,7 +30,7 @@ function ParallaxMobile() {
         }
     })
     tlB
-        .from('footer section', {
+        .from('footer', {
             y: "-50%", ease: "none",
         }, 0)
 }
