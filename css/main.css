@@ -1,16 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 :root {
   font-family: 'Lato', sans-serif;
+  /*-------------Colors------------- */
   --ColorDarkA: hsl(0, 0%, 6.472%);
   --ColorDarkB: hsl(0, 0%, 3.236%);
   --ColorWhiteA: hsl(0, 0%, 93.528%);
   --ColorWhiteB: hsl(0, 0%, 90.292%);
+  /*-------------Perfect Fifth (1.500) Base Size 22px------------- */
+  --FontD: 375.89px;
+  --FontH1: 250.59px;
+  --FontH2: 167.06px;
+  --FontH3: 111.38px;
+  --FontH4: 74.25px;
+  --FontH5: 49.50px;
+  --FontParagraph: 33px;
+  --FontSubtitle: 22px;
+  /*-------------GoldenRatio W (1.618) (Viewport Width 1920px)------------- */
+  --GoldenRatioW1: 1920px;
+  --GoldenRatioW2: 1186.65px;
+  --GoldenRatioW3: 733.40px;
+  --GoldenRatioW4: 453.27px;
+  --GoldenRatioW5: 280.14px;
+  --GoldenRatioW6: 173.14px;
+  --GoldenRatioW7: 107.00px;
+  --GoldenRatioW8: 66.13px;
+  --GoldenRatioW9: 40.87px;
+  --GoldenRatioW10: 25.25px;
+  --GoldenRatioW11: 15.60px;
+  --GoldenRatioW12: 9.64px;
+  --GoldenRatioW13: 5.95px;
+  /*-------------GoldenRatio H (1.618) (Viewport Width 1920px)------------- */
+  --GoldenRatioH1: 1080px;
+  --GoldenRatioH2: 667.49px;
+  --GoldenRatioH3: 412.54px;
+  --GoldenRatioH4: 254.96px;
+  --GoldenRatioH5: 157.57px;
+  --GoldenRatioH6: 97.38px;
+  --GoldenRatioH7: 60.18px;
+  --GoldenRatioH8: 37.19px;
+  --GoldenRatioH9: 22.98px;
+  --GoldenRatioH10: 14.2px;
+  --GoldenRatioH11: 8.77px;
+  --GoldenRatioH12: 5.42px;
+  --GoldenRatioH13: 3.34px;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 * {
   margin: 0;
-  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   color: var(--ColorWhiteA);
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -18,80 +69,63 @@ body {
 }
 
 #wrapper {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-flow: column;
-  position: relative;
-  z-index: 1;
 }
 
 #wrapper #logo {
   position: absolute;
-  left: 3vw;
-  top: 3vw;
+  left: var(--GoldenRatioW7);
+  top: var(--GoldenRatioW7);
 }
 
 #wrapper #logo h1 {
   color: var(--ColorWhiteA);
-  font-size: 2vw;
+  font-size: var(--FontH5);
   font-weight: 900;
 }
 
-#wrapper h2 {
-  font-size: 4vw;
-  font-weight: 600;
-  margin-left: 6vw;
-  color: var(--ColorDarkB);
-  padding: 2vw;
-  background: var(--ColorWhiteA);
+/*-------------@media (max-width: 1920px)------------- */
+
+@media (max-width: 1920px) {
+  :root {
+    --FontD: 19.578vw;
+    --FontH1: 13.052vw;
+    --FontH2: 8.701vw;
+    --FontH3: 5.801vw;
+    --FontH4: 3.867vw;
+    --FontH5: 2.578vw;
+    --FontParagraph: 1.719vw;
+    --FontSubtitle: 1.146vw;
+    /*-------------GoldenRatio W (1.618) (Viewport Width 1920px)------------- */
+    --GoldenRatioW1: 100vw;
+    --GoldenRatioW2: 61.805vw;
+    --GoldenRatioW3: 38.198vw;
+    --GoldenRatioW4: 23.608vw;
+    --GoldenRatioW5: 14.591vw;
+    --GoldenRatioW6: 9.018vw;
+    --GoldenRatioW7: 5.573vw;
+    --GoldenRatioW8: 3.444vw;
+    --GoldenRatioW9: 2.129vw;
+    --GoldenRatioW10: 1.315vw;
+    --GoldenRatioW11: 0.813vw;
+    --GoldenRatioW12: 0.502vw;
+    --GoldenRatioW13: 0.310vw;
+    /*-------------GoldenRatio H (1.618) (Viewport Width 1920px)------------- */
+    --GoldenRatioH1: 56.250vw;
+    --GoldenRatioH2: 34.765vw;
+    --GoldenRatioH3: 21.486vw;
+    --GoldenRatioH4: 13.279vw;
+    --GoldenRatioH5: 8.207vw;
+    --GoldenRatioH6: 5.072vw;
+    --GoldenRatioH7: 3.134vw;
+    --GoldenRatioH8: 1.937vw;
+    --GoldenRatioH9: 1.197vw;
+    --GoldenRatioH10: 0.740vw;
+    --GoldenRatioH11: 0.457vw;
+    --GoldenRatioH12: 0.282vw;
+    --GoldenRatioH13: 0.174vw;
+  }
 }
 
-#wrapper p {
-  font-size: 1.5vw;
-  font-weight: 600;
-  margin: 1vw 6vw;
-  width: 70%;
-  padding: 2vw;
-  color: var(--ColorDarkB);
-  background: var(--ColorWhiteA);
-}
-
-.SectionA {
-  background: rgb(168, 168, 168);
-}
-
-.SectionB {
-  background: rgb(105, 105, 105);
-}
-
-footer {
-  height: 600px;
-  display: flex;
-  justify-content: center;
-  background: var(--ColorWhiteA);
-}
-
-footer section {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-flow: column;
-  width: 100%;
-  height: 100%;
-  background: url(https://source.unsplash.com/random/1080x720) center;
-  background-size: 100vw;
-}
-
-footer h2, p {
-  font-size: 2vw;
-  padding: 1.5vw 10vw;
-  color: var(--ColorDarkA);
-}
-
-footer p {
-  font-size: 1.3vw;
-  color: var(--ColorDarkA);
-}
+/*-------------/@media (max-width: 1920px)------------- */

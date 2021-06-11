@@ -1,26 +1,29 @@
 gsap.registerPlugin(ScrollTrigger);
 
-//---------------------Parallax---------------------
-function Parallax() {
-    let tl = gsap.timeline({
+//---------------------App---------------------
+function App() {
+
+    gsap.to('body', { // LoadingAnimation---------------------
+        opacity: 1, duration: 0,
+    }) // /LoadingAnimation---------------------
+
+    let GSAPScrollTL = gsap.timeline({
         scrollTrigger: {
-            trigger: ".SectionB",
-            start: "100% 100%",
-            end: () => `+=${document.querySelector("footer").offsetHeight}`,
-            scrub: 0,
-            // markers: true,
+            trigger: "#wrapper",
+            toggleActions: "restart restart restart restart",
+            start: "0% 100%",
+            end: "50% 0%",
+            // markers: "true",
         }
     })
-    tl
-        .from('footer', {
-            y: "-50%", ease: "none",
+    GSAPScrollTL
+        .from('#wrapper #logo', {
+            opacity: 0, y: "22%", duration: 1.3, ease: "sine.inOut",
         }, 0)
+
 }
-//---------------------/Parallax---------------------
+//---------------------/App---------------------
 
 window.onload = () => {
-    if (window.matchMedia("(max-width: 480px)").matches) {
-    } else {
-        Parallax()
-    }
+    App()
 }

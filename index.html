@@ -2,46 +2,113 @@
 <html lang="en">
 
 <head>
-  <title>Parallax Animation GSAP iCodeAyush</title>
-  <meta name="description" content="Description.">
+  <title>iCodeAyush Home Page</title>
+  <meta name="description" content="My Name Is Ayush, I'm A Web Designer, UI/UX Designer, And Front End Web Developer.">
   <meta name="author" content="Ayush Shukla">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="css/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+  <link rel="shortcut icon" type="img/png" href="img/PortfolioLogoBlack.png">
+  <link rel="stylesheet" href="css/iCodeAyushHomePage.css">
 </head>
 
 <body>
-  <!----------------------------------------------------SectionA--------------------------------------------------->
-  <div id="wrapper" class="SectionA">
-    <a id="logo" href="#wrapper">
-      <h1>Logo</h1>
-    </a>
-    <h2>SectionA</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis pariatur ipsum quos porro quia, quae qui
-      fugiat ex corporis doloribus provident neque!</p>
+
+  <div id="wrap">
+
+    <!----------------------------------------------------HomePage--------------------------------------------------->
+    <div id="HomePage" class="ScrollSnap">
+
+      <!------------logo------------>
+      <a id="logo" href="#HomePage">
+        <h3>A</h3>
+      </a>
+      <!------------/logo------------>
+
+      <!------------Nav------------>
+      <nav>
+        <li>
+          <a href="#MyWorksWrap">Works<br><span id="FadeIn">Works</span></a>
+        </li>
+        <li>
+          <a href="#ContactMeWrap">Contact<br><span id="FadeIn">Contact</span></a>
+        </li>
+        <li>
+          <a href="Resume.pdf">Resume<br><span id="FadeIn">Resume</span></a>
+        </li>
+      </nav>
+      <!------------/Nav------------>
+
+      <!------------Intro------------>
+      <section id="intro">
+        <h2>
+          <span>My Name Is</span>
+          <span>Ayush</span>
+        </h2>
+        <h5>
+          <span>I'm A</span>
+          <span>Web Designer</span>
+          <span>UI/UX Designer</span>
+          <span>Front End Web Developer</span>
+        </h5>
+      </section>
+      <!------------/Intro------------>
+
+      <!------------Social------------>
+      <div id="social">
+        <a target="_blank" href="https://www.behance.net/iCodeAyush/">
+          <span>
+            <img src="Icon/Behance.svg" alt="Behance"><img id="FadeIn" src="Icon/Behance.svg" alt="Behance">
+          </span>
+        </a>
+        <a target="_blank" href="https://codepen.io/iCodeAyush">
+          <span>
+            <img src="Icon/Codepen.svg" alt="Codepen"><img id="FadeIn" src="Icon/Codepen.svg" alt="Codepen">
+          </span>
+        </a>
+        <a target="_blank" href="https://github.com/iCodeAyush">
+          <span>
+            <img src="Icon/Github.svg" alt="Github"><img id="FadeIn" src="Icon/Github.svg" alt="Github">
+          </span>
+        </a>
+        <a target="_blank" href="https://dribbble.com/iCodeAyush">
+          <span>
+            <img src="Icon/Dribbble.svg" alt="Dribbble"><img id="FadeIn" src="Icon/Dribbble.svg" alt="Dribbble">
+          </span>
+        </a>
+      </div>
+      <!------------/Social------------>
+
+      <!------------Scrolldown------------>
+      <div id="scrolldown">
+        <span>
+          <P>Scroll Down<br>
+          <div id="FadeIn">Scroll Down</div>
+          </P>
+        </span>
+      </div>
+      <!------------/Scrolldown------------>
+
+      <!------------CodeBy------------>
+      <div id="codeby">
+        <p>Code By </p>
+        <p><span><a target="_blank" href="https://github.com/icodeayush/">iCodeAyush</a><br><a id="FadeIn"
+              target="_blank" href="https://github.com/icodeayush/">iCodeAyush</a></span></p>
+      </div>
+      <!------------/CodeBy------------>
+
+    </div>
+    <!----------------------------------------------------/HomePage--------------------------------------------------->
+
   </div>
-  <!----------------------------------------------------/SectionA--------------------------------------------------->
-  <!----------------------------------------------------SectionB--------------------------------------------------->
-  <div id="wrapper" class="SectionB">
-    <h2>SectionB</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis pariatur ipsum quos porro quia, quae qui
-      fugiat ex corporis doloribus provident neque!</p>
-  </div>
-  <!----------------------------------------------------/SectionB--------------------------------------------------->
-  <!----------------------------------------------------footer--------------------------------------------------->
-  <footer>
-    <section>
-      <h2>Footer</h2>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis pariatur ipsum quos porro quia, quae qui
-        fugiat ex corporis doloribus provident neque!</p>
-    </section>
-  </footer>
-  <!----------------------------------------------------/footer--------------------------------------------------->
 
   <!-- GSAP.js -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js'></script>
   <!-- ScrollTrigger.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+  <!-- App.js -->
   <script src="JS/App.js"></script>
 </body>
 
