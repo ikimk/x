@@ -7,18 +7,25 @@ function App() {
         opacity: 1, duration: 0,
     }) // /LoadingAnimation---------------------
 
-    let GSAPScrollTL = gsap.timeline({
+    let tl = gsap.timeline({
         scrollTrigger: {
-            trigger: "#wrapper",
-            toggleActions: "restart restart restart restart",
-            start: "0% 100%",
-            end: "50% 0%",
-            // markers: "true",
+            trigger: "#HomePage",
+            start: "0% 0%",
+            end: "100% 0%",
+            scroller: "#wrap",
+            scrub: 0,
+            //markers: true,
         }
     })
-    GSAPScrollTL
-        .from('#wrapper #logo', {
-            opacity: 0, y: "22%", duration: 1.3, ease: "sine.inOut",
+    tl
+        .to('#HomePage>*', {
+            y: "-31%", ease: "none",
+        }, 0)
+        .to('#HomePage', {
+            backgroundSize: '90vw', ease: "none",
+        }, 0)
+        .from('#wrapX', {
+            y: "-50%", backgroundSize: '90vw', ease: "none",
         }, 0)
 
 }
