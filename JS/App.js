@@ -29,20 +29,20 @@ function App() {
         scrollTrigger: {
             trigger: "#HomePage",
             start: "0% 0%",
-            end: "100% 0%",
+            end: () => `+=${document.querySelector("#HomePage").offsetHeight}`,
             scrub: 0,
             // markers: true,
         }
     })
     HomePageParallax
         .to('#HomePage>*', {
-            y: "-31%", ease: "none",
+            // x: "50%", ease: "none", rotate: "22deg",
         }, 0)
         .to('#HomePage', {
-            backgroundSize: '90vw', ease: "none",
+            backgroundSize: '80vw', ease: "none",
         }, 0)
         .from('#MyWorks', {
-            y: "-50%", backgroundSize: '90vw', ease: "none",
+            backgroundSize: '80vw', ease: "none",
         }, 0)
     // /HomePageParallax---------------------
     //---------------------/HomePage---------------------
@@ -68,21 +68,21 @@ function App() {
     let MyWorksParallax = gsap.timeline({
         scrollTrigger: {
             trigger: "#MyWorks",
-            start: "50% 0%",
-            end: "150% 0%",
+            start: "0% 0%",
+            end: () => `+=${document.querySelector("#MyWorks").offsetHeight}`,
             scrub: 0,
             // markers: true,
         }
     })
     MyWorksParallax
         .to('#MyWorks>*', {
-            y: "-31%", ease: "none",
+            // x: "-50%", ease: "none", rotate: "22deg",
         }, 0)
         .to('#MyWorks', {
-            backgroundSize: '90vw', ease: "none",
+            backgroundSize: '80vw', ease: "none",
         }, 0)
         .from('#ContactMe', {
-            y: "-50%", backgroundSize: '90vw', ease: "none",
+            backgroundSize: '80vw', ease: "none",
         }, 0)
     // /MyWorksParallax---------------------
     //---------------------/MyWorks---------------------
