@@ -7,9 +7,6 @@ $("body").dblclick(function () {
     document.documentElement.style.setProperty('--ColorDark3', "#e3e3e3");
     document.documentElement.style.setProperty('--ColorDark2', "#ebebeb");
     document.documentElement.style.setProperty('--ColorDark1', "#f2f2f2");
-    $("#HomePage").css({ 'background': 'url(./img/HiThereWhite.jpg) var(--ColorDark2) no-repeat center', 'backgroundSize': '100vw', });
-    $("#MyWorks").css({ 'background': 'url(./img/MyWorksWhite.jpg) var(--ColorDark2) no-repeat center', 'backgroundSize': '100vw', });
-    $("#ContactMe").css({ 'background': 'url(./img/ContactMeWhite.jpg) var(--ColorDark2) no-repeat center', 'backgroundSize': '100vw', });
     $("#FiverrIcon img").attr("src", "Icon/FiverrBlack.svg");
     $("#BehanceIcon img").attr("src", "Icon/BehanceBlack.svg");
     $("#CodepenIcon img").attr("src", "Icon/CodepenBlack.svg");
@@ -38,11 +35,11 @@ function App() {
         .to('#HomePage>*', {
             // x: "50%", ease: "none", rotate: "22deg",
         }, 0)
-        .to('#HomePage', {
-            backgroundSize: '80vw', ease: "none",
+        .to('#HomePage #HiThereBG h1', {
+            scale: 0.8, ease: "none",
         }, 0)
-        .from('#MyWorks', {
-            backgroundSize: '80vw', ease: "none",
+        .from('#MyWorks #MyWorksBG h1', {
+            scale: 0.8, ease: "none",
         }, 0)
     // /HomePageParallax---------------------
     //---------------------/HomePage---------------------
@@ -78,11 +75,11 @@ function App() {
         .to('#MyWorks>*', {
             // x: "-50%", ease: "none", rotate: "22deg",
         }, 0)
-        .to('#MyWorks', {
-            backgroundSize: '80vw', ease: "none",
+        .to('#MyWorks #MyWorksBG h1', {
+            scale: 0.8, ease: "none",
         }, 0)
-        .from('#ContactMe', {
-            backgroundSize: '80vw', ease: "none",
+        .from('#ContactMe #ContactMeBG h1', {
+            scale: 0.8, ease: "none",
         }, 0)
     // /MyWorksParallax---------------------
     //---------------------/MyWorks---------------------

@@ -103,11 +103,31 @@ body {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background: url(../img/HiThere.jpg) var(--ColorDark2) no-repeat center;
+    /* background: url(../img/HiThere.jpg) var(--ColorDark2) no-repeat center; */
     /* background: url(../img/HiThereWhite.jpg) var(--ColorDark2) no-repeat center; */
     /* background: url(../img/HomePageLayout.jpg) no-repeat; */
     background-size: 100vw;
     z-index: 3;
+}
+
+#HomePage #HiThereBG {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: var(--GoldenRatioH1);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+#HomePage #HiThereBG h1 {
+    margin-left: calc(var(--GoldenRatioW8) * -1);
+    font-size: var(--FontH1);
+    font-weight: 400;
+    color: var(--ColorDark3);
+    font-size: 29.907vw;
+    line-height: var(--GoldenRatioH2);
 }
 
 #HomePage #logo {
@@ -391,10 +411,30 @@ body {
     height: 100vh;
     display: flex;
     overflow: hidden;
-    background: url(../img/MyWorks.jpg) var(--ColorDark2) no-repeat center;
+    /* background: url(../img/MyWorks.jpg) var(--ColorDark2) no-repeat center; */
     /* background: url(../img/MyWorksWhite.jpg) var(--ColorDark2) no-repeat center; */
     /* background: url(../img/MyWorksLayout.jpg) no-repeat; */
     background-size: 100vw;
+}
+
+#MyWorks #MyWorksBG {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: var(--GoldenRatioH1);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+#MyWorks #MyWorksBG h1 {
+    margin-left: calc(var(--GoldenRatioW8) * -1);
+    font-size: var(--FontH1);
+    font-weight: 400;
+    color: var(--ColorDark3);
+    font-size: 29.907vw;
+    line-height: var(--GoldenRatioH2);
 }
 
 #MyWorks #ProjectWrap {
@@ -497,10 +537,30 @@ body {
     z-index: 1;
     width: 100vw;
     height: 100vh;
-    background: url(../img/ContactMe.jpg) var(--ColorDark2) no-repeat center;
+    /* background: url(../img/ContactMe.jpg) var(--ColorDark2) no-repeat center; */
     /* background: url(../img/ContactMeWhite.jpg) var(--ColorDark2) no-repeat center; */
     /* background: url(../img/ContactMeLayout.jpg) no-repeat; */
     background-size: 100vw;
+}
+
+#ContactMe #ContactMeBG {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: var(--GoldenRatioH1);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+#ContactMe #ContactMeBG h1 {
+    margin-left: calc(var(--GoldenRatioW8) * -1);
+    font-size: var(--FontH1);
+    font-weight: 400;
+    color: var(--ColorDark3);
+    font-size: 29.907vw;
+    line-height: var(--GoldenRatioH2);
 }
 
 #ContactMe section {
