@@ -11,6 +11,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
   <link rel="shortcut icon" type="img/png" href="img/PortfolioLogoBlack.png">
+  <!-- /splitting.js -->
+  <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+  <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+  <!-- /splitting.js -->
   <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -19,9 +24,15 @@
   <!----------------------------------------------------HomePage--------------------------------------------------->
   <div id="HomePage">
 
+    <!----------------------------------------------------PageLoadingAnimation--------------------------------------------------->
+    <div id="PageLoadingAnimation">
+      <h2>A</h2>
+    </div>
+    <!----------------------------------------------------/PageLoadingAnimation--------------------------------------------------->
+
     <!------------HiThere------------>
-    <div id="HiThereBG">
-      <h1>Hi There</h1>
+    <div id="HiThere">
+      <h1 data-splitting>Hi <br> There</h1>
     </div>
     <!------------/HiThere------------>
 
@@ -48,14 +59,14 @@
     <!------------Intro------------>
     <section id="intro">
       <h2>
-        <span>My Name Is</span>
-        <span>Ayush</span>
+        <div id="IntroWords"><span data-splitting>My Name Is</span></div>
+        <div id="IntroWords"><span data-splitting>Ayush</span></div>
       </h2>
       <h5>
-        <span>I'm A</span>
-        <span>Web Designer</span>
-        <span>UI/UX Designer</span>
-        <span>Front End Web Developer</span>
+        <div id="IntroWords"><span data-splitting>I'm A</span></div>
+        <div id="IntroWords"><span data-splitting>Web Designer</span></div>
+        <div id="IntroWords"><span data-splitting>UI/UX Designer</span></div>
+        <div id="IntroWords"><span data-splitting>Front End Web Developer</span></div>
       </h5>
     </section>
     <!------------/Intro------------>
@@ -67,7 +78,7 @@
           <img src="Icon/FiverrWhite.svg" alt="Fiverr"><img id="FadeIn" src="Icon/FiverrWhite.svg" alt="Fiverr">
         </span>
       </a>
-      <a target="_blank" href="https://www.behance.net/iCodeAyush/">
+      <a target="_blank" href="https://www.behance.net/iCodeAyush">
         <span id="BehanceIcon">
           <img src="Icon/BehanceWhite.svg" alt="Behance"><img id="FadeIn" src="Icon/BehanceWhite.svg" alt="Behance">
         </span>
@@ -111,24 +122,24 @@
 
     <!------------MyWorks------------>
     <div id="MyWorksBG">
-      <h1>My Works</h1>
+      <h1 data-splitting>My <br> Works</h1>
     </div>
     <!------------/MyWorks------------>
 
     <div id="ProjectWrap">
       <!------------ProjectSlideA------------>
-      <div id="ProjectSlide" class="ProjectSlideA">
+      <div id="ProjectSlide" class="ProjectSlideA ProjectSlides">
         <!------------/ProjectImageSlideA------------>
         <div id="ProjectImageWrap">
           <img src="img/ProjectA.jpg">
         </div>
         <!------------/ProjectImageSlideA------------>
         <!------------ProjectTitleSlideA------------>
-        <h4><span>01 Landing Page</span></h4>
-        <h2><span>Dora</span></h2>
+        <h4><span data-splitting>01 Landing Page</span></h4>
+        <h2><span data-splitting>Dora</span></h2>
         <!------------/ProjectTitleSlideA------------>
         <!------------ViewCodeViewPageSlideA------------>
-        <a id="ViewCode" target="_blank" href="https://icodeayush.github.io/#MyWorksWrapACode">
+        <a id="ViewCode" target="_blank" href="https://codepen.io/icodeayush/pen/bGgWmyL">
           View <span>Code</span>
         </a>
         <a id="ViewPage" target="_blank" href="https://icodeayush.github.io/Dora">
@@ -139,15 +150,15 @@
       <!------------/ProjectSlideA------------>
 
       <!------------ProjectSlideB------------>
-      <div id="ProjectSlide" class="ProjectSlideB">
+      <div id="ProjectSlide" class="ProjectSlideB ProjectSlides">
         <!------------/ProjectImageSlideB------------>
         <div id="ProjectImageWrap">
           <img src="img/ProjectB.jpg">
         </div>
         <!------------/ProjectImageSlideB------------>
         <!------------ProjectTitleSlideB------------>
-        <h4><span>02 Landing Page</span></h4>
-        <h2><span>BeeSoft</span></h2>
+        <h4><span data-splitting>02 Landing Page</span></h4>
+        <h2><span data-splitting>BeeSoft</span></h2>
         <!------------/ProjectTitleSlideB------------>
         <!------------ViewCodeViewPageSlideB------------>
         <a id="ViewCode" target="_blank" href="https://codepen.io/icodeayush/pen/QWdgXgB">
@@ -161,15 +172,15 @@
       <!------------/ProjectSlideB------------>
 
       <!------------ProjectSlideC------------>
-      <div id="ProjectSlide" class="ProjectSlideC">
+      <div id="ProjectSlide" class="ProjectSlideC ProjectSlides">
         <!------------/ProjectImageSlideC------------>
         <div id="ProjectImageWrap">
           <img src="img/ProjectC.jpg">
         </div>
         <!------------/ProjectImageSlideC------------>
         <!------------ProjectTitleSlideC------------>
-        <h4><span>03 UI UX Design Concept</span></h4>
-        <h2><span>Roman Sculpt</span></h2>
+        <h4><span data-splitting>03 UI UX Design Concept</span></h4>
+        <h2><span data-splitting>Roman Sculpt</span></h2>
         <!------------/ProjectTitleSlideC------------>
         <!------------ViewCodeViewPageSlideC------------>
         <a id="ViewCode" target="_blank"
@@ -185,15 +196,15 @@
       <!------------/ProjectSlideC------------>
 
       <!------------ProjectSlideD------------>
-      <div id="ProjectSlide" class="ProjectSlideD">
+      <div id="ProjectSlide" class="ProjectSlideD ProjectSlides">
         <!------------/ProjectImageSlideD------------>
         <div id="ProjectImageWrap">
           <img src="img/ProjectD.jpg">
         </div>
         <!------------/ProjectImageSlideD------------>
         <!------------ProjectTitleSlideD------------>
-        <h4><span>04 GSAP ScrollTrigger</span></h4>
-        <h2><span>Scroll Animation</span></h2>
+        <h4><span data-splitting>04 GSAP ScrollTrigger</span></h4>
+        <h2><span data-splitting>Scroll Animation</span></h2>
         <!------------/ProjectTitleSlideD------------>
         <!------------ViewCodeViewPageSlideD------------>
         <a id="ViewCode" target="_blank" href="https://codepen.io/icodeayush/pen/vYgdBVr">
@@ -207,21 +218,21 @@
       <!------------/ProjectSlideD------------>
 
       <!------------ProjectSlideE------------>
-      <div id="ProjectSlide" class="ProjectSlideE">
+      <div id="ProjectSlide" class="ProjectSlideE ProjectSlides">
         <!------------/ProjectImageSlideE------------>
         <div id="ProjectImageWrap">
           <img src="img/ProjectE.jpg">
         </div>
         <!------------/ProjectImageSlideE------------>
         <!------------ProjectTitleSlideE------------>
-        <h4><span>05 Landing Page</span></h4>
-        <h2><span>TravelNow</span></h2>
+        <h4><span data-splitting>05 Landing Page</span></h4>
+        <h2><span data-splitting>TravelNow</span></h2>
         <!------------/ProjectTitleSlideE------------>
         <!------------ViewCodeViewPageSlideE------------>
         <a id="ViewCode" target="_blank" href="https://codepen.io/icodeayush/pen/PoWjrra">
           View <span>Code</span>
         </a>
-        <a id="ViewPage" target="_blank" href="https://github.com/icodeayush/TravelNow">
+        <a id="ViewPage" target="_blank" href="https://icodeayush.github.io/TravelNow/">
           View <span>Page</span>
         </a>
         <!------------/ViewCodeViewPageSlideE------------>
@@ -235,19 +246,19 @@
   <!----------------------------------------------------ContactMe--------------------------------------------------->
   <div id="ContactMe">
 
-    <!------------ContactMe------------>
+    <!------------ContactMeBG------------>
     <div id="ContactMeBG">
-      <h1>Contact Me</h1>
+      <h1 data-splitting>Contact <br> Me</h1>
     </div>
-    <!------------/ContactMe------------>
+    <!------------/ContactMeBG------------>
 
     <!-------------section------------>
     <section>
       <h3>
-        <span>Let's Make Something Together</span>
+        <span data-splitting>Let's Make Something Together</span>
       </h3>
       <h4>
-        <span>Start By Saying Hi</span>
+        <span data-splitting>Start By Saying Hi</span>
       </h4>
     </section>
     <!-------------/section------------>
@@ -301,10 +312,10 @@
     <div id="address">
       <span id="AddressBorderTop"></span>
       <p id="addressA">
-        <span>B-60 Sector O, Aliganj, Lucknow</span>
+        <span data-splitting>B-60 Sector O, Aliganj, Lucknow</span>
       </p>
       <p id="addressB">
-        <span>Uttar Pradesh, India</span>
+        <span data-splitting>Uttar Pradesh, India</span>
       </p>
     </div>
     <!-------------/Address------------>
@@ -314,10 +325,10 @@
 
   <!-- GSAP.js -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js'></script>
-  <!-- Draggable.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/Draggable.min.js"></script>
   <!-- ScrollTrigger.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+  <!-- splitting.js -->
+  <script> Splitting();</script>
   <!-- App.js -->
   <script src="JS/App.js"></script>
 </body>

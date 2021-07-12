@@ -98,22 +98,118 @@ body {
     background: var(--ColorDark2);
 }
 
+/*-------------PageLoadingAnimation------------- */
+
+#PageLoadingAnimation {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--ColorDark2);
+    z-index: 3;
+    opacity: 1;
+    cursor: none;
+}
+
+#PageLoadingAnimation h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: var(--FontH2);
+    font-weight: 700;
+    color: var(--ColorDark2);
+    cursor: default;
+    -webkit-animation: x 2.2s 0.4s steps(22, start) infinite alternate;
+    animation: x 2.2s 0.4s steps(22, start) infinite alternate;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+    cursor: none;
+}
+
+@-webkit-keyframes x {
+    from {
+        color: var(--ColorDark2);
+    }
+    to {
+        color: var(--ColorLight2);
+    }
+}
+
+@keyframes x {
+    from {
+        color: var(--ColorDark2);
+    }
+    to {
+        color: var(--ColorLight2);
+    }
+}
+
+/*-------------PageLoadingAnimation------------- */
+
+#PageLoadingAnimation {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--ColorDark2);
+    z-index: 3;
+    opacity: 1;
+    cursor: none;
+}
+
+#PageLoadingAnimation h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: var(--FontH2);
+    font-weight: 700;
+    color: var(--ColorDark2);
+    cursor: default;
+    -webkit-animation: x 2.2s 0.4s steps(22, start) infinite alternate;
+    animation: x 2.2s 0.4s steps(22, start) infinite alternate;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+    cursor: none;
+}
+
+@-webkit-keyframes x {
+    from {
+        color: var(--ColorDark2);
+    }
+    to {
+        color: var(--ColorLight2);
+    }
+}
+
+@keyframes x {
+    from {
+        color: var(--ColorDark2);
+    }
+    to {
+        color: var(--ColorLight2);
+    }
+}
+
+/*-------------PageLoadingAnimation------------- */
+
 /*-------------HomePage------------- */
 
 #HomePage {
     position: relative;
+    z-index: 3;
     width: 100vw;
     height: 100vh;
     /* background: url(../img/HiThere.jpg) var(--ColorDark2) no-repeat center; */
+    /* background: url(../img/iCodeAyushHomePageText.jpg) var(--ColorDark2) no-repeat center; */
     /* background: url(../img/HiThereWhite.jpg) var(--ColorDark2) no-repeat center; */
     /* background: url(../img/HomePageLayout.jpg) no-repeat; */
     background-size: 100vw;
-    z-index: 3;
 }
 
-#HomePage #HiThereBG {
+#HomePage #HiThere {
     position: absolute;
     top: 0;
+    left: 0;
     width: 100%;
     height: var(--GoldenRatioH1);
     overflow: hidden;
@@ -122,8 +218,13 @@ body {
     pointer-events: none;
 }
 
-#HomePage #HiThereBG h1 {
-    margin-left: calc(var(--GoldenRatioW8) * -1);
+#HomePage #HiThere h1 {
+    margin-left: calc(var(--GoldenRatioW13) * -1);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+#HomePage #HiThere h1 .char {
     font-size: var(--FontH1);
     font-weight: 400;
     color: var(--ColorDark3);
@@ -205,8 +306,11 @@ body {
     left: var(--GoldenCannonW5);
 }
 
-#HomePage #intro h2 span {
-    display: block;
+#HomePage #intro h2 #IntroWords, #HomePage #intro h5 #IntroWords {
+    overflow: hidden;
+}
+
+#HomePage #intro h2 #IntroWords span {
     font-size: var(--FontH2);
     font-weight: 400;
     color: var(--ColorLight1);
@@ -218,20 +322,19 @@ body {
     right: var(--GoldenCannonW6);
 }
 
-#HomePage #intro h5 span {
-    display: block;
+#HomePage #intro h5 #IntroWords span {
     font-size: var(--FontH5);
     font-weight: 300;
     color: var(--ColorLight3);
     cursor: default;
-    transition: color 0.618s ease
+    transition: color 0.618s ease;
 }
 
-#HomePage #intro h5:hover span {
+#HomePage #intro h5:hover #IntroWords span {
     color: var(--ColorDark3);
 }
 
-#HomePage #intro h5 span:hover {
+#HomePage #intro h5 #IntroWords:hover span {
     color: var(--ColorLight1);
 }
 
@@ -421,6 +524,7 @@ body {
 #MyWorks #MyWorksBG {
     position: absolute;
     top: 0;
+    left: 0;
     width: 100%;
     height: var(--GoldenRatioH1);
     overflow: hidden;
@@ -431,6 +535,11 @@ body {
 
 #MyWorks #MyWorksBG h1 {
     margin-left: calc(var(--GoldenRatioW8) * -1);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+#MyWorks #MyWorksBG h1 .char {
     font-size: var(--FontH1);
     font-weight: 400;
     color: var(--ColorDark3);
@@ -454,6 +563,7 @@ body {
     bottom: calc(var(--GoldenCannonH3) + var(--GoldenRatioW8) + var(--GoldenCannonH5));
     left: var(--GoldenCannonW6);
     display: block;
+    overflow: hidden;
 }
 
 #MyWorks #ProjectWrap #ProjectSlide h4 span {
@@ -487,7 +597,7 @@ body {
     right: var(--GoldenCannonW5);
     display: block;
     overflow: hidden;
-    cursor: default;
+    cursor: pointer;
 }
 
 #MyWorks #ProjectWrap #ProjectSlide #ViewPage {
@@ -496,7 +606,7 @@ body {
     right: var(--GoldenCannonW6);
     display: block;
     overflow: hidden;
-    cursor: default;
+    cursor: pointer;
 }
 
 #MyWorks #ProjectWrap #ProjectSlide #ViewCode, #MyWorks #ProjectWrap #ProjectSlide #ViewPage {
@@ -515,7 +625,6 @@ body {
     display: flex;
     flex-flow: column;
     height: calc(var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2);
-    border: 1.618px solid var(--ColorLight1);
     aspect-ratio: 16 / 9;
     top: var(--GoldenCannonH4);
     right: var(--GoldenCannonW6);
@@ -523,6 +632,7 @@ body {
 }
 
 #MyWorks #ProjectWrap #ProjectSlide #ProjectImageWrap img {
+    border: 1.618px solid var(--ColorLight1);
     position: relative;
     width: 100%;
     top: 0;
@@ -547,6 +657,7 @@ body {
 #ContactMe #ContactMeBG {
     position: absolute;
     top: 0;
+    left: 0;
     width: 100%;
     height: var(--GoldenRatioH1);
     overflow: hidden;
@@ -557,6 +668,10 @@ body {
 
 #ContactMe #ContactMeBG h1 {
     margin-left: calc(var(--GoldenRatioW8) * -1);
+    white-space: nowrap;
+}
+
+#ContactMe #ContactMeBG h1 .char {
     font-size: var(--FontH1);
     font-weight: 400;
     color: var(--ColorDark3);
@@ -575,7 +690,6 @@ body {
 }
 
 #ContactMe section h3 span {
-    display: block;
     font-size: var(--FontH3);
     font-weight: 600;
     color: var(--ColorLight1);
@@ -588,7 +702,6 @@ body {
 }
 
 #ContactMe section h4 span {
-    display: block;
     font-size: var(--FontH4);
     font-weight: 300;
     color: var(--ColorLight2);
@@ -667,6 +780,7 @@ body {
     overflow: hidden;
     margin-top: var(--GoldenRatioH13);
     height: var(--FontH5);
+    width: var(--GoldenCannonW4);
 }
 
 #ContactMe #social a {
@@ -722,7 +836,6 @@ body {
 }
 
 #ContactMe #address #addressA span {
-    display: block;
     font-size: var(--FontParagraph);
     font-weight: 600;
     color: var(--ColorLight1);
@@ -730,7 +843,6 @@ body {
 }
 
 #ContactMe #address #addressB span {
-    display: block;
     font-size: var(--FontParagraph);
     font-weight: 300;
     color: var(--ColorLight2);
