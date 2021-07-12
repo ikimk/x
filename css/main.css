@@ -124,6 +124,7 @@ body {
     -webkit-animation-play-state: running;
     animation-play-state: running;
     cursor: none;
+    user-select: none;
 }
 
 @-webkit-keyframes x {
@@ -144,53 +145,7 @@ body {
     }
 }
 
-/*-------------PageLoadingAnimation------------- */
-
-#PageLoadingAnimation {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--ColorDark2);
-    z-index: 3;
-    opacity: 1;
-    cursor: none;
-}
-
-#PageLoadingAnimation h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: var(--FontH2);
-    font-weight: 700;
-    color: var(--ColorDark2);
-    cursor: default;
-    -webkit-animation: x 2.2s 0.4s steps(22, start) infinite alternate;
-    animation: x 2.2s 0.4s steps(22, start) infinite alternate;
-    -webkit-animation-play-state: running;
-    animation-play-state: running;
-    cursor: none;
-}
-
-@-webkit-keyframes x {
-    from {
-        color: var(--ColorDark2);
-    }
-    to {
-        color: var(--ColorLight2);
-    }
-}
-
-@keyframes x {
-    from {
-        color: var(--ColorDark2);
-    }
-    to {
-        color: var(--ColorLight2);
-    }
-}
-
-/*-------------PageLoadingAnimation------------- */
+/*-------------/PageLoadingAnimation------------- */
 
 /*-------------HomePage------------- */
 
@@ -221,7 +176,7 @@ body {
 #HomePage #HiThere h1 {
     margin-left: calc(var(--GoldenRatioW13) * -1);
     white-space: nowrap;
-    pointer-events: none;
+    user-select: none;
 }
 
 #HomePage #HiThere h1 .char {
@@ -536,7 +491,7 @@ body {
 #MyWorks #MyWorksBG h1 {
     margin-left: calc(var(--GoldenRatioW8) * -1);
     white-space: nowrap;
-    pointer-events: none;
+    user-select: none;
 }
 
 #MyWorks #MyWorksBG h1 .char {
@@ -623,7 +578,6 @@ body {
 #MyWorks #ProjectWrap #ProjectSlide #ProjectImageWrap {
     position: absolute;
     display: flex;
-    flex-flow: column;
     height: calc(var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2);
     aspect-ratio: 16 / 9;
     top: var(--GoldenCannonH4);
@@ -669,6 +623,7 @@ body {
 #ContactMe #ContactMeBG h1 {
     margin-left: calc(var(--GoldenRatioW8) * -1);
     white-space: nowrap;
+    user-select: none;
 }
 
 #ContactMe #ContactMeBG h1 .char {
