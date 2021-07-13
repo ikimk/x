@@ -579,7 +579,7 @@ body {
     position: absolute;
     display: flex;
     height: calc(var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2);
-    aspect-ratio: 16 / 9;
+    width: calc((var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2) * 1.7777);
     top: var(--GoldenCannonH4);
     right: var(--GoldenCannonW6);
     overflow: hidden;
