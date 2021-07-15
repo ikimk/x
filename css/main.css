@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
 :root {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', Arial;
     /*-------------Colors -- Black to White (HSL) lightness 0% 20% 25% 50% 75% 80% 100%------------- */
     --ColorDark1: hsl(0, 0%, 0%);
     --ColorDark2: hsl(0, 0%, 20%);
@@ -10,6 +10,13 @@
     --ColorLight3: hsl(0, 0%, 75%);
     --ColorLight2: hsl(0, 0%, 80%);
     --ColorLight1: hsl(0, 0%, 100%);
+    /*-------------FontWeights------------- */
+    --Light: 300;
+    --Regular: 400;
+    --SemiBold: 600;
+    --Bold: 700;
+    --ExtraBold: 800;
+    /*-------------/FontWeights------------- */
     /*-------------WhiteColors------------- */
     /* --ColorDark1: hsl(0, 0%, 05%); */
     /* --ColorDark2: hsl(0, 0%, 07%); */
@@ -26,6 +33,7 @@
     --FontParagraph: 25.89px;
     --FontSubtitle: 16px;
     --IconSize: calc(var(--FontSubtitle) * 2);
+    --FontBG: 574.22px;
     /*-------------GoldenRatio W (1.618) (Viewport Width 1920px)------------- */
     --GoldenRatioW1: 1920px;
     --GoldenRatioW2: 1186.65px;
@@ -108,7 +116,7 @@ body {
     justify-content: center;
     align-items: center;
     background: var(--ColorDark2);
-    z-index: 3;
+    z-index: 4;
     opacity: 1;
     cursor: none;
 }
@@ -116,7 +124,7 @@ body {
 #PageLoadingAnimation h2 {
     font-family: 'Playfair Display', serif;
     font-size: var(--FontH2);
-    font-weight: 700;
+    font-weight: var(--Bold);
     color: var(--ColorDark2);
     cursor: default;
     -webkit-animation: x 2.2s 0.4s steps(22, start) infinite alternate;
@@ -146,6 +154,32 @@ body {
 }
 
 /*-------------/PageLoadingAnimation------------- */
+
+/*-------------CursorX------------- */
+
+#CursorX {
+    z-index: 5;
+    position: fixed;
+    width: var(--GoldenRatioW11);
+    height: var(--GoldenRatioW11);
+    background: var(--ColorLight1);
+    border-radius: 50%;
+    transform: scale(0);
+    pointer-events: none;
+}
+
+#CursorXC {
+    z-index: 5;
+    position: fixed;
+    height: var(--GoldenRatioW7);
+    width: var(--GoldenRatioW7);
+    border: 1.618px solid var(--ColorLight1);
+    border-radius: 50%;
+    transform: scale(0);
+    pointer-events: none;
+}
+
+/*-------------/CursorX------------- */
 
 /*-------------HomePage------------- */
 
@@ -180,10 +214,9 @@ body {
 }
 
 #HomePage #HiThere h1 .char {
-    font-size: var(--FontH1);
-    font-weight: 400;
+    font-size: var(--FontBG);
+    font-weight: var(--Regular);
     color: var(--ColorDark3);
-    font-size: 29.907vw;
     line-height: var(--GoldenRatioH2);
 }
 
@@ -198,7 +231,7 @@ body {
 #HomePage #logo h3 {
     font-family: 'Playfair Display', serif;
     font-size: var(--FontH3);
-    font-weight: 700;
+    font-weight: var(--Bold);
     color: var(--ColorLight1);
 }
 
@@ -220,7 +253,7 @@ body {
 
 #HomePage nav li a {
     font-size: var(--FontParagraph);
-    font-weight: 300;
+    font-weight: var(--Light);
     color: var(--ColorLight1);
     line-height: var(--FontH5);
     display: block;
@@ -267,7 +300,7 @@ body {
 
 #HomePage #intro h2 #IntroWords span {
     font-size: var(--FontH2);
-    font-weight: 400;
+    font-weight: var(--Regular);
     color: var(--ColorLight1);
     cursor: default;
 }
@@ -279,7 +312,7 @@ body {
 
 #HomePage #intro h5 #IntroWords span {
     font-size: var(--FontH5);
-    font-weight: 300;
+    font-weight: var(--Light);
     color: var(--ColorLight3);
     cursor: default;
     transition: color 0.618s ease;
@@ -360,7 +393,7 @@ body {
     padding: 0;
     margin: 0;
     font-size: var(--FontParagraph);
-    font-weight: 300;
+    font-weight: var(--Light);
     color: var(--ColorLight3);
     line-height: var(--FontH5);
     cursor: default;
@@ -373,7 +406,7 @@ body {
 
 #HomePage #scrolldown span #FadeIn {
     font-size: var(--FontParagraph);
-    font-weight: 300;
+    font-weight: var(--Light);
     color: var(--ColorLight3);
     line-height: var(--FontH5);
     cursor: default;
@@ -431,7 +464,7 @@ body {
 #HomePage #codeby p {
     font-size: var(--FontParagraph);
     white-space: pre;
-    font-weight: 300;
+    font-weight: var(--Light);
     color: var(--ColorLight1);
     line-height: var(--FontH5);
     cursor: default;
@@ -443,7 +476,7 @@ body {
 }
 
 #HomePage #codeby p span {
-    font-weight: 600;
+    font-weight: var(--SemiBold);
 }
 
 #HomePage #codeby p span #FadeIn {
@@ -495,10 +528,9 @@ body {
 }
 
 #MyWorks #MyWorksBG h1 .char {
-    font-size: var(--FontH1);
-    font-weight: 400;
+    font-size: var(--FontBG);
+    font-weight: var(--Regular);
     color: var(--ColorDark3);
-    font-size: 29.907vw;
     line-height: var(--GoldenRatioH2);
 }
 
@@ -523,7 +555,7 @@ body {
 
 #MyWorks #ProjectWrap #ProjectSlide h4 span {
     font-size: var(--FontH4);
-    font-weight: 300;
+    font-weight: var(--Light);
     color: var(--ColorLight2);
     cursor: default;
 }
@@ -539,10 +571,10 @@ body {
 
 #MyWorks #ProjectWrap #ProjectSlide h2 span {
     font-size: var(--FontH2);
-    font-weight: 400;
+    font-weight: var(--Regular);
     color: var(--ColorLight1);
-    text-shadow: 0px 0px 2.2vh hsla(0, 0%, 25%, 0.31);
-    /* --ColorDark3 Opacity 0.31--*/
+    -webkit-text-stroke-width: 1.618px;
+    -webkit-text-stroke-color: var(--ColorDark2);
     cursor: default;
 }
 
@@ -566,31 +598,35 @@ body {
 
 #MyWorks #ProjectWrap #ProjectSlide #ViewCode, #MyWorks #ProjectWrap #ProjectSlide #ViewPage {
     font-size: var(--FontParagraph);
-    font-weight: 300;
+    font-weight: var(--Light);
     color: var(--ColorLight2);
 }
 
 #MyWorks #ProjectWrap #ProjectSlide #ViewCode span, #MyWorks #ProjectWrap #ProjectSlide #ViewPage span {
-    font-weight: 600;
+    font-weight: var(--SemiBold);
     color: var(--ColorLight1);
 }
 
 #MyWorks #ProjectWrap #ProjectSlide #ProjectImageWrap {
     position: absolute;
-    display: flex;
-    height: calc(var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2);
-    width: calc((var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2) * 1.7777);
     top: var(--GoldenCannonH4);
     right: var(--GoldenCannonW6);
+    height: calc(var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2);
+    width: calc((var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2) * 1.7777);
     overflow: hidden;
 }
 
-#MyWorks #ProjectWrap #ProjectSlide #ProjectImageWrap img {
+#MyWorks #ProjectWrap #ProjectSlide #ProjectImageWrap span {
+    display: flex;
+    height: calc(var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2);
+    width: calc((var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2) * 1.7777);
+    overflow: hidden;
     border: 1.618px solid var(--ColorLight1);
-    position: relative;
-    width: 100%;
-    top: 0;
-    left: 0;
+}
+
+#MyWorks #ProjectWrap #ProjectSlide #ProjectImageWrap span img {
+    height: calc(var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2);
+    width: calc((var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2) * 1.7777);
 }
 
 /*-------------/MyWorks------------- */
@@ -627,10 +663,9 @@ body {
 }
 
 #ContactMe #ContactMeBG h1 .char {
-    font-size: var(--FontH1);
-    font-weight: 400;
+    font-size: var(--FontBG);
+    font-weight: var(--Regular);
     color: var(--ColorDark3);
-    font-size: 29.907vw;
     line-height: var(--GoldenRatioH2);
 }
 
@@ -646,7 +681,7 @@ body {
 
 #ContactMe section h3 span {
     font-size: var(--FontH3);
-    font-weight: 600;
+    font-weight: var(--SemiBold);
     color: var(--ColorLight1);
     cursor: default;
 }
@@ -658,7 +693,7 @@ body {
 
 #ContactMe section h4 span {
     font-size: var(--FontH4);
-    font-weight: 300;
+    font-weight: var(--Light);
     color: var(--ColorLight2);
     cursor: default;
 }
@@ -675,7 +710,7 @@ body {
     display: block;
     font-family: 'Playfair Display', serif;
     font-size: var(--FontH3);
-    font-weight: 700;
+    font-weight: var(--Bold);
     color: var(--ColorLight1);
     text-decoration: none;
 }
@@ -704,11 +739,12 @@ body {
 
 #ContactMe #EmailPhoneNoSocial #Email a {
     display: block;
+    width: fit-content;
 }
 
 #ContactMe #EmailPhoneNoSocial #Email a span {
     font-size: var(--FontParagraph);
-    font-weight: 600;
+    font-weight: var(--SemiBold);
     color: var(--ColorLight1);
     display: block;
 }
@@ -716,6 +752,7 @@ body {
 #ContactMe #EmailPhoneNoSocial #PhoneNo {
     margin-top: var(--GoldenRatioH13);
     display: block;
+    width: fit-content;
 }
 
 #ContactMe #EmailPhoneNoSocial #PhoneNo a {
@@ -724,7 +761,7 @@ body {
 
 #ContactMe #EmailPhoneNoSocial #PhoneNo a span {
     font-size: var(--FontParagraph);
-    font-weight: 400;
+    font-weight: var(--Regular);
     color: var(--ColorLight2);
     display: block;
 }
@@ -745,7 +782,7 @@ body {
 #ContactMe #social a span {
     display: block;
     font-size: var(--FontParagraph);
-    font-weight: 300;
+    font-weight: var(--Light);
     color: var(--ColorLight2);
     line-height: var(--FontH5);
     transition: margin-top 0.618s ease, color 0.618s ease;
@@ -778,7 +815,7 @@ body {
 }
 
 #ContactMe #address p {
-    display: block;
+    display: flex;
     overflow: hidden;
 }
 
@@ -792,14 +829,14 @@ body {
 
 #ContactMe #address #addressA span {
     font-size: var(--FontParagraph);
-    font-weight: 600;
+    font-weight: var(--SemiBold);
     color: var(--ColorLight1);
     cursor: default;
 }
 
 #ContactMe #address #addressB span {
     font-size: var(--FontParagraph);
-    font-weight: 300;
+    font-weight: var(--Light);
     color: var(--ColorLight2);
     cursor: default;
 }
@@ -819,6 +856,7 @@ body {
         --FontParagraph: 1.3484vw;
         --FontSubtitle: 0.8333vw;
         --IconSize: calc(var(--FontSubtitle) * 2);
+        --FontBG: 29.9072vw;
         /*-------------GoldenRatio W (1.618) (Viewport Width 1920px)------------- */
         --GoldenRatioW1: 100vw;
         --GoldenRatioW2: 61.8046vw;

@@ -34,6 +34,73 @@ function App() {
     }
     //---------------------/PageLoadingAnimation---------------------
 
+    //---------------------Cursor---------------------
+    // CursorX---------------------
+    var CursorX = document.querySelector("#CursorX");
+    var PosCursorX = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    var mouseCursorX = { x: PosCursorX.x, y: PosCursorX.y };
+    var xSetCursorX = gsap.quickSetter(CursorX, "x", "px");
+    var ySetCursorX = gsap.quickSetter(CursorX, "y", "px");
+    gsap.set("#CursorX", { xPercent: -50, yPercent: -50 });
+
+    window.addEventListener("mousemove", e => {
+        mouseCursorX.x = e.x;
+        mouseCursorX.y = e.y;
+        gsap.to("#CursorX", { scale: 1, duration: 2.2, ease: "power3.out", });
+    });
+
+    var SpeedX1CursorX = 0.1;
+    var SpeedX2CursorX = 31 / 1300;
+
+    gsap.ticker.add((_TIME, TimeX) => {
+        var NewX = TimeX * SpeedX2CursorX;
+        var X = 1.0 - Math.pow(1.0 - SpeedX1CursorX, NewX);
+        PosCursorX.x += (mouseCursorX.x - PosCursorX.x) * X;
+        PosCursorX.y += (mouseCursorX.y - PosCursorX.y) * X;
+        xSetCursorX(PosCursorX.x);
+        ySetCursorX(PosCursorX.y);
+    });
+    // /CursorX---------------------
+
+    // CursorXC---------------------
+    var CursorXC = document.querySelector("#CursorXC");
+    var PosCursorXC = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    var mouseCursorXC = { x: PosCursorXC.x, y: PosCursorXC.y };
+    var xSetCursorXC = gsap.quickSetter(CursorXC, "x", "px");
+    var ySetCursorXC = gsap.quickSetter(CursorXC, "y", "px");
+    gsap.set("#CursorXC", { xPercent: -50, yPercent: -50 });
+
+    window.addEventListener("mousemove", e => {
+        mouseCursorXC.x = e.x;
+        mouseCursorXC.y = e.y;
+    });
+
+    var SpeedX1CursorXC = 0.1;
+    var SpeedX2CursorXC = 130 / 1300;
+
+    gsap.ticker.add((_TIME, TimeX) => {
+        var NewX = TimeX * SpeedX2CursorXC;
+        var X = 1.0 - Math.pow(1.0 - SpeedX1CursorXC, NewX);
+        PosCursorXC.x += (mouseCursorXC.x - PosCursorXC.x) * X;
+        PosCursorXC.y += (mouseCursorXC.y - PosCursorXC.y) * X;
+        xSetCursorXC(PosCursorXC.x);
+        ySetCursorXC(PosCursorXC.y);
+    });
+
+    const CursorXCTL = gsap.timeline({ defaults: { ease: "power3.out" }, paused: true });
+    CursorXCTL.to(CursorXC, { scale: 1, duration: 2.2, })
+
+    $(".CursorA").mouseenter(function () {
+        CursorXCTL.reversed(!CursorXCTL.timeScale(1).play());
+        // CursorXCTL.play();
+    });
+    $(".CursorA").mouseleave(function () {
+        CursorXCTL.reversed(!CursorXCTL.timeScale(2.2).reversed());
+        // CursorXCTL.reverse();
+    });
+    // /CursorXC---------------------
+    //---------------------/Cursor---------------------
+
     //---------------------HomePage---------------------
     let HomePageScrollTrigger = gsap.timeline({
         scrollTrigger: {
@@ -80,12 +147,12 @@ function App() {
             toggleActions: "play reverse play reverse",
             onToggle: self => self.animation.timeScale(self.isActive ? 1 : -1.3),
             start: "0% 70%",
-            end:  "+=" + (document.querySelector('#ProjectWrap').scrollWidth - window.innerWidth * 0.3),
+            end: "+=" + (document.querySelector('#ProjectWrap').scrollWidth - window.innerWidth * 0.3),
             // markers: "true",
         }
     })
     MyWorksScrollTrigger
-        .from('#MyWorks #MyWorksBG h1 .word', {
+        .from('#MyWorks #MyWorksBG h1 .char', {
             opacity: 0, yPercent: 50, duration: 2.2, ease: "power3.out", stagger: 0.13
         }, 0)
     // /MyWorksScrollTrigger
@@ -125,9 +192,6 @@ function App() {
                 start: () => "top top-=" + (ProjectSlidesXO.offsetLeft - window.innerWidth * 0.2),
                 end: () => "+=" + (ProjectSlidesXO.offsetWidth - window.innerWidth * 0.6),
                 toggleActions: "play play play reverse",
-                // start: () => "top top-=" + (ProjectSlidesXO.offsetLeft - window.innerWidth),
-                // end: () => "+=" + (ProjectSlidesXO.offsetWidth),
-                // scrub: 1.5,
                 // markers: "true",
             }
         })
@@ -138,8 +202,14 @@ function App() {
             .from(ProjectSlidesXO.querySelectorAll("h2 span .char"), {
                 yPercent: 220, opacity: 0, ease: "power3.out", duration: 1.3, stagger: 0.13,
             }, 0)
-            .from(ProjectSlidesXO.querySelectorAll("#ProjectImageWrap img"), {
-                yPercent: 220, opacity: 0, duration: 1.3, ease: "power3.out",
+            .from(ProjectSlidesXO.querySelectorAll("#ProjectImageWrap span "), {
+                opacity: 0, duration: 0.013,
+            }, 0)
+            .from(ProjectSlidesXO.querySelectorAll("#ProjectImageWrap span "), {
+                height: 0, ease: "power3.inOut", duration: 1.3,
+            }, 0)
+            .from(ProjectSlidesXO.querySelectorAll("#ProjectImageWrap span img"), {
+                yPercent: -22, scale: 2.2, ease: "power1.inOut", duration: 1.3,
             }, 0)
             .from(ProjectSlidesXO.querySelectorAll("#ViewCode"), {
                 yPercent: 113, opacity: 0, duration: 1.3, ease: "power3.out",
@@ -163,7 +233,7 @@ function App() {
         }
     })
     ContactMeScrollTrigger
-        .from('#ContactMe #ContactMeBG h1 .word', {
+        .from('#ContactMe #ContactMeBG h1 .char', {
             opacity: 0, yPercent: 50, duration: 2.2, ease: "power3.out", stagger: 0.13
         }, 0)
         .from('#ContactMe section h3 span .char', {

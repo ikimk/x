@@ -21,6 +21,9 @@
 
 <body>
 
+  <div id="CursorX"></div>
+  <div id="CursorXC"></div>
+
   <!----------------------------------------------------HomePage--------------------------------------------------->
   <div id="HomePage">
 
@@ -37,20 +40,20 @@
     <!------------/HiThere------------>
 
     <!------------logo------------>
-    <a id="logo" href="#HomePage">
+    <a id="logo" href="#HomePage" class="CursorA">
       <h3>A</h3>
     </a>
     <!------------/logo------------>
 
     <!------------Nav------------>
     <nav>
-      <li>
+      <li class="CursorA">
         <a href="#MyWorksWrap">Works<br><span id="FadeIn">Works</span></a>
       </li>
-      <li>
+      <li class="CursorA">
         <a href="#ContactMeWrap">Contact<br><span id="FadeIn">Contact</span></a>
       </li>
-      <li>
+      <li class="CursorA">
         <a href="Resume.pdf">Resume<br><span id="FadeIn">Resume</span></a>
       </li>
     </nav>
@@ -73,22 +76,22 @@
 
     <!------------Social------------>
     <div id="social">
-      <a target="_blank" href="https://www.fiverr.com/icodeayush">
+      <a target="_blank" href="https://www.fiverr.com/icodeayush" class="CursorA">
         <span id="FiverrIcon">
           <img src="Icon/FiverrWhite.svg" alt="Fiverr"><img id="FadeIn" src="Icon/FiverrWhite.svg" alt="Fiverr">
         </span>
       </a>
-      <a target="_blank" href="https://www.behance.net/iCodeAyush">
+      <a target="_blank" href="https://www.behance.net/iCodeAyush" class="CursorA">
         <span id="BehanceIcon">
           <img src="Icon/BehanceWhite.svg" alt="Behance"><img id="FadeIn" src="Icon/BehanceWhite.svg" alt="Behance">
         </span>
       </a>
-      <a target="_blank" href="https://codepen.io/iCodeAyush">
+      <a target="_blank" href="https://codepen.io/iCodeAyush" class="CursorA">
         <span id="CodepenIcon">
           <img src="Icon/CodepenWhite.svg" alt="Codepen"><img id="FadeIn" src="Icon/CodepenWhite.svg" alt="Codepen">
         </span>
       </a>
-      <a target="_blank" href="https://github.com/iCodeAyush">
+      <a target="_blank" href="https://github.com/iCodeAyush" class="CursorA">
         <span id="GithubIcon">
           <img src="Icon/GithubWhite.svg" alt="Github"><img id="FadeIn" src="Icon/GithubWhite.svg" alt="Github">
         </span>
@@ -107,10 +110,10 @@
     <!------------/Scrolldown------------>
 
     <!------------CodeBy------------>
-    <div id="codeby">
+    <div id="codeby" class="CursorA">
       <p>Code By </p>
-      <p><span><a target="_blank" href="https://github.com/icodeayush/">iCodeAyush</a><br><a id="FadeIn" target="_blank"
-            href="https://github.com/icodeayush/">iCodeAyush</a></span></p>
+      <p><span><a target="_blank" href="https://github.com/icodeayush/">iCodeAyush</a><br><a id="FadeIn"
+            target="_blank" href="https://github.com/icodeayush/">iCodeAyush</a></span></p>
     </div>
     <!------------/CodeBy------------>
 
@@ -131,7 +134,7 @@
       <div id="ProjectSlide" class="ProjectSlideA ProjectSlides">
         <!------------/ProjectImageSlideA------------>
         <div id="ProjectImageWrap">
-          <img src="img/ProjectA.jpg">
+          <span><img src="img/ProjectA.jpg"></span>
         </div>
         <!------------/ProjectImageSlideA------------>
         <!------------ProjectTitleSlideA------------>
@@ -139,10 +142,10 @@
         <h2><span data-splitting>Dora</span></h2>
         <!------------/ProjectTitleSlideA------------>
         <!------------ViewCodeViewPageSlideA------------>
-        <a id="ViewCode" target="_blank" href="https://codepen.io/icodeayush/pen/bGgWmyL">
+        <a class="CursorA" id="ViewCode" target="_blank" href="https://codepen.io/icodeayush/pen/bGgWmyL">
           View <span>Code</span>
         </a>
-        <a id="ViewPage" target="_blank" href="https://icodeayush.github.io/Dora">
+        <a class="CursorA" id="ViewPage" target="_blank" href="https://icodeayush.github.io/Dora">
           View <span>Page</span>
         </a>
         <!------------/ViewCodeViewPageSlideA------------>
@@ -153,7 +156,7 @@
       <div id="ProjectSlide" class="ProjectSlideB ProjectSlides">
         <!------------/ProjectImageSlideB------------>
         <div id="ProjectImageWrap">
-          <img src="img/ProjectB.jpg">
+          <span><img src="img/ProjectB.jpg"></span>
         </div>
         <!------------/ProjectImageSlideB------------>
         <!------------ProjectTitleSlideB------------>
@@ -161,10 +164,10 @@
         <h2><span data-splitting>BeeSoft</span></h2>
         <!------------/ProjectTitleSlideB------------>
         <!------------ViewCodeViewPageSlideB------------>
-        <a id="ViewCode" target="_blank" href="https://codepen.io/icodeayush/pen/QWdgXgB">
+        <a class="CursorA" id="ViewCode" target="_blank" href="https://codepen.io/icodeayush/pen/QWdgXgB">
           View <span>Code</span>
         </a>
-        <a id="ViewPage" target="_blank" href="https://icodeayush.github.io/BeeSoft">
+        <a class="CursorA" id="ViewPage" target="_blank" href="https://icodeayush.github.io/BeeSoft">
           View <span>Page</span>
         </a>
         <!------------/ViewCodeViewPageSlideB------------>
@@ -175,7 +178,7 @@
       <div id="ProjectSlide" class="ProjectSlideC ProjectSlides">
         <!------------/ProjectImageSlideC------------>
         <div id="ProjectImageWrap">
-          <img src="img/ProjectC.jpg">
+          <span><img src="img/ProjectC.jpg"></span>
         </div>
         <!------------/ProjectImageSlideC------------>
         <!------------ProjectTitleSlideC------------>
@@ -183,11 +186,11 @@
         <h2><span data-splitting>Roman Sculpt</span></h2>
         <!------------/ProjectTitleSlideC------------>
         <!------------ViewCodeViewPageSlideC------------>
-        <a id="ViewCode" target="_blank"
+        <a class="CursorA" id="ViewCode" target="_blank"
           href="https://github.com/icodeayush/RomanSculpt3DModelBlender3DUIUXDesignConcept">
           View <span>Code</span>
         </a>
-        <a id="ViewPage" target="_blank"
+        <a class="CursorA" id="ViewPage" target="_blank"
           href="https://icodeayush.github.io/RomanSculpt3DModelBlender3DUIUXDesignConcept">
           View <span>Page</span>
         </a>
@@ -199,7 +202,7 @@
       <div id="ProjectSlide" class="ProjectSlideD ProjectSlides">
         <!------------/ProjectImageSlideD------------>
         <div id="ProjectImageWrap">
-          <img src="img/ProjectD.jpg">
+          <span><img src="img/ProjectD.jpg"></span>
         </div>
         <!------------/ProjectImageSlideD------------>
         <!------------ProjectTitleSlideD------------>
@@ -207,10 +210,10 @@
         <h2><span data-splitting>Scroll Animation</span></h2>
         <!------------/ProjectTitleSlideD------------>
         <!------------ViewCodeViewPageSlideD------------>
-        <a id="ViewCode" target="_blank" href="https://codepen.io/icodeayush/pen/vYgdBVr">
+        <a class="CursorA" id="ViewCode" target="_blank" href="https://codepen.io/icodeayush/pen/vYgdBVr">
           View <span>Code</span>
         </a>
-        <a id="ViewPage" target="_blank" href="https://icodeayush.github.io/TheWeekndGSAPScrollEffect">
+        <a class="CursorA" id="ViewPage" target="_blank" href="https://icodeayush.github.io/TheWeekndGSAPScrollEffect">
           View <span>Page</span>
         </a>
         <!------------/ViewCodeViewPageSlideD------------>
@@ -221,7 +224,7 @@
       <div id="ProjectSlide" class="ProjectSlideE ProjectSlides">
         <!------------/ProjectImageSlideE------------>
         <div id="ProjectImageWrap">
-          <img src="img/ProjectE.jpg">
+          <span><img src="img/ProjectE.jpg"></span>
         </div>
         <!------------/ProjectImageSlideE------------>
         <!------------ProjectTitleSlideE------------>
@@ -229,10 +232,10 @@
         <h2><span data-splitting>TravelNow</span></h2>
         <!------------/ProjectTitleSlideE------------>
         <!------------ViewCodeViewPageSlideE------------>
-        <a id="ViewCode" target="_blank" href="https://codepen.io/icodeayush/pen/PoWjrra">
+        <a class="CursorA" id="ViewCode" target="_blank" href="https://codepen.io/icodeayush/pen/PoWjrra">
           View <span>Code</span>
         </a>
-        <a id="ViewPage" target="_blank" href="https://icodeayush.github.io/TravelNow/">
+        <a class="CursorA" id="ViewPage" target="_blank" href="https://icodeayush.github.io/TravelNow/">
           View <span>Page</span>
         </a>
         <!------------/ViewCodeViewPageSlideE------------>
@@ -275,30 +278,30 @@
       <span id="EmailnPhoneNoBorderTop"></span>
 
       <p id="Email">
-        <a href="mailto: iCodeAyush@Gmail.com"><span>iCodeAyush@Gmail.com</span></a>
+        <a class="CursorA" href="mailto: iCodeAyush@Gmail.com"><span>iCodeAyush@Gmail.com</span></a>
       </p>
 
       <p id="PhoneNo">
-        <a href="tel: +911322132213"><span>1322132213</span></a>
+        <a class="CursorA" href="tel: +911322132213"><span>1322132213</span></a>
       </p>
 
       <div id="social">
-        <a target="_blank" href="https://github.com/iCodeAyush">
+        <a class="CursorA" target="_blank" href="https://github.com/iCodeAyush">
           <span>GitHub<br>
             <div id="FadeIn">GitHub</div>
           </span>
         </a>
-        <a target="_blank" href="https://www.fiverr.com/icodeayush">
+        <a class="CursorA" target="_blank" href="https://www.fiverr.com/icodeayush">
           <span>Fiverr<br>
             <div id="FadeIn">Fiverr</div>
           </span>
         </a>
-        <a target="_blank" href="https://codepen.io/iCodeAyush">
+        <a class="CursorA" target="_blank" href="https://codepen.io/iCodeAyush">
           <span>Codepen<br>
             <div id="FadeIn">Codepen</div>
           </span>
         </a>
-        <a target="_blank" href="https://www.behance.net/iCodeAyush/">
+        <a class="CursorA" target="_blank" href="https://www.behance.net/iCodeAyush/">
           <span>Behance<br>
             <div id="FadeIn">Behance</div>
           </span>
