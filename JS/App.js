@@ -1,21 +1,6 @@
 gsap.registerPlugin(ScrollTrigger);
-
-$("body").dblclick(function () {
-    document.documentElement.style.setProperty('--ColorLight1', "#0d0d0d");
-    document.documentElement.style.setProperty('--ColorLight2', "#121212");
-    document.documentElement.style.setProperty('--ColorLight3', "#1f1f1f");
-    document.documentElement.style.setProperty('--ColorDark3', "#e3e3e3");
-    document.documentElement.style.setProperty('--ColorDark2', "#ebebeb");
-    document.documentElement.style.setProperty('--ColorDark1', "#f2f2f2");
-    $("#FiverrIcon img").attr("src", "Icon/FiverrBlack.svg");
-    $("#BehanceIcon img").attr("src", "Icon/BehanceBlack.svg");
-    $("#CodepenIcon img").attr("src", "Icon/CodepenBlack.svg");
-    $("#GithubIcon img").attr("src", "Icon/GithubBlack.svg");
-});
-
 //---------------------App---------------------
 function App() {
-
     //---------------------PageLoadingAnimation---------------------
     function PageLoadingAnimation() {
         $('#PageLoadingAnimation').animate({
@@ -138,8 +123,8 @@ function App() {
     //---------------------/HomePage---------------------
 
     //---------------------MyWorks---------------------
-    // MyWorksScrollTrigger
-    let MyWorksScrollTrigger = gsap.timeline({
+    // MyWorksBGScrollTrigger
+    let MyWorksBGScrollTrigger = gsap.timeline({
         scrollTrigger: {
             trigger: "#MyWorks",
             toggleActions: "play reverse play reverse",
@@ -149,15 +134,14 @@ function App() {
             // markers: "true",
         }
     })
-    MyWorksScrollTrigger
+    MyWorksBGScrollTrigger
         .from('#MyWorks #MyWorksBG h1 .char', {
             opacity: 0, yPercent: 50, duration: 2.2, ease: "power3.out", stagger: 0.13
         }, 0)
-    // /MyWorksScrollTrigger
+    // /MyWorksBGScrollTrigger
 
     // ProjectWrapHorizontalScroll
     let ProjectSlides = gsap.utils.toArray(".ProjectSlides");
-
     let ProjectWrapHorizontalScroll = gsap.timeline({
         scrollTrigger: {
             trigger: "#ProjectWrap",
@@ -219,7 +203,7 @@ function App() {
     // /ProjectSlidesAnimation
     //---------------------/MyWorks---------------------
 
-    //---------------------Contact Me---------------------
+    //---------------------ContactMe---------------------
     let ContactMeScrollTrigger = gsap.timeline({
         scrollTrigger: {
             trigger: "#ContactMe",
@@ -258,7 +242,34 @@ function App() {
         .from('#ContactMe #address p span .word', {
             opacity: 0, yPercent: 100, ease: 'power3.out', duration: 2.2, stagger: 0.31,
         }, 3.5)
-    //---------------------/Contact Me---------------------
+    //---------------------/ContactMe---------------------
+
+    //---------------------ColorAnimation---------------------
+    let ColorAnimationTL = gsap.timeline({ defaults: { ease: "power3.out", duration: 1.3, ease: "power3.out", }, paused: true, repeat: -1, yoyo: true, repeatDelay: 80, });
+    // let ColorAnimationTL = gsap.timeline({ defaults: { ease: "power3.out", duration: 1.3, ease: "power3.out", }, repeat: -1, yoyo: true, repeatDelay: 1, });
+    ColorAnimationTL
+        .to(":root", { '--ColorLight1': '#0d0d0d', }, 4.4)
+        .to(":root", { '--ColorLight2': '#121212', }, 4.2)
+        .to(":root", { '--ColorLight3': '#1f1f1f', }, 4.0)
+        .to(":root", { '--ColorDark3': '#e3e3e3', }, 4.0)
+        .to(":root", { '--ColorDark2': '#ebebeb', }, 4.2)
+        .to(":root", { '--ColorDark1': '#f2f2f2', }, 4.4)
+        .set("#FiverrIcon img", { attr: { src: "Icon/FiverrBlack.svg" } }, 4.4)
+        .set("#BehanceIcon img", { attr: { src: "Icon/BehanceBlack.svg" } }, 4.4)
+        .set("#CodepenIcon img", { attr: { src: "Icon/CodepenBlack.svg" } }, 4.4)
+        .set("#GithubIcon img", { attr: { src: "Icon/GithubBlack.svg" } }, 4.4)
+        .fromTo("#MyWorks #ProjectWrap #ProjectSlide h2 span", { WebkitTextStrokeColor: '#333333', color: '#ffffff', }, { WebkitTextStrokeColor: '#0d0d0d', color: '#ebebeb', }, 4.2)
+    let ColorAnimationScrollTrigger = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#ContactMe",
+            toggleActions: "play none none none",
+            start: "0% 22%",
+            end: "31% 0%",
+            // markers: "true",
+        }
+    })
+    ColorAnimationScrollTrigger.add(ColorAnimationTL.play(), 3.1);
+    //---------------------/ColorAnimation---------------------
 
     //---------------------ParallaxAnimation---------------------
     let HomePageParallax = gsap.timeline({ // HomePage/MyWorksParallax---------------------
@@ -294,14 +305,15 @@ function App() {
             yPercent: -22, ease: "none",
         }, 0) // /MyWorks/ContactMeParallax---------------------
     //---------------------/ParallaxAnimation---------------------
-
     PageLoadingAnimation()
-    addEventListener('resize', function() {
-        location.reload();
-    });
 }
 //---------------------/App---------------------
-
 window.onload = () => {
     App()
+    if (window.matchMedia("(max-width: 400px)").matches) {
+    } else {
+        addEventListener('resize', function () {
+            location.reload();
+        });
+    }
 }
