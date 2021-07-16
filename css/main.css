@@ -10,13 +10,6 @@
     --ColorLight3: hsl(0, 0%, 75%);
     --ColorLight2: hsl(0, 0%, 80%);
     --ColorLight1: hsl(0, 0%, 100%);
-    /*-------------FontWeights------------- */
-    --Light: 300;
-    --Regular: 400;
-    --SemiBold: 600;
-    --Bold: 700;
-    --ExtraBold: 800;
-    /*-------------/FontWeights------------- */
     /*-------------WhiteColors------------- */
     /* --ColorDark1: hsl(0, 0%, 05%); */
     /* --ColorDark2: hsl(0, 0%, 07%); */
@@ -24,6 +17,12 @@
     /* --ColorLight3: hsl(0, 0%, 89%); */
     /* --ColorLight2: hsl(0, 0%, 92%); */
     /* --ColorLight1: hsl(0, 0%, 95%); */
+    /*-------------FontWeights------------- */
+    --Light: 300;
+    --Regular: 400;
+    --SemiBold: 600;
+    --Bold: 700;
+    --ExtraBold: 800;
     /*-------------FontSize -- Golden Ratio (1.618) Base Size 16px------------- */
     --FontH1: 287.11px;
     --FontH2: 177.45px;
@@ -155,31 +154,29 @@ body {
 
 /*-------------/PageLoadingAnimation------------- */
 
-/*-------------CursorX------------- */
+/*-------------Cursor------------- */
 
 #CursorX {
-    z-index: 5;
-    position: fixed;
     width: var(--GoldenRatioW11);
-    height: var(--GoldenRatioW11);
-    background: var(--ColorLight1);
-    border-radius: 50%;
+    fill: var(--ColorLight1);
+    position: fixed;
     transform: scale(0);
     pointer-events: none;
 }
 
 #CursorXC {
-    z-index: 5;
     position: fixed;
-    height: var(--GoldenRatioW7);
+    z-index: 5;
     width: var(--GoldenRatioW7);
-    border: 1.618px solid var(--ColorLight1);
-    border-radius: 50%;
+    overflow: visible;
+    fill: transparent;
+    stroke: var(--ColorLight1);
+    stroke-width: 1.618px;
     transform: scale(0);
     pointer-events: none;
 }
 
-/*-------------/CursorX------------- */
+/*-------------/Cursor------------- */
 
 /*-------------HomePage------------- */
 
@@ -614,6 +611,7 @@ body {
     height: calc(var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2);
     width: calc((var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2) * 1.7777);
     overflow: hidden;
+    user-select: none;
 }
 
 #MyWorks #ProjectWrap #ProjectSlide #ProjectImageWrap span {
@@ -622,6 +620,7 @@ body {
     width: calc((var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2) * 1.7777);
     overflow: hidden;
     border: 1.618px solid var(--ColorLight1);
+    background: var(--ColorLight1);
 }
 
 #MyWorks #ProjectWrap #ProjectSlide #ProjectImageWrap span img {

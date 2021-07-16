@@ -76,7 +76,7 @@ function App() {
     });
 
     var SpeedX1CursorXC = 0.1;
-    var SpeedX2CursorXC = 130 / 1300;
+    var SpeedX2CursorXC = 130 / 2200;
 
     gsap.ticker.add((_TIME, TimeX) => {
         var NewX = TimeX * SpeedX2CursorXC;
@@ -88,15 +88,13 @@ function App() {
     });
 
     const CursorXCTL = gsap.timeline({ defaults: { ease: "power3.out" }, paused: true });
-    CursorXCTL.to(CursorXC, { scale: 1, duration: 2.2, })
+    CursorXCTL.to(CursorXC, { scale: 1, duration: 1.3, })
 
     $(".CursorA").mouseenter(function () {
         CursorXCTL.reversed(!CursorXCTL.timeScale(1).play());
-        // CursorXCTL.play();
     });
     $(".CursorA").mouseleave(function () {
         CursorXCTL.reversed(!CursorXCTL.timeScale(2.2).reversed());
-        // CursorXCTL.reverse();
     });
     // /CursorXC---------------------
     //---------------------/Cursor---------------------
@@ -298,6 +296,9 @@ function App() {
     //---------------------/ParallaxAnimation---------------------
 
     PageLoadingAnimation()
+    addEventListener('resize', function() {
+        location.reload();
+    });
 }
 //---------------------/App---------------------
 
