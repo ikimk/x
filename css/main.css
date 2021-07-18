@@ -89,6 +89,7 @@
     margin: 0;
     padding: 0;
     color: var(--ColorLight1);
+    line-height: 1.3;
     box-sizing: border-box;
     scrollbar-width: none;
 }
@@ -109,8 +110,8 @@ body {
 
 #PageLoadingAnimation {
     position: absolute;
-    width: 100vw;
-    height: 100vh;
+    width: var(--GoldenCannonW1);
+    height: var(--GoldenCannonH1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -183,13 +184,13 @@ body {
 #HomePage {
     position: relative;
     z-index: 3;
-    width: 100vw;
-    height: 100vh;
+    width: var(--GoldenCannonW1);
+    height: var(--GoldenCannonH1);
     /* background: url(../img/HiThere.jpg) var(--ColorDark2) no-repeat center; */
     /* background: url(../img/iCodeAyushHomePageText.jpg) var(--ColorDark2) no-repeat center; */
     /* background: url(../img/HiThereWhite.jpg) var(--ColorDark2) no-repeat center; */
     /* background: url(../img/HomePageLayout.jpg) no-repeat; */
-    background-size: 100vw;
+    background-size: var(--GoldenCannonW1);
 }
 
 #HomePage #HiThere {
@@ -496,14 +497,14 @@ body {
 #MyWorks {
     position: relative;
     z-index: 2;
-    width: 100vw;
-    height: 100vh;
+    width: var(--GoldenCannonW1);
+    height: var(--GoldenCannonH1);
     display: flex;
     overflow: hidden;
     /* background: url(../img/MyWorks.jpg) var(--ColorDark2) no-repeat center; */
     /* background: url(../img/MyWorksWhite.jpg) var(--ColorDark2) no-repeat center; */
     /* background: url(../img/MyWorksLayout.jpg) no-repeat; */
-    background-size: 100vw;
+    background-size: var(--GoldenCannonW1);
 }
 
 #MyWorks #MyWorksBG {
@@ -537,9 +538,9 @@ body {
 
 #MyWorks #ProjectWrap #ProjectSlide {
     position: relative;
-    width: 100vw;
+    width: var(--GoldenCannonW1);
     flex-shrink: 0;
-    height: 100vh;
+    height: var(--GoldenCannonH1);
 }
 
 #MyWorks #ProjectWrap #ProjectSlide h4 {
@@ -635,12 +636,12 @@ body {
 #ContactMe {
     position: relative;
     z-index: 1;
-    width: 100vw;
-    height: 100vh;
+    width: var(--GoldenCannonW1);
+    height: var(--GoldenCannonH1);
     /* background: url(../img/ContactMe.jpg) var(--ColorDark2) no-repeat center; */
     /* background: url(../img/ContactMeWhite.jpg) var(--ColorDark2) no-repeat center; */
     /* background: url(../img/ContactMeLayout.jpg) no-repeat; */
-    background-size: 100vw;
+    background-size: var(--GoldenCannonW1);
 }
 
 #ContactMe #ContactMeBG {
@@ -810,7 +811,7 @@ body {
 #ContactMe #address #AddressBorderTop {
     display: block;
     width: calc(var(--GoldenCannonW2) - var(--GoldenCannonW5));
-    border-top: 2px solid var(--ColorLight1);
+    border-top: 1.618px solid var(--ColorLight1);
 }
 
 #ContactMe #address p {
@@ -901,3 +902,114 @@ body {
 }
 
 /*-------------/@media (max-width: 1920px)------------- */
+
+/*-------------@media (max-width: 400px)------------- */
+
+@media (max-width: 480px) {
+    :root {
+        /*-------------GoldenRatio (1.618) (Viewport Width 480px)------------- */
+        --GoldenRatioW1: 100vw;
+        --GoldenRatioW2: 61.7604vw;
+        --GoldenRatioW3: 38.1708vw;
+        --GoldenRatioW4: 23.5958vw;
+        --GoldenRatioW5: 14.5791vw;
+        --GoldenRatioW6: 9.0104vw;
+        --GoldenRatioW7: 5.5687vw;
+        --GoldenRatioW8: 3.4416vw;
+        --GoldenRatioW9: 2.1270vw;
+        --GoldenRatioW10: 1.3145vw;
+        --GoldenRatioW11: 0.8125vw;
+        --GoldenRatioW12: 0.5020vw;
+        --GoldenRatioW13: 0.3104vw;
+        /*-------------GoldenRatio H (1.618) (Viewport Width 480px)------------- */
+        --GoldenRatioH1: 100vh;
+        --GoldenRatioH2: 61.8288vh;
+        --GoldenRatioH3: 38.2121vh;
+        --GoldenRatioH4: 23.6166vh;
+        --GoldenRatioH5: 14.5955vh;
+        --GoldenRatioH6: 9.0199vh;
+        --GoldenRatioH7: 5.5744vh;
+        --GoldenRatioH8: 3.4443vh;
+        --GoldenRatioH9: 2.1289vh;
+        --GoldenRatioH10: 1.3153vh;
+        --GoldenRatioH11: 0.8124vh;
+        --GoldenRatioH12: 0.5017vh;
+        --GoldenRatioH13: 0.3094vh;
+        /*-------------GoldenCannon W (Viewport Width 480px)------------- */
+        --GoldenCannonW1: 100vw;
+        --GoldenCannonW2: 50vw;
+        --GoldenCannonW3: calc(var(--GoldenCannonW4) + var(--GoldenCannonW5));
+        --GoldenCannonW4: 25vw;
+        --GoldenCannonW5: 12.5vw;
+        --GoldenCannonW6: 5vw;
+        /*-------------GoldenCannon H (Viewport Width 480px)------------- */
+        --GoldenCannonH1: 100vh;
+        --GoldenCannonH2: 50vh;
+        --GoldenCannonH3: 33.3458vh;
+        --GoldenCannonH4: 20.0082vh;
+        --GoldenCannonH5: 12.6635vh;
+    }
+    /*-------------HomePage (max-width: 480px)------------- */
+    #HomePage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #HomePage #HiThere {
+        height: calc(var(--FontBG)*2.5);
+        top: auto;
+        bottom: var(--GoldenRatioH7);
+    }
+    #HomePage #HiThere h1 .char {
+        line-height: calc(var(--FontBG)*1.3);
+    }
+    #HomePage #logo {
+        display: none;
+    }
+    #HomePage nav {
+        display: none;
+    }
+    #HomePage #intro {
+        position: absolute;
+        height: fit-content;
+        width: calc(var(--GoldenRatioW1) - var(--GoldenCannonW5)*2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+    }
+    #HomePage #intro h2 {
+        position: static;
+        align-self: flex-start;
+    }
+    #HomePage #intro h2 #IntroWords span {
+        font-size: var(--FontH4);
+    }
+    #HomePage #intro h5 {
+        position: static;
+        align-self: flex-end;
+        display: flex;
+        flex-flow: column;
+    }
+    #HomePage #intro h5 #IntroWords {
+        align-self: flex-end;
+    }
+    #HomePage #intro h5 #IntroWords span {
+        font-size: var(--FontParagraph);
+        align-self: flex-end;
+    }
+    #HomePage #social {
+        display: none;
+    }
+    #HomePage #scrolldown {
+        display: none;
+    }
+    #HomePage #codeby {
+        right: var(--GoldenCannonW6);
+        bottom: calc(var(--GoldenRatioH7) + var(--GoldenRatioH12));
+        /* border: 1px solid blue; */
+    }
+    /*-------------/HomePage (max-width: 480px)------------- */
+}
+
+/*-------------/@media (max-width: 480px)------------- */
