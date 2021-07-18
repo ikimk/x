@@ -970,6 +970,37 @@ body {
         top: auto;
         bottom: var(--GoldenRatioH7);
     }
+    #HomePage #MobileMenu {
+        position: absolute;
+        width: calc(var(--GoldenRatioW1) - var(--GoldenCannonW6)*2);
+        top: var(--GoldenRatioH7);
+        left: var(--GoldenCannonW6);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #HomePage #MobileMenu #Mobilelogo {
+        overflow: hidden;
+        display: block;
+    }
+    #HomePage #MobileMenu #Mobilelogo h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: var(--FontH5);
+        font-weight: var(--Bold);
+        color: var(--ColorLight1);
+    }
+    #HomePage #MobileMenu h1 {
+        display: block;
+        height: calc(var(--FontParagraph) + 0);
+        overflow: hidden;
+    }
+    #HomePage #MobileMenu h1 span {
+        font-size: var(--FontSubtitle);
+        font-weight: var(--Light);
+        color: var(--ColorLight1);
+        line-height: var(--FontH5);
+        /* border: 1px solid blue; */
+    }
     #HomePage #HiThere h1 .char {
         line-height: calc(var(--FontBG)*1.3);
     }
@@ -982,7 +1013,6 @@ body {
     #HomePage #intro {
         position: absolute;
         height: calc(var(--GoldenRatioH1) - var(--GoldenRatioH7)*2);
-        width: calc(var(--GoldenRatioW1) - var(--GoldenCannonW5)*2);
         width: calc(var(--GoldenRatioW1) - var(--GoldenCannonW6)*2);
         border-top: 1.618px solid var(--ColorLight1);
         border-bottom: 1.618px solid var(--ColorLight1);
