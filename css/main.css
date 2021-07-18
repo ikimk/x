@@ -218,6 +218,10 @@ body {
     line-height: var(--GoldenRatioH2);
 }
 
+#HomePage #MobileMenu {
+    display: none;
+}
+
 #HomePage #logo {
     position: absolute;
     top: calc(var(--GoldenCannonH5) - var(--FontH3)/2);
@@ -456,7 +460,6 @@ body {
     height: var(--FontH5);
     display: flex;
     overflow: hidden;
-    height: var(--FontH5);
 }
 
 #HomePage #codeby p {
@@ -978,6 +981,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        height: var(--FontH4);
     }
     #HomePage #MobileMenu #Mobilelogo {
         overflow: hidden;
@@ -985,21 +989,26 @@ body {
     }
     #HomePage #MobileMenu #Mobilelogo h3 {
         font-family: 'Playfair Display', serif;
-        font-size: var(--FontH5);
+        font-size: var(--FontH4);
         font-weight: var(--Bold);
         color: var(--ColorLight1);
     }
     #HomePage #MobileMenu h1 {
-        display: block;
-        height: calc(var(--FontParagraph) + 0);
+        right: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        top: var(--GoldenRatioH12);
+        align-items: center;
+        position: absolute;
+        height: var(--FontParagraph);
         overflow: hidden;
     }
     #HomePage #MobileMenu h1 span {
         font-size: var(--FontSubtitle);
         font-weight: var(--Light);
         color: var(--ColorLight1);
-        line-height: var(--FontH5);
-        /* border: 1px solid blue; */
+        line-height: var(--FontSubtitle);
     }
     #HomePage #HiThere h1 .char {
         line-height: calc(var(--FontBG)*1.3);
@@ -1051,10 +1060,13 @@ body {
     }
     #HomePage #codeby {
         right: var(--GoldenCannonW6);
-        bottom: var(--GoldenRatioH7);
+        height: var(--FontParagraph);
+        bottom: calc(var(--GoldenRatioH7) + var(--GoldenRatioH12));
     }
     #HomePage #codeby p {
         font-size: var(--FontSubtitle);
+        line-height: var(--FontParagraph);
+        /* border: 1px solid blue; */
     }
     /*-------------/HomePage (max-width: 480px)------------- */
 }
