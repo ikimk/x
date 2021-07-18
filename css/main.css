@@ -907,6 +907,16 @@ body {
 
 @media (max-width: 480px) {
     :root {
+        /*-------------FontSize -- Golden Ratio (1.618) Base Size 16px------------- */
+        --FontH1: 59.8145vw;
+        --FontH2: 36.9687vw;
+        --FontH3: 22.8479vw;
+        --FontH4: 13.0791vw;
+        --FontH5: 8.7270vw;
+        --FontParagraph: 5.3937vw;
+        --FontSubtitle: 3.3333vw;
+        --IconSize: calc(var(--FontSubtitle) * 2);
+        --FontBG: 29.9072vw;
         /*-------------GoldenRatio (1.618) (Viewport Width 480px)------------- */
         --GoldenRatioW1: 100vw;
         --GoldenRatioW2: 61.7604vw;
@@ -971,8 +981,11 @@ body {
     }
     #HomePage #intro {
         position: absolute;
-        height: fit-content;
+        height: calc(var(--GoldenRatioH1) - var(--GoldenRatioH7)*2);
         width: calc(var(--GoldenRatioW1) - var(--GoldenCannonW5)*2);
+        width: calc(var(--GoldenRatioW1) - var(--GoldenCannonW6)*2);
+        border-top: 1.618px solid var(--ColorLight1);
+        border-bottom: 1.618px solid var(--ColorLight1);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -981,6 +994,7 @@ body {
     #HomePage #intro h2 {
         position: static;
         align-self: flex-start;
+        margin-left: calc(var(--GoldenCannonW5) - var(--GoldenCannonW6));
     }
     #HomePage #intro h2 #IntroWords span {
         font-size: var(--FontH4);
@@ -988,6 +1002,7 @@ body {
     #HomePage #intro h5 {
         position: static;
         align-self: flex-end;
+        margin-right: calc(var(--GoldenCannonW5) - var(--GoldenCannonW6));
         display: flex;
         flex-flow: column;
     }
@@ -1006,8 +1021,10 @@ body {
     }
     #HomePage #codeby {
         right: var(--GoldenCannonW6);
-        bottom: calc(var(--GoldenRatioH7) + var(--GoldenRatioH12));
-        /* border: 1px solid blue; */
+        bottom: var(--GoldenRatioH7);
+    }
+    #HomePage #codeby p {
+        font-size: var(--FontSubtitle);
     }
     /*-------------/HomePage (max-width: 480px)------------- */
 }
