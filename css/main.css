@@ -33,6 +33,7 @@
     --FontSubtitle: 16px;
     --IconSize: calc(var(--FontSubtitle) * 2);
     --FontBG: 574.22px;
+    --GoldenNumber: 1.618px;
     /*-------------GoldenRatio W (1.618) (Viewport Width 1920px)------------- */
     --GoldenRatioW1: 1920px;
     --GoldenRatioW2: 1186.65px;
@@ -109,14 +110,14 @@ body {
 /*-------------PageLoadingAnimation------------- */
 
 #PageLoadingAnimation {
-    position: absolute;
+    position: fixed;
     width: var(--GoldenCannonW1);
     height: var(--GoldenCannonH1);
     display: flex;
     justify-content: center;
     align-items: center;
     background: var(--ColorDark2);
-    z-index: 4;
+    z-index: 22;
     opacity: 1;
     cursor: none;
 }
@@ -172,12 +173,20 @@ body {
     overflow: visible;
     fill: transparent;
     stroke: var(--ColorLight1);
-    stroke-width: 1.618px;
+    stroke-width: var(--GoldenNumber);
     transform: scale(0);
     pointer-events: none;
 }
 
 /*-------------/Cursor------------- */
+
+/*-------------MenuWrap------------- */
+
+#MenuWrap {
+    display: none;
+}
+
+/*-------------/MenuWrap------------- */
 
 /*-------------HomePage------------- */
 
@@ -218,7 +227,7 @@ body {
     line-height: var(--GoldenRatioH2);
 }
 
-#HomePage #MobileMenu {
+#HomePage #MobileMenuNav {
     display: none;
 }
 
@@ -574,7 +583,7 @@ body {
     font-size: var(--FontH2);
     font-weight: var(--Regular);
     color: var(--ColorLight1);
-    -webkit-text-stroke-width: 1.618px;
+    -webkit-text-stroke-width: var(--GoldenNumber);
     -webkit-text-stroke-color: var(--ColorDark2);
     cursor: default;
 }
@@ -623,7 +632,7 @@ body {
     height: calc(var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2);
     width: calc((var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2) * 1.7777);
     overflow: hidden;
-    border: 1.618px solid var(--ColorLight1);
+    border: var(--GoldenNumber) solid var(--ColorLight1);
     background: var(--ColorLight1);
 }
 
@@ -731,7 +740,7 @@ body {
 #ContactMe #EmailPhoneNoSocial #EmailnPhoneNoBorderTop {
     display: block;
     width: var(--GoldenCannonW4);
-    border-top: 1.618px solid var(--ColorLight1);
+    border-top: var(--GoldenNumber) solid var(--ColorLight1);
 }
 
 #ContactMe #EmailPhoneNoSocial #Email {
@@ -814,7 +823,7 @@ body {
 #ContactMe #address #AddressBorderTop {
     display: block;
     width: calc(var(--GoldenCannonW2) - var(--GoldenCannonW5));
-    border-top: 1.618px solid var(--ColorLight1);
+    border-top: var(--GoldenNumber) solid var(--ColorLight1);
 }
 
 #ContactMe #address p {
@@ -920,61 +929,131 @@ body {
         --FontSubtitle: 3.3333vw;
         --IconSize: calc(var(--FontSubtitle) * 2);
         --FontBG: 29.9072vw;
-        /*-------------GoldenRatio (1.618) (Viewport Width 480px)------------- */
-        --GoldenRatioW1: 100vw;
-        --GoldenRatioW2: 61.7604vw;
-        --GoldenRatioW3: 38.1708vw;
-        --GoldenRatioW4: 23.5958vw;
-        --GoldenRatioW5: 14.5791vw;
-        --GoldenRatioW6: 9.0104vw;
-        --GoldenRatioW7: 5.5687vw;
-        --GoldenRatioW8: 3.4416vw;
-        --GoldenRatioW9: 2.1270vw;
-        --GoldenRatioW10: 1.3145vw;
-        --GoldenRatioW11: 0.8125vw;
-        --GoldenRatioW12: 0.5020vw;
-        --GoldenRatioW13: 0.3104vw;
-        /*-------------GoldenRatio H (1.618) (Viewport Width 480px)------------- */
-        --GoldenRatioH1: 100vh;
-        --GoldenRatioH2: 61.8288vh;
-        --GoldenRatioH3: 38.2121vh;
-        --GoldenRatioH4: 23.6166vh;
-        --GoldenRatioH5: 14.5955vh;
-        --GoldenRatioH6: 9.0199vh;
-        --GoldenRatioH7: 5.5744vh;
-        --GoldenRatioH8: 3.4443vh;
-        --GoldenRatioH9: 2.1289vh;
-        --GoldenRatioH10: 1.3153vh;
-        --GoldenRatioH11: 0.8124vh;
-        --GoldenRatioH12: 0.5017vh;
-        --GoldenRatioH13: 0.3094vh;
-        /*-------------GoldenCannon W (Viewport Width 480px)------------- */
-        --GoldenCannonW1: 100vw;
-        --GoldenCannonW2: 50vw;
-        --GoldenCannonW3: calc(var(--GoldenCannonW4) + var(--GoldenCannonW5));
-        --GoldenCannonW4: 25vw;
-        --GoldenCannonW5: 12.5vw;
-        --GoldenCannonW6: 5vw;
-        /*-------------GoldenCannon H (Viewport Width 480px)------------- */
-        --GoldenCannonH1: 100vh;
-        --GoldenCannonH2: 50vh;
-        --GoldenCannonH3: 33.3458vh;
-        --GoldenCannonH4: 20.0082vh;
-        --GoldenCannonH5: 12.6635vh;
     }
+    /*-------------MenuWrap (max-width: 480px)------------- */
+    #MenuWrap {
+        position: fixed;
+        z-index: 13;
+        top: 0;
+        left: 0;
+        width: var(--GoldenRatioW1);
+        height: var(--GoldenRatioH1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        background: var(--ColorDark2);
+        pointer-events: none;
+    }
+    #MenuWrap #LogoBG {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: var(--GoldenRatioW1);
+        height: var(--GoldenRatioH1);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        pointer-events: none;
+    }
+    #MenuWrap #LogoBG h1 {
+        margin-top: -13vh;
+        margin-left: 31vw;
+        font-family: 'Playfair Display', serif;
+        font-size: calc(var(--FontH1)* 3.236);
+        font-weight: var(--Bold);
+        color: var(--ColorDark3);
+    }
+    #MenuWrap nav {
+        position: absolute;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+    }
+    #MenuWrap nav li {
+        list-style: none;
+        display: block;
+        padding: calc(var(--GoldenCannonH5)/2) 0;
+    }
+    #MenuWrap nav li a {
+        display: block;
+        font-size: var(--FontH5);
+        font-weight: var(--Light);
+        color: var(--ColorLight1);
+        line-height: var(--FontH5);
+    }
+    #MenuWrap nav #social {
+        display: flex;
+        justify-content: space-between;
+        width: calc(var(--GoldenCannonW3) + var(--GoldenCannonW5));
+        padding: calc(var(--GoldenCannonH5)/2) 0;
+    }
+    #MenuWrap nav #social a {
+        overflow: hidden;
+        height: var(--IconSize);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #MenuWrap nav #social a span {
+        width: var(--IconSize);
+        height: var(--IconSize);
+        display: inline-block;
+    }
+    #MenuWrap nav #social a span img {
+        width: var(--IconSize);
+        display: block;
+    }
+    #MenuWrap #codeby {
+        position: absolute;
+        bottom: var(--GoldenCannonH5);
+        height: var(--FontParagraph);
+        display: flex;
+        overflow: hidden;
+    }
+    #MenuWrap #codeby p {
+        font-size: var(--FontSubtitle);
+        white-space: pre;
+        font-weight: var(--Light);
+        color: var(--ColorLight1);
+        line-height: var(--FontParagraph);
+        cursor: default;
+        transition: color 0.618s ease, margin-top 0.618s ease;
+    }
+    #MenuWrap #codeby p span {
+        font-weight: var(--SemiBold);
+    }
+    /*-------------/MenuWrap (max-width: 480px)------------- */
     /*-------------HomePage (max-width: 480px)------------- */
     #HomePage {
         display: flex;
         justify-content: center;
         align-items: center;
     }
+    #HomePage #logo {
+        display: none;
+    }
+    #HomePage nav {
+        display: none;
+    }
+    #HomePage #social {
+        display: none;
+    }
+    #HomePage #scrolldown {
+        display: none;
+    }
     #HomePage #HiThere {
         height: calc(var(--FontBG)*2.5);
         top: auto;
-        bottom: var(--GoldenRatioH7);
+        bottom: var(--GoldenRatioH9);
     }
-    #HomePage #MobileMenu {
+    #HomePage #MobileMenuNav {
         position: absolute;
+        z-index: 1;
         width: calc(var(--GoldenRatioW1) - var(--GoldenCannonW6)*2);
         top: var(--GoldenRatioH7);
         left: var(--GoldenCannonW6);
@@ -983,17 +1062,17 @@ body {
         justify-content: space-between;
         height: var(--FontH4);
     }
-    #HomePage #MobileMenu #Mobilelogo {
+    #HomePage #MobileMenuNav #Mobilelogo {
         overflow: hidden;
         display: block;
     }
-    #HomePage #MobileMenu #Mobilelogo h3 {
+    #HomePage #MobileMenuNav #Mobilelogo h3 {
         font-family: 'Playfair Display', serif;
         font-size: var(--FontH4);
         font-weight: var(--Bold);
         color: var(--ColorLight1);
     }
-    #HomePage #MobileMenu h1 {
+    #HomePage #MobileMenuNav h1 {
         right: 0;
         top: 0;
         display: flex;
@@ -1003,8 +1082,9 @@ body {
         position: absolute;
         height: var(--FontParagraph);
         overflow: hidden;
+        cursor: default;
     }
-    #HomePage #MobileMenu h1 span {
+    #HomePage #MobileMenuNav h1 span {
         font-size: var(--FontSubtitle);
         font-weight: var(--Light);
         color: var(--ColorLight1);
@@ -1013,18 +1093,12 @@ body {
     #HomePage #HiThere h1 .char {
         line-height: calc(var(--FontBG)*1.3);
     }
-    #HomePage #logo {
-        display: none;
-    }
-    #HomePage nav {
-        display: none;
-    }
     #HomePage #intro {
         position: absolute;
         height: calc(var(--GoldenRatioH1) - var(--GoldenRatioH7)*2);
         width: calc(var(--GoldenRatioW1) - var(--GoldenCannonW6)*2);
-        border-top: 1.618px solid var(--ColorLight1);
-        border-bottom: 1.618px solid var(--ColorLight1);
+        border-top: calc(var(--GoldenNumber) /1.618) solid var(--ColorLight1);
+        border-bottom: calc(var(--GoldenNumber) /1.618) solid var(--ColorLight1);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1052,12 +1126,6 @@ body {
         font-size: var(--FontParagraph);
         align-self: flex-end;
     }
-    #HomePage #social {
-        display: none;
-    }
-    #HomePage #scrolldown {
-        display: none;
-    }
     #HomePage #codeby {
         right: var(--GoldenCannonW6);
         height: var(--FontParagraph);
@@ -1066,9 +1134,21 @@ body {
     #HomePage #codeby p {
         font-size: var(--FontSubtitle);
         line-height: var(--FontParagraph);
-        /* border: 1px solid blue; */
+    }
+    #HomePage #codeby:hover p:nth-child(2) {
+        margin-top: calc(var(--FontParagraph) * -1);
     }
     /*-------------/HomePage (max-width: 480px)------------- */
+    /*-------------MyWorks (max-width: 480px)------------- */
+    #MyWorks {
+        display: none;
+    }
+    /*-------------/MyWorks (max-width: 480px)------------- */
+    /*-------------ContactMe (max-width: 480px)------------- */
+    #ContactMe {
+        display: none;
+    }
+    /*-------------/ContactMe (max-width: 480px)------------- */
 }
 
 /*-------------/@media (max-width: 480px)------------- */

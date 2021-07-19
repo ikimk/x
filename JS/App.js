@@ -1,25 +1,26 @@
 gsap.registerPlugin(ScrollTrigger);
-//---------------------App---------------------
-function App() {
-    //---------------------PageLoadingAnimation---------------------
-    function PageLoadingAnimation() {
-        $('#PageLoadingAnimation').animate({
-            'animationPlayState': 'paused',
-            "opacity": "0",
-        }, 400);
-        $('#PageLoadingAnimation').css({
-            "display": "none",
-        }, 400);
-        //---------------------Enablescrolling---------------------
-        $("body").css("overflow", "scroll");
-        //---------------------LandingPageSCrollSnap---------------------
-        $('html, body').animate({
-            scrollTop: $("#HomePage").offset().top
-        }, 400);
-    }
-    //---------------------/PageLoadingAnimation---------------------
 
-    //---------------------Cursor---------------------
+//---------------------PageLoadingAnimation---------------------
+function PageLoadingAnimation() {
+    $('#PageLoadingAnimation').animate({
+        'animationPlayState': 'paused',
+        "opacity": "0",
+    }, 400);
+    $('#PageLoadingAnimation').css({
+        "display": "none",
+    }, 400);
+    //---------------------Enablescrolling---------------------
+    $("body").css("overflow", "scroll");
+    //---------------------LandingPageSCrollSnap---------------------
+    $('html, body').animate({
+        scrollTop: $("#HomePage").offset().top
+    }, 400);
+}
+//---------------------/PageLoadingAnimation---------------------
+
+//---------------------Cursor---------------------
+function Cursor() {
+
     // CursorX---------------------
     var CursorX = document.querySelector("#CursorX");
     var PosCursorX = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
@@ -73,16 +74,50 @@ function App() {
     });
 
     const CursorXCTL = gsap.timeline({ defaults: { ease: "power3.out" }, paused: true });
-    CursorXCTL.to(CursorXC, { scale: 1, duration: 1.3, })
+    CursorXCTL.to(CursorXC, {
+        scale: 1, duration: 1.3,
+    })
 
-    $(".CursorA").mouseenter(function () {
+    $(".CursorA").click(function () {
         CursorXCTL.reversed(!CursorXCTL.timeScale(1).play());
     });
-    $(".CursorA").mouseleave(function () {
+    $(".CursorA").click(function () {
         CursorXCTL.reversed(!CursorXCTL.timeScale(2.2).reversed());
     });
     // /CursorXC---------------------
-    //---------------------/Cursor---------------------
+}
+//---------------------/Cursor---------------------
+
+//---------------------MenuWrap---------------------
+function Menu() {
+    const MenuWrapTL = gsap.timeline({ defaults: { ease: "power3.out" }, paused: true });
+    MenuWrapTL
+        .from("#MenuWrap", {
+            yPercent: 13, opacity: 0, duration: 0.5,
+        }, 0)
+        .from("#MenuWrap #LogoBG h1", {
+            opacity: 0, yPercent: 13, duration: 1.3, ease: "power3.out",
+        }, 0)
+        .from("#MenuWrap nav li a", {
+            opacity: 0, yPercent: 70, duration: 1.3, stagger: 0.31,
+        }, 0.4)
+        .from("#social a span img", {
+            opacity: 0, yPercent: 100, duration: 1.3, stagger: 0.31,
+        }, 0.4)
+
+    $("#MobileMenuNav h1").click(function () {
+        MenuWrapTL.reversed(!MenuWrapTL.timeScale(1).play());
+        $('#MenuWrap').css({ "pointer-events": "all", });
+    });
+    $("#MenuWrap").click(function () {
+        MenuWrapTL.reversed(!MenuWrapTL.timeScale(3.1).reversed());
+        $('#MenuWrap').css({ "pointer-events": "none", });
+    });
+}
+//---------------------/MenuWrap---------------------
+
+//---------------------PageAnimation---------------------
+function PageAnimation() {
 
     //---------------------HomePage---------------------
     let HomePageScrollTrigger = gsap.timeline({
@@ -105,7 +140,10 @@ function App() {
         .from('#HomePage #intro h5 span .word', {
             opacity: 0, yPercent: 100, ease: "power3.out", duration: 2.2, stagger: 0.13
         }, 1.5)
-        .from('#HomePage #logo h3', {
+        .from('#HomePage #logo h3,#HomePage #MobileMenuNav #Mobilelogo h3', {
+            opacity: 0, yPercent: 100, ease: 'power3.out', duration: 2.2,
+        }, 3)
+        .from('#HomePage #MobileMenuNav h1 span', {
             opacity: 0, yPercent: 100, ease: 'power3.out', duration: 2.2,
         }, 3)
         .from('#HomePage nav li a', {
@@ -305,15 +343,22 @@ function App() {
             yPercent: -22, ease: "none",
         }, 0) // /MyWorks/ContactMeParallax---------------------
     //---------------------/ParallaxAnimation---------------------
-    PageLoadingAnimation()
 }
-//---------------------/App---------------------
+//---------------------/PageAnimation---------------------
+
 window.onload = () => {
-    App()
-    if (window.matchMedia("(max-width: 400px)").matches) {
+    if (window.matchMedia("(max-width: 480px)").matches) {
+        // MobileView---------------------
+        PageLoadingAnimation()
+        PageAnimation()
+        Menu()
+        // /MobileView---------------------
     } else {
-        addEventListener('resize', function () {
-            location.reload();
-        });
+        // DesktopView---------------------
+        addEventListener('resize', function () { location.reload(); });
+        PageLoadingAnimation()
+        PageAnimation()
+        Cursor()
+        // /DesktopView---------------------
     }
 }
