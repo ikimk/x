@@ -116,6 +116,23 @@ function Menu() {
 }
 //---------------------/MenuWrap---------------------
 
+//---------------------ColorAnimationMobileTL---------------------
+function ColorAnimationMobileTL() {
+    let ColorAnimationMobileTL = gsap.timeline({ defaults: { ease: "power3.out", duration: 1.3, ease: "power3.out", }, repeat: -1, yoyo: true, repeatDelay: 22, });
+    ColorAnimationMobileTL
+        .to(":root", { '--ColorLight1': '#ffffff', }, 22.4)
+        .to(":root", { '--ColorLight2': '#cccccc', }, 22.2)
+        .to(":root", { '--ColorLight3': '#bfbfbf', }, 22.0)
+        .to(":root", { '--ColorDark3': '#404040', }, 22.0)
+        .to(":root", { '--ColorDark2': '#333333', }, 22.2)
+        .to(":root", { '--ColorDark1': '#000000', }, 22.4)
+        .set("#FiverrIcon img", { attr: { src: "Icon/FiverrWhite.svg" } }, 22.4)
+        .set("#BehanceIcon img", { attr: { src: "Icon/BehanceWhite.svg" } }, 22.4)
+        .set("#CodepenIcon img", { attr: { src: "Icon/CodepenWhite.svg" } }, 22.4)
+        .set("#GithubIcon img", { attr: { src: "Icon/GithubWhite.svg" } }, 22.4)
+}
+//---------------------/ColorAnimationMobileTL---------------------
+
 //---------------------PageAnimation---------------------
 function PageAnimation() {
 
@@ -351,6 +368,7 @@ window.onload = () => {
         // MobileView---------------------
         PageLoadingAnimation()
         PageAnimation()
+        ColorAnimationMobileTL()
         Menu()
         // /MobileView---------------------
     } else {
