@@ -93,11 +93,11 @@ function Menu() {
     const MenuWrapTL = gsap.timeline({ defaults: { ease: "power3.out" }, paused: true });
     MenuWrapTL
         .from("#MenuWrap", {
-            opacity: 0, duration: 0.22,
+            opacity: 0, duration: 0.31,
         }, 0)
         .from("#MenuWrap #LogoBG h1", {
             opacity: 0, yPercent: 13, duration: 1.3,
-        }, 0.22)
+        }, 0)
         .from("#MenuWrap nav li a", {
             opacity: 0, yPercent: 70, duration: 1.3, stagger: 0.22,
         }, 0.31)
