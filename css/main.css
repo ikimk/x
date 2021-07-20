@@ -48,7 +48,7 @@
     --GoldenRatioW11: 15.60px;
     --GoldenRatioW12: 9.64px;
     --GoldenRatioW13: 5.95px;
-    /*-------------GoldenRatio H (1.618) (Viewport Width 1920px)------------- */
+    /*-------------GoldenRatio H (1.618) (Viewport Hight 1080px)------------- */
     --GoldenRatioH1: 1080px;
     --GoldenRatioH2: 667.49px;
     --GoldenRatioH3: 412.54px;
@@ -69,7 +69,7 @@
     --GoldenCannonW4: 480px;
     --GoldenCannonW5: 240px;
     --GoldenCannonW6: 96px;
-    /*-------------GoldenCannon H (Viewport Width 1920px)------------- */
+    /*-------------GoldenCannon H (Viewport Hight 1080px)------------- */
     --GoldenCannonH1: 1080px;
     --GoldenCannonH2: 540px;
     --GoldenCannonH3: 360px;
@@ -883,7 +883,7 @@ body {
         --GoldenRatioW11: 0.8125vw;
         --GoldenRatioW12: 0.5020vw;
         --GoldenRatioW13: 0.3098vw;
-        /*-------------GoldenRatio H (1.618) (Viewport Width 1920px)------------- */
+        /*-------------GoldenRatio H (1.618) (Viewport Hight 1080px)------------- */
         --GoldenRatioH1: 100vh;
         --GoldenRatioH2: 61.8046vh;
         --GoldenRatioH3: 38.1981vh;
@@ -904,7 +904,7 @@ body {
         --GoldenCannonW4: 25vw;
         --GoldenCannonW5: 12.5vw;
         --GoldenCannonW6: 5vw;
-        /*-------------GoldenCannon H (Viewport Width 1920px)------------- */
+        /*-------------GoldenCannon H (Viewport Hight 1080px)------------- */
         --GoldenCannonH1: 100vh;
         --GoldenCannonH2: 50vh;
         --GoldenCannonH3: 33.3333vh;
@@ -929,7 +929,6 @@ body {
         --FontSubtitle: 3.3333vw;
         --IconSize: calc(var(--FontSubtitle) * 2);
         --FontBG: 29.9072vw;
-        /*-------------/FontWeights------------- */
         /*-------------WhiteColors------------- */
         --ColorDark1: #f2f2f2;
         --ColorDark2: #ebebeb;
@@ -937,8 +936,7 @@ body {
         --ColorLight3: #1f1f1f;
         --ColorLight2: #121212;
         --ColorLight1: #0d0d0d;
-        /*-------------/WhiteColors------------- */
-        /*-------------GoldenRatio H (1.618) (Viewport Width 1920px)------------- */
+        /*-------------GoldenRatio H (1.618) (Viewport Hight 829px)------------- */
         --GoldenRatioH1: 172.7083vw;
         --GoldenRatioH2: 106.7416vw;
         --GoldenRatioH3: 65.9708vw;
@@ -952,8 +950,7 @@ body {
         --GoldenRatioH11: 1.4020vw;
         --GoldenRatioH12: 0.8666vw;
         --GoldenRatioH13: 0.5333vw;
-        /*-------------GoldenCannon W (Viewport Width 1920px)------------- */
-        /*-------------GoldenCannon H (Viewport Width 1920px)------------- */
+        /*-------------GoldenCannon H (Viewport Hight 829px)------------- */
         --GoldenCannonH1: 172.7083vw;
         --GoldenCannonH2: 88.8895vw;
         --GoldenCannonH3: 59.2583vw;
@@ -967,7 +964,7 @@ body {
         top: 0;
         left: 0;
         width: var(--GoldenRatioW1);
-        height: 100vh;
+        height: var(--GoldenRatioH1);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -981,7 +978,7 @@ body {
         top: 0;
         left: 0;
         width: var(--GoldenRatioW1);
-        height: 100vh;
+        height: var(--GoldenRatioH1);
         overflow: hidden;
         display: flex;
         justify-content: center;
@@ -1060,7 +1057,7 @@ body {
     /*-------------/MenuWrap (max-width: 480px)------------- */
     /*-------------PageLoadingAnimation (max-width: 480px)------------- */
     #PageLoadingAnimation {
-        height: 100vh;
+        height: var(--GoldenRatioH1);
     }
     /*-------------/PageLoadingAnimation (max-width: 480px)------------- */
     /*-------------HomePage (max-width: 480px)------------- */
