@@ -938,6 +938,27 @@ body {
         --ColorLight2: #121212;
         --ColorLight1: #0d0d0d;
         /*-------------/WhiteColors------------- */
+        /*-------------GoldenRatio H (1.618) (Viewport Width 1920px)------------- */
+        --GoldenRatioH1: 225vw;
+        --GoldenRatioH2: 139.0604vw;
+        --GoldenRatioH3: 85.9458vw;
+        --GoldenRatioH4: 53.1166vw;
+        --GoldenRatioH5: 32.8270vw;
+        --GoldenRatioH6: 20.2875vw;
+        --GoldenRatioH7: 12.5374vw;
+        --GoldenRatioH8: 7.7479vw;
+        --GoldenRatioH9: 4.7875vw;
+        --GoldenRatioH10: 2.9583vw;
+        --GoldenRatioH11: 1.8270vw;
+        --GoldenRatioH12: 1.1291vw;
+        --GoldenRatioH13: 0.6958vw;
+        /*-------------GoldenCannon W (Viewport Width 1920px)------------- */
+        /*-------------GoldenCannon H (Viewport Width 1920px)------------- */
+        --GoldenCannonH1: 225vw;
+        --GoldenCannonH2: 112.5vw;
+        --GoldenCannonH3: 75vw;
+        --GoldenCannonH4: 45vw;
+        --GoldenCannonH5: 28.4812vw;
     }
     /*-------------MenuWrap (max-width: 480px)------------- */
     #MenuWrap {
@@ -946,7 +967,7 @@ body {
         top: 0;
         left: 0;
         width: var(--GoldenRatioW1);
-        height: var(--GoldenRatioH1);
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -960,7 +981,7 @@ body {
         top: 0;
         left: 0;
         width: var(--GoldenRatioW1);
-        height: var(--GoldenRatioH1);
+        height: 100vh;
         overflow: hidden;
         display: flex;
         justify-content: center;
@@ -1097,7 +1118,8 @@ body {
     #HomePage #HiThere {
         height: calc(var(--FontBG)*2.5);
         top: auto;
-        bottom: var(--GoldenRatioH9);
+        bottom: var(--GoldenRatioH7);
+        /* border: 5px solid blue; */
     }
     #HomePage #HiThere h1 .char {
         line-height: calc(var(--FontBG)*1.3);
