@@ -939,26 +939,26 @@ body {
         --ColorLight1: #0d0d0d;
         /*-------------/WhiteColors------------- */
         /*-------------GoldenRatio H (1.618) (Viewport Width 1920px)------------- */
-        --GoldenRatioH1: 225vw;
-        --GoldenRatioH2: 139.0604vw;
-        --GoldenRatioH3: 85.9458vw;
-        --GoldenRatioH4: 53.1166vw;
-        --GoldenRatioH5: 32.8270vw;
-        --GoldenRatioH6: 20.2875vw;
-        --GoldenRatioH7: 12.5374vw;
-        --GoldenRatioH8: 7.7479vw;
-        --GoldenRatioH9: 4.7875vw;
-        --GoldenRatioH10: 2.9583vw;
-        --GoldenRatioH11: 1.8270vw;
-        --GoldenRatioH12: 1.1291vw;
-        --GoldenRatioH13: 0.6958vw;
+        --GoldenRatioH1: 172.7083vw;
+        --GoldenRatioH2: 106.7416vw;
+        --GoldenRatioH3: 65.9708vw;
+        --GoldenRatioH4: 40.7729vw;
+        --GoldenRatioH5: 25.1979vw;
+        --GoldenRatioH6: 15.5729vw;
+        --GoldenRatioH7: 9.6229vw;
+        --GoldenRatioH8: 5.9479vw;
+        --GoldenRatioH9: 3.675vw;
+        --GoldenRatioH10: 2.2708vw;
+        --GoldenRatioH11: 1.4020vw;
+        --GoldenRatioH12: 0.8666vw;
+        --GoldenRatioH13: 0.5333vw;
         /*-------------GoldenCannon W (Viewport Width 1920px)------------- */
         /*-------------GoldenCannon H (Viewport Width 1920px)------------- */
-        --GoldenCannonH1: 225vw;
-        --GoldenCannonH2: 112.5vw;
-        --GoldenCannonH3: 75vw;
-        --GoldenCannonH4: 45vw;
-        --GoldenCannonH5: 28.4812vw;
+        --GoldenCannonH1: 172.7083vw;
+        --GoldenCannonH2: 88.8895vw;
+        --GoldenCannonH3: 59.2583vw;
+        --GoldenCannonH4: 35.5562vw;
+        --GoldenCannonH5: 22.5041vw;
     }
     /*-------------MenuWrap (max-width: 480px)------------- */
     #MenuWrap {
@@ -1058,6 +1058,11 @@ body {
         font-weight: var(--SemiBold);
     }
     /*-------------/MenuWrap (max-width: 480px)------------- */
+    /*-------------PageLoadingAnimation (max-width: 480px)------------- */
+    #PageLoadingAnimation {
+        height: 100vh;
+    }
+    /*-------------/PageLoadingAnimation (max-width: 480px)------------- */
     /*-------------HomePage (max-width: 480px)------------- */
     #HomePage {
         display: flex;
