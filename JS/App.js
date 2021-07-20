@@ -93,17 +93,17 @@ function Menu() {
     const MenuWrapTL = gsap.timeline({ defaults: { ease: "power3.out" }, paused: true });
     MenuWrapTL
         .from("#MenuWrap", {
-            yPercent: 13, opacity: 0, duration: 0.5,
+            opacity: 0, duration: 0.22,
         }, 0)
         .from("#MenuWrap #LogoBG h1", {
-            opacity: 0, yPercent: 13, duration: 1.3, ease: "power3.out",
-        }, 0)
+            opacity: 0, yPercent: 13, duration: 1.3,
+        }, 0.22)
         .from("#MenuWrap nav li a", {
-            opacity: 0, yPercent: 70, duration: 1.3, stagger: 0.31,
-        }, 0.4)
+            opacity: 0, yPercent: 70, duration: 1.3, stagger: 0.22,
+        }, 0.31)
         .from("#social a span img", {
-            opacity: 0, yPercent: 100, duration: 1.3, stagger: 0.31,
-        }, 0.4)
+            opacity: 0, yPercent: 100, duration: 1.52, stagger: 0.22,
+        }, 0.31)
 
     $("#MobileMenuNav h1").click(function () {
         MenuWrapTL.reversed(!MenuWrapTL.timeScale(1).play());

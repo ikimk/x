@@ -712,7 +712,7 @@ body {
 
 #ContactMe #logo {
     position: absolute;
-    bottom: calc(var(--GoldenCannonH5) / 1.3);
+    top: calc(var(--GoldenCannonH1) - var(--GoldenCannonH3) + var(--GoldenRatioH6));
     left: calc(var(--GoldenCannonW6) / 1.65);
     height: calc(var(--FontH3) + 0);
     overflow: hidden;
@@ -1055,11 +1055,6 @@ body {
     #HomePage #scrolldown {
         display: none;
     }
-    #HomePage #HiThere {
-        height: calc(var(--FontBG)*2.5);
-        top: auto;
-        bottom: var(--GoldenRatioH9);
-    }
     #HomePage #MobileMenuNav {
         position: absolute;
         z-index: 1;
@@ -1094,10 +1089,15 @@ body {
         cursor: default;
     }
     #HomePage #MobileMenuNav h1 span {
-        font-size: var(--FontSubtitle);
-        font-weight: var(--Light);
+        font-size: var(--FontParagraph);
+        font-weight: var(--Regular);
         color: var(--ColorLight1);
         line-height: var(--FontSubtitle);
+    }
+    #HomePage #HiThere {
+        height: calc(var(--FontBG)*2.5);
+        top: auto;
+        bottom: var(--GoldenRatioH9);
     }
     #HomePage #HiThere h1 .char {
         line-height: calc(var(--FontBG)*1.3);
@@ -1135,17 +1135,23 @@ body {
         font-size: var(--FontParagraph);
         align-self: flex-end;
     }
+    #HomePage #intro h5:hover #IntroWords span {
+        color: var(--ColorLight3);
+    }
+    #HomePage #intro h5 #IntroWords:hover span {
+        color: var(--ColorLight3);
+    }
     #HomePage #codeby {
         right: var(--GoldenCannonW6);
-        height: var(--FontParagraph);
+        height: var(--FontH5);
         bottom: calc(var(--GoldenRatioH7) + var(--GoldenRatioH12));
     }
     #HomePage #codeby p {
-        font-size: var(--FontSubtitle);
-        line-height: var(--FontParagraph);
+        font-size: var(--FontParagraph);
+        line-height: var(--FontH5);
     }
     #HomePage #codeby:hover p:nth-child(2) {
-        margin-top: calc(var(--FontParagraph) * -1);
+        margin-top: calc(var(--FontH5) * -1);
     }
     /*-------------/HomePage (max-width: 480px)------------- */
     /*-------------MyWorks (max-width: 480px)------------- */
