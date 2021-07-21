@@ -116,36 +116,37 @@ body {
     z-index: 2;
 }
 
-/*-------------MyWorks------------- */
+/*-------------MyWorksX------------- */
 
-#MyWorks {
+#MyWorksX {
     position: relative;
     width: var(--GoldenCannonW1);
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: space-between;
-    height: var(--GoldenCannonH1);
+    min-height: var(--GoldenCannonH1);
 }
 
-#MyWorks #MyWorksTitle {
+#MyWorksX #MyWorksXTitle {
     display: flex;
     flex-shrink: 0;
     margin-top: var(--GoldenRatioH7);
     align-items: center;
     width: calc(var(--GoldenRatioW1) - var(--GoldenCannonW6)*2);
     height: var(--GoldenCannonH5);
+    overflow: hidden;
     border-top: calc(var(--GoldenNumber) /1.618) solid var(--ColorLight1);
     border-bottom: calc(var(--GoldenNumber) /1.618) solid var(--ColorLight1);
 }
 
-#MyWorks #MyWorksTitle h1 {
+#MyWorksX #MyWorksXTitle h1 {
     font-size: var(--FontH4);
     font-weight: var(--Regular);
     color: var(--ColorLight1);
 }
 
-#MyWorks #ProjectSlide {
+#MyWorksX #ProjectSlide {
     display: flex;
     flex-shrink: 0;
     flex-flow: column;
@@ -153,11 +154,12 @@ body {
     width: calc(var(--GoldenRatioW1) - var(--GoldenCannonW6)*2);
     border-bottom: calc(var(--GoldenNumber) /1.618) solid var(--ColorLight1);
 }
-#MyWorks #ProjectSlide:nth-child(6){
+
+#MyWorksX #ProjectSlide:nth-child(6) {
     margin-bottom: var(--GoldenRatioH7);
 }
 
-#MyWorks #ProjectSlide #ProjectTitle {
+#MyWorksX #ProjectSlide #ProjectTitle {
     display: flex;
     flex-shrink: 0;
     flex-flow: column;
@@ -165,80 +167,92 @@ body {
     height: var(--GoldenRatioH5);
 }
 
-#MyWorks #ProjectSlide #ProjectTitle h4 {
+#MyWorksX #ProjectSlide #ProjectTitle h4 {
     display: block;
     overflow: hidden;
 }
 
-#MyWorks #ProjectSlide #ProjectTitle h4 span {
+#MyWorksX #ProjectSlide #ProjectTitle h4 span {
     font-size: var(--FontParagraph);
     font-weight: var(--Light);
     color: var(--ColorLight2);
 }
 
-#MyWorks #ProjectSlide h2 {
+#MyWorksX #ProjectSlide h2 {
     display: block;
     overflow: hidden;
 }
 
-#MyWorks #ProjectSlide #ProjectTitle h2 span {
+#MyWorksX #ProjectSlide #ProjectTitle h2 span {
     font-size: var(--FontH5);
     font-weight: var(--Regular);
     color: var(--ColorLight1);
 }
 
-#MyWorks #ProjectSlide #ProjectImageWrap {
+#MyWorksX #ProjectSlide #ProjectImageWrap {
     width: calc(var(--GoldenRatioW1) - var(--GoldenCannonW6) * 2);
     display: flex;
     flex-shrink: 0;
     flex-flow: column;
     overflow: hidden;
     height: 0;
-    transition: 0.5s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    /* border: 1px solid blue; */
+    transition: height 0.7s 0s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-#MyWorks #ProjectSlide:hover #ProjectImageWrap {
+#MyWorksX #ProjectSlide:hover #ProjectImageWrap {
     height: calc((var(--GoldenCannonW1) - var(--GoldenCannonW6) * 2) * 0.5625 + var(--GoldenRatioH7));
+    transition: height 1.3s 0s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-#MyWorks #ProjectSlide #ProjectImageWrap img {
+#MyWorksX #ProjectSlide #ProjectImageWrap img {
     width: calc(var(--GoldenRatioW1) - var(--GoldenCannonW6) * 2);
     height: calc((var(--GoldenCannonW1) - var(--GoldenCannonW6) * 2) * 0.5625);
     flex-shrink: 0;
-    border: var(--GoldenNumber) solid var(--ColorLight1);
+    transform: translateY(-50%) scale(1.3);
+    transition: transform 0.7s 0s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-#MyWorks #ProjectSlide #ViewCodeAndPage {
+#MyWorksX #ProjectSlide:hover #ProjectImageWrap img {
+    transform: translateY(0) scale(1);
+    transition: transform 1.3s 0s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#MyWorksX #ProjectSlide #ViewCodeAndPage {
     display: flex;
     flex-shrink: 0;
     align-items: center;
     height: var(--GoldenRatioH7);
+    transform: translateY(220%);
+    transition: transform 1.3s 0.13s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-#MyWorks #ProjectSlide #ViewCodeAndPage #ViewCode {
+#MyWorksX #ProjectSlide:hover #ViewCodeAndPage {
+    transform: translateY(0);
+}
+
+#MyWorksX #ProjectSlide #ViewCodeAndPage #ViewCode {
     display: block;
     overflow: hidden;
     padding-right: var(--GoldenRatioW9);
 }
 
-#MyWorks #ProjectSlide #ViewCodeAndPage #ViewPage {
+#MyWorksX #ProjectSlide #ViewCodeAndPage #ViewPage {
     display: block;
     overflow: hidden;
 }
 
-#MyWorks #ProjectSlide #ViewCodeAndPage #ViewCode, #MyWorks #ProjectSlide #ViewCodeAndPage #ViewPage {
+#MyWorksX #ProjectSlide #ViewCodeAndPage #ViewCode, #MyWorksX #ProjectSlide #ViewCodeAndPage #ViewPage {
     font-size: var(--FontSubtitle);
     font-weight: var(--Light);
     color: var(--ColorLight2);
 }
 
-#MyWorks #ProjectSlide #ViewCodeAndPage #ViewCode span, #MyWorks #ProjectSlide #ViewPage span {
+#MyWorksX #ProjectSlide #ViewCodeAndPage #ViewCode span, #MyWorksX #ProjectSlide #ViewPage span {
     font-weight: var(--SemiBold);
     color: var(--ColorLight1);
 }
 
-/*-------------/MyWorks------------- */
+/*-------------/MyWorksX------------- */
 
 /*-------------@media (max-width: 1920px)------------- */
 
