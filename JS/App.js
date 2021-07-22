@@ -9,9 +9,7 @@ function PageLoadingAnimation() {
     $('#PageLoadingAnimation').css({
         "display": "none",
     }, 400);
-    //---------------------Enablescrolling---------------------
     $("body").css("overflow", "scroll");
-    //---------------------LandingPageSCrollSnap---------------------
     $('html, body').animate({
         scrollTop: $("#HomePage").offset().top
     }, 400);
@@ -20,7 +18,6 @@ function PageLoadingAnimation() {
 
 //---------------------Cursor---------------------
 function Cursor() {
-
     // CursorX---------------------
     var CursorX = document.querySelector("#CursorX");
     var PosCursorX = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
@@ -133,10 +130,8 @@ function ColorAnimationMobileTL() {
 }
 //---------------------/ColorAnimationMobileTL---------------------
 
-//---------------------PageAnimation---------------------
-function PageAnimation() {
-
-    //---------------------HomePage---------------------
+//---------------------HomePage---------------------
+function HomePage() {
     let HomePageScrollTrigger = gsap.timeline({
         scrollTrigger: {
             trigger: "#HomePage",
@@ -175,9 +170,43 @@ function PageAnimation() {
         .from('#HomePage #scrolldown span p', {
             opacity: 0, yPercent: 100, ease: 'power2.out', duration: 2.2,
         }, 3)
-    //---------------------/HomePage---------------------
+}
+//---------------------/HomePage---------------------
 
-    //---------------------MyWorks---------------------
+//---------------------MyWorksX---------------------
+function MyWorksX() {
+    let MyWorksXTL = gsap.timeline({
+        defaults: { ease: "power3.out", duration: 1.3, },
+        scrollTrigger: {
+            trigger: "#MyWorksX",
+            toggleActions: "play reverse play reverse",
+            onToggle: self => self.animation.timeScale(self.isActive ? 1 : -1.3),
+            start: "0% 13%",
+            end: "100% 13%",
+            // markers: "true",
+        }
+    })
+    MyWorksXTL
+        .from("#MyWorksX #MyWorksXTitle h1 .word", {
+            yPercent: 100, stagger: 0.13,
+        }, 0)
+        .from("#MyWorksX #MyWorksXTitle", {
+            opacity: 0, yPercent: 82,
+        }, 0)
+        .from("#MyWorksX #ProjectSlide", {
+            opacity: 0, yPercent: 220, stagger: 0.13,
+        }, 0)
+        .from("#MyWorksX #ProjectSlide #ProjectTitle h4 .word", {
+            yPercent: 100, stagger: 0.061,
+        }, 0.31)
+        .from("#MyWorksX #ProjectSlide #ProjectTitle h2 .char", {
+            yPercent: 100, stagger: 0.031,
+        }, 0.31)
+}
+//---------------------/MyWorksX---------------------
+
+//---------------------MyWorks---------------------
+function MyWorks() {
     // MyWorksBGScrollTrigger
     let MyWorksBGScrollTrigger = gsap.timeline({
         scrollTrigger: {
@@ -199,10 +228,10 @@ function PageAnimation() {
     let ProjectSlides = gsap.utils.toArray(".ProjectSlides");
     let ProjectWrapHorizontalScroll = gsap.timeline({
         scrollTrigger: {
-            trigger: "#ProjectWrap",
+            trigger: "#MyWorks #ProjectWrap",
             pin: "#MyWorks",
             start: "0% 0%",
-            end: "+=" + (document.querySelector('#ProjectWrap').scrollWidth - window.innerWidth),
+            end: "+=" + (document.querySelector('#MyWorks #ProjectWrap').scrollWidth - window.innerWidth),
             scrub: 1.3,
             snap: {
                 snapTo: 1 / (ProjectSlides.length - 1),
@@ -256,9 +285,11 @@ function PageAnimation() {
             }, 0.93)
     });
     // /ProjectSlidesAnimation
-    //---------------------/MyWorks---------------------
+}
+//---------------------/MyWorks---------------------
 
-    //---------------------ContactMe---------------------
+//---------------------ContactMe---------------------
+function ContactMe() {
     let ContactMeScrollTrigger = gsap.timeline({
         scrollTrigger: {
             trigger: "#ContactMe",
@@ -297,9 +328,11 @@ function PageAnimation() {
         .from('#ContactMe #address p span .word', {
             opacity: 0, yPercent: 100, ease: 'power3.out', duration: 2.2, stagger: 0.31,
         }, 3.5)
-    //---------------------/ContactMe---------------------
+}
+//---------------------/ContactMe---------------------
 
-    //---------------------ColorAnimation---------------------
+//---------------------ColorAnimation---------------------
+function ColorAnimation() {
     let ColorAnimationTL = gsap.timeline({ defaults: { ease: "power3.out", duration: 1.3, ease: "power3.out", }, paused: true, repeat: -1, yoyo: true, repeatDelay: 80, });
     // let ColorAnimationTL = gsap.timeline({ defaults: { ease: "power3.out", duration: 1.3, ease: "power3.out", }, repeat: -1, yoyo: true, repeatDelay: 1, });
     ColorAnimationTL
@@ -324,9 +357,11 @@ function PageAnimation() {
         }
     })
     ColorAnimationScrollTrigger.add(ColorAnimationTL.play(), 3.1);
-    //---------------------/ColorAnimation---------------------
+}
+//---------------------/ColorAnimation---------------------
 
-    //---------------------ParallaxAnimation---------------------
+//---------------------ParallaxAnimation---------------------
+function ParallaxAnimation() {
     let HomePageParallax = gsap.timeline({ // HomePage/MyWorksParallax---------------------
         scrollTrigger: {
             trigger: "#HomePage",
@@ -359,24 +394,42 @@ function PageAnimation() {
         .from('#ContactMe #ContactMeBG h1', {
             yPercent: -22, ease: "none",
         }, 0) // /MyWorks/ContactMeParallax---------------------
-    //---------------------/ParallaxAnimation---------------------
 }
-//---------------------/PageAnimation---------------------
+//---------------------/ParallaxAnimation---------------------
 
 window.onload = () => {
     if (window.matchMedia("(max-width: 480px)").matches) {
         // MobileView---------------------
         PageLoadingAnimation()
-        PageAnimation()
-        ColorAnimationMobileTL()
+        Cursor()
         Menu()
+        ColorAnimationMobileTL()
+        HomePage()
+        MyWorksX()
+        MyWorks()
+        ContactMe()
+        ColorAnimation()
+        ParallaxAnimation()
         // /MobileView---------------------
+    } else if (window.matchMedia("(max-width: 1090px)").matches) {
+        // TabView---------------------
+        PageLoadingAnimation()
+        ColorAnimationMobileTL()
+        HomePage()
+        MyWorksX()
+        ContactMe()
+        ParallaxAnimation()
+        // /TabView---------------------
     } else {
         // DesktopView---------------------
         addEventListener('resize', function () { location.reload(); });
         PageLoadingAnimation()
-        PageAnimation()
         Cursor()
+        HomePage()
+        MyWorks()
+        ContactMe()
+        ParallaxAnimation()
+        ColorAnimation()
         // /DesktopView---------------------
     }
 }
