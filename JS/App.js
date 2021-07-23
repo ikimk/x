@@ -75,10 +75,10 @@ function Cursor() {
         scale: 1, duration: 1.3,
     })
 
-    $(".CursorA").click(function () {
+    $(".CursorA").mouseenter(function () {
         CursorXCTL.reversed(!CursorXCTL.timeScale(1).play());
     });
-    $(".CursorA").click(function () {
+    $(".CursorA").mouseleave(function () {
         CursorXCTL.reversed(!CursorXCTL.timeScale(2.2).reversed());
     });
     // /CursorXC---------------------
@@ -181,8 +181,8 @@ function MyWorksX() {
             trigger: "#MyWorksX",
             toggleActions: "play reverse play reverse",
             onToggle: self => self.animation.timeScale(self.isActive ? 1 : -1.3),
-            start: "0% 13%",
-            end: "100% 13%",
+            start: "0% 22%",
+            end: "100% 0%",
             // markers: "true",
         }
     })
@@ -331,6 +331,37 @@ function ContactMe() {
 }
 //---------------------/ContactMe---------------------
 
+//---------------------ContactMeX---------------------
+function ContactMeX() {
+    let ContactMeXScrollTrigger = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#ContactMe",
+            toggleActions: "play reverse play reverse",
+            onToggle: self => self.animation.timeScale(self.isActive ? 1 : -1.3),
+            start: "0% 70%",
+            end: "100% 0%",
+            // markers: "true",
+        }
+    })
+    ContactMeXScrollTrigger
+        .from('#ContactMe #ContactMeBG h1 .char', {
+            opacity: 0, yPercent: 50, duration: 2.2, ease: "power3.out", stagger: 0.13
+        }, 0)
+        .from('#ContactMe section h3 span .word', {
+            opacity: 0, yPercent: 100, ease: "power3.out", duration: 2.2, stagger: 0.13,
+        }, 0.5)
+        .from('#ContactMe section h4 span .word', {
+            opacity: 0, yPercent: 100, ease: "power3.out", duration: 2.2, stagger: 0.13
+        }, 1.5)
+        .from('#ContactMe #EmailnAddressX p a span', {
+            opacity: 0, yPercent: 100, ease: 'power3.out', duration: 2.2, stagger: 0.31,
+        }, 2)
+        .from('#ContactMe #EmailnAddressX #Address h1 .word, #ContactMe #EmailnAddressX #Address h2 .word', {
+            opacity: 0, yPercent: 100, ease: 'power3.out', duration: 2.2, stagger: 0.31,
+        }, 2.2)
+}
+//---------------------/ContactMeX---------------------
+
 //---------------------ColorAnimation---------------------
 function ColorAnimation() {
     let ColorAnimationTL = gsap.timeline({ defaults: { ease: "power3.out", duration: 1.3, ease: "power3.out", }, paused: true, repeat: -1, yoyo: true, repeatDelay: 80, });
@@ -401,14 +432,11 @@ window.onload = () => {
     if (window.matchMedia("(max-width: 480px)").matches) {
         // MobileView---------------------
         PageLoadingAnimation()
-        Cursor()
         Menu()
         ColorAnimationMobileTL()
         HomePage()
         MyWorksX()
-        MyWorks()
-        ContactMe()
-        ColorAnimation()
+        ContactMeX()
         ParallaxAnimation()
         // /MobileView---------------------
     } else if (window.matchMedia("(max-width: 1090px)").matches) {

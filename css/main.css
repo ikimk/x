@@ -861,6 +861,10 @@ body {
     cursor: default;
 }
 
+#ContactMe #EmailnAddressX, #ContactMe #EmailnAddressXBorderTop {
+    display: none;
+}
+
 /*-------------/ContactMe------------- */
 
 /*-------------@media (max-width: 1920px)------------- */
@@ -965,6 +969,24 @@ body {
         --GoldenCannonH4: 20.5867vh;
         --GoldenCannonH5: 13.0295vh;
     }
+    /*-------------HomePage (max-width: 1090px)------------- */
+    #HomePage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #HomePage #HiThere {
+        height: calc(var(--FontBG)*2.5);
+        top: auto;
+        bottom: var(--GoldenRatioH7);
+    }
+    #HomePage #HiThere h1 .char {
+        line-height: calc(var(--FontBG)*1.3);
+    }
+    #HomePage #intro {
+        /* border: 4px solid hotpink; */
+    }
+    /*-------------/HomePage (max-width: 1090px)------------- */
     /*-------------MyWorks (max-width: 1090px)------------- */
     #MyWorks {
         display: none;
@@ -979,6 +1001,7 @@ body {
         align-items: center;
         justify-content: space-between;
         min-height: var(--GoldenCannonH1);
+        overflow: hidden;
     }
     #MyWorksX #MyWorksXTitle {
         display: flex;
@@ -1239,16 +1262,7 @@ body {
         justify-content: center;
         align-items: center;
     }
-    #HomePage #logo {
-        display: none;
-    }
-    #HomePage nav {
-        display: none;
-    }
-    #HomePage #social {
-        display: none;
-    }
-    #HomePage #scrolldown {
+    #HomePage #logo, #HomePage nav, #HomePage #social, #HomePage #scrolldown {
         display: none;
     }
     #HomePage #MobileMenuNav {
@@ -1294,7 +1308,6 @@ body {
         height: calc(var(--FontBG)*2.5);
         top: auto;
         bottom: var(--GoldenRatioH7);
-        /* border: 5px solid blue; */
     }
     #HomePage #HiThere h1 .char {
         line-height: calc(var(--FontBG)*1.3);
@@ -1472,7 +1485,95 @@ body {
     /*-------------/MyWorks (max-width: 480px)------------- */
     /*-------------ContactMe (max-width: 480px)------------- */
     #ContactMe {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        min-height: var(--GoldenCannonH1);
+    }
+    #ContactMe #ContactMeBG {
+        height: calc(var(--FontBG)*2.5);
+        top: auto;
+        bottom: var(--GoldenRatioH7);
+    }
+    #ContactMe #ContactMeBG h1 .char {
+        line-height: calc(var(--FontBG)*1.3);
+    }
+    #ContactMe section {
+        position: static;
+        flex-flow: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #ContactMe section h3 {
+        text-align: center;
+        overflow: hidden;
+    }
+    #ContactMe section h3 span {
+        font-size: var(--FontH4);
+    }
+    #ContactMe section h4 span {
+        font-size: var(--FontParagraph);
+    }
+    #ContactMe #logo, #ContactMe #EmailPhoneNoSocial, #ContactMe #social, #ContactMe #address {
         display: none;
+    }
+    #ContactMe #EmailnAddressXBorderTop {
+        position: absolute;
+        display: block;
+        top: var(--GoldenRatioH7);
+        width: calc(var(--GoldenRatioW1) - var(--GoldenCannonW6)*2);
+        border-top: calc(var(--GoldenNumber) /1.618) solid var(--ColorLight1);
+    }
+    #ContactMe #EmailnAddressX {
+        position: absolute;
+        bottom: var(--GoldenRatioH7);
+        width: calc(var(--GoldenRatioW1) - var(--GoldenCannonW6)*2);
+        height: var(--GoldenRatioH5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        border-bottom: calc(var(--GoldenNumber) /1.618) solid var(--ColorLight1);
+        border-top: calc(var(--GoldenNumber) /1.618) solid var(--ColorLight1);
+    }
+    #ContactMe #EmailnAddressX #Email {
+        display: block;
+        overflow: hidden;
+        display: block;
+    }
+    #ContactMe #EmailnAddressX #Email a {
+        display: block;
+        width: fit-content;
+    }
+    #ContactMe #EmailnAddressX #Email a span {
+        font-size: var(--FontParagraph);
+        font-weight: var(--SemiBold);
+        color: var(--ColorLight1);
+        display: block;
+    }
+    #ContactMe #EmailnAddressX #Address {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        white-space: pre;
+        margin-top: var(--GoldenRatioH11);
+    }
+    #ContactMe #EmailnAddressX #Address h1, #ContactMe #EmailnAddressX #Address h2 {
+        display: block;
+        overflow: hidden;
+    }
+    #ContactMe #EmailnAddressX #Address h1 span {
+        font-size: var(--FontParagraph);
+        font-weight: var(--SemiBold);
+        color: var(--ColorLight1);
+    }
+    #ContactMe #EmailnAddressX #Address h2 span {
+        font-size: var(--FontParagraph);
+        font-weight: var(--Light);
+        color: var(--ColorLight2);
     }
     /*-------------/ContactMe (max-width: 480px)------------- */
 }
