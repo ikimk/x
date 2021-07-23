@@ -1555,15 +1555,12 @@ body {
     }
     #ContactMe #EmailnAddressX #Address {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
         white-space: pre;
         margin-top: var(--GoldenRatioH11);
     }
     #ContactMe #EmailnAddressX #Address h1, #ContactMe #EmailnAddressX #Address h2 {
-        display: block;
         overflow: hidden;
+        line-height: var(--FontParagraph);
     }
     #ContactMe #EmailnAddressX #Address h1 span {
         font-size: var(--FontParagraph);
