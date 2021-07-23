@@ -113,23 +113,6 @@ function Menu() {
 }
 //---------------------/MenuWrap---------------------
 
-//---------------------ColorAnimationMobileTL---------------------
-function ColorAnimationMobileTL() {
-    let ColorAnimationMobileTL = gsap.timeline({ defaults: { ease: "power3.out", duration: 1.3, ease: "power3.out", }, repeat: -1, yoyo: true, repeatDelay: 22, });
-    ColorAnimationMobileTL
-        .to(":root", { '--ColorLight1': '#ffffff', }, 22.4)
-        .to(":root", { '--ColorLight2': '#cccccc', }, 22.2)
-        .to(":root", { '--ColorLight3': '#bfbfbf', }, 22.0)
-        .to(":root", { '--ColorDark3': '#404040', }, 22.0)
-        .to(":root", { '--ColorDark2': '#333333', }, 22.2)
-        .to(":root", { '--ColorDark1': '#000000', }, 22.4)
-        .set("#FiverrIcon img", { attr: { src: "Icon/FiverrWhite.svg" } }, 22.4)
-        .set("#BehanceIcon img", { attr: { src: "Icon/BehanceWhite.svg" } }, 22.4)
-        .set("#CodepenIcon img", { attr: { src: "Icon/CodepenWhite.svg" } }, 22.4)
-        .set("#GithubIcon img", { attr: { src: "Icon/GithubWhite.svg" } }, 22.4)
-}
-//---------------------/ColorAnimationMobileTL---------------------
-
 //---------------------HomePage---------------------
 function HomePage() {
     let HomePageScrollTrigger = gsap.timeline({
@@ -331,6 +314,35 @@ function ContactMe() {
 }
 //---------------------/ContactMe---------------------
 
+//---------------------ColorAnimation---------------------
+function ColorAnimation() {
+    let ColorAnimationTL = gsap.timeline({ defaults: { ease: "power3.out", duration: 1.3, ease: "power3.out", }, paused: true, repeat: -1, yoyo: true, repeatDelay: 80, });
+    // let ColorAnimationTL = gsap.timeline({ defaults: { ease: "power3.out", duration: 1.3, ease: "power3.out", }, repeat: -1, yoyo: true, repeatDelay: 1, });
+    ColorAnimationTL
+        .to(":root", { '--ColorLight1': '#0d0d0d', }, 4.4)
+        .to(":root", { '--ColorLight2': '#121212', }, 4.2)
+        .to(":root", { '--ColorLight3': '#1f1f1f', }, 4.0)
+        .to(":root", { '--ColorDark3': '#e3e3e3', }, 4.0)
+        .to(":root", { '--ColorDark2': '#ebebeb', }, 4.2)
+        .to(":root", { '--ColorDark1': '#f2f2f2', }, 4.4)
+        .set("#FiverrIcon img", { attr: { src: "Icon/FiverrBlack.svg" } }, 4.4)
+        .set("#BehanceIcon img", { attr: { src: "Icon/BehanceBlack.svg" } }, 4.4)
+        .set("#CodepenIcon img", { attr: { src: "Icon/CodepenBlack.svg" } }, 4.4)
+        .set("#GithubIcon img", { attr: { src: "Icon/GithubBlack.svg" } }, 4.4)
+        .fromTo("#MyWorks #ProjectWrap #ProjectSlide h2 span", { WebkitTextStrokeColor: '#333333', color: '#ffffff', }, { WebkitTextStrokeColor: '#0d0d0d', color: '#ebebeb', }, 4.2)
+    let ColorAnimationScrollTrigger = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#ContactMe",
+            toggleActions: "play none none none",
+            start: "0% 22%",
+            end: "31% 0%",
+            // markers: "true",
+        }
+    })
+    ColorAnimationScrollTrigger.add(ColorAnimationTL.play(), 3.1);
+}
+//---------------------/ColorAnimation---------------------
+
 //---------------------ContactMeX---------------------
 function ContactMeX() {
     let ContactMeXScrollTrigger = gsap.timeline({
@@ -362,23 +374,28 @@ function ContactMeX() {
 }
 //---------------------/ContactMeX---------------------
 
-//---------------------ColorAnimation---------------------
-function ColorAnimation() {
-    let ColorAnimationTL = gsap.timeline({ defaults: { ease: "power3.out", duration: 1.3, ease: "power3.out", }, paused: true, repeat: -1, yoyo: true, repeatDelay: 80, });
-    // let ColorAnimationTL = gsap.timeline({ defaults: { ease: "power3.out", duration: 1.3, ease: "power3.out", }, repeat: -1, yoyo: true, repeatDelay: 1, });
-    ColorAnimationTL
-        .to(":root", { '--ColorLight1': '#0d0d0d', }, 4.4)
-        .to(":root", { '--ColorLight2': '#121212', }, 4.2)
-        .to(":root", { '--ColorLight3': '#1f1f1f', }, 4.0)
-        .to(":root", { '--ColorDark3': '#e3e3e3', }, 4.0)
-        .to(":root", { '--ColorDark2': '#ebebeb', }, 4.2)
-        .to(":root", { '--ColorDark1': '#f2f2f2', }, 4.4)
-        .set("#FiverrIcon img", { attr: { src: "Icon/FiverrBlack.svg" } }, 4.4)
-        .set("#BehanceIcon img", { attr: { src: "Icon/BehanceBlack.svg" } }, 4.4)
-        .set("#CodepenIcon img", { attr: { src: "Icon/CodepenBlack.svg" } }, 4.4)
-        .set("#GithubIcon img", { attr: { src: "Icon/GithubBlack.svg" } }, 4.4)
-        .fromTo("#MyWorks #ProjectWrap #ProjectSlide h2 span", { WebkitTextStrokeColor: '#333333', color: '#ffffff', }, { WebkitTextStrokeColor: '#0d0d0d', color: '#ebebeb', }, 4.2)
-    let ColorAnimationScrollTrigger = gsap.timeline({
+//---------------------ColorAnimationMobileTL---------------------
+function ColorAnimationMobileTL() {
+    // Set Black SVG OnLoad---------------------
+    gsap.set("#FiverrIcon img", { attr: { src: "Icon/FiverrBlack.svg" } })
+    gsap.set("#BehanceIcon img", { attr: { src: "Icon/BehanceBlack.svg" } })
+    gsap.set("#CodepenIcon img", { attr: { src: "Icon/CodepenBlack.svg" } })
+    gsap.set("#GithubIcon img", { attr: { src: "Icon/GithubBlack.svg" } })
+    // /Set Black SVG OnLoad---------------------
+    // ColorAnimationMobileTL ScrollTrigger---------------------
+    let ColorAnimationMobileTL = gsap.timeline({ defaults: { ease: "power3.out", duration: 1.3, ease: "power3.out", }, paused: true, repeat: -1, yoyo: true, repeatDelay: 31, });
+    ColorAnimationMobileTL
+        .to(":root", { '--ColorLight1': '#ffffff', }, 3.4)
+        .to(":root", { '--ColorLight2': '#cccccc', }, 3.2)
+        .to(":root", { '--ColorLight3': '#bfbfbf', }, 3.0)
+        .to(":root", { '--ColorDark3': '#404040', }, 3.0)
+        .to(":root", { '--ColorDark2': '#333333', }, 3.2)
+        .to(":root", { '--ColorDark1': '#000000', }, 3.4)
+        .set("#FiverrIcon img", { attr: { src: "Icon/FiverrWhite.svg" } }, 3.4)
+        .set("#BehanceIcon img", { attr: { src: "Icon/BehanceWhite.svg" } }, 3.4)
+        .set("#CodepenIcon img", { attr: { src: "Icon/CodepenWhite.svg" } }, 3.4)
+        .set("#GithubIcon img", { attr: { src: "Icon/GithubWhite.svg" } }, 3.4)
+    let ColorAnimationMobileTLScrollTrigger = gsap.timeline({
         scrollTrigger: {
             trigger: "#ContactMe",
             toggleActions: "play none none none",
@@ -387,9 +404,10 @@ function ColorAnimation() {
             // markers: "true",
         }
     })
-    ColorAnimationScrollTrigger.add(ColorAnimationTL.play(), 3.1);
+    ColorAnimationMobileTLScrollTrigger.add(ColorAnimationMobileTL.play(), 3.1);
+    // /ColorAnimationMobileTL ScrollTrigger---------------------
 }
-//---------------------/ColorAnimation---------------------
+//---------------------/ColorAnimationMobileTL---------------------
 
 //---------------------ParallaxAnimation---------------------
 function ParallaxAnimation() {
@@ -439,7 +457,7 @@ window.onload = () => {
         ContactMeX()
         ParallaxAnimation()
         // /MobileView---------------------
-    } else if (window.matchMedia("(max-width: 1090px)").matches) {
+    } else if (window.matchMedia("(max-width: 1080px)").matches) {
         // TabView---------------------
         PageLoadingAnimation()
         ColorAnimationMobileTL()
