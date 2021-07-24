@@ -957,6 +957,10 @@ body {
     }
     #HomePage nav li a {
         font-size: var(--FontH5);
+        line-height: var(--FontH4);
+    }
+    #HomePage nav li:hover a {
+        margin-top: calc(var(--FontH4) * -1);
     }
     #HomePage #social {
         height: var(--GoldenCannonH4);
@@ -969,7 +973,11 @@ body {
         line-height: var(--FontH4);
     }
     #HomePage #scrolldown span #FadeIn {
-        font-size: var(--FontH4);
+        font-size: var(--FontH5);
+        line-height: var(--FontH4);
+    }
+    #HomePage #scrolldown span:hover p {
+        margin-top: calc(var(--FontH4) * -1);
     }
     #HomePage #codeby {
         height: var(--FontH4);
@@ -977,6 +985,9 @@ body {
     #HomePage #codeby p {
         font-size: var(--FontH5);
         line-height: var(--FontH4);
+    }
+    #HomePage #codeby:hover p:nth-child(2) {
+        margin-top: calc(var(--FontH4) * -1);
     }
     /*-------------/HomePage (max-width: 1080px)------------- */
     /*-------------MyWorks (max-width: 1080px)------------- */
@@ -1103,6 +1114,21 @@ body {
     #ContactMe #ContactMeBG h1 .char {
         line-height: calc(var(--FontBG)*1.3);
     }
+    #ContactMe #EmailPhoneNoSocial #Email a span {
+        font-size: var(--FontH5);
+    }
+    #ContactMe #EmailPhoneNoSocial #PhoneNo a span {
+        font-size: var(--FontH5);
+    }
+    #ContactMe #social {
+        display: none;
+    }
+    #ContactMe #address #addressA span {
+        font-size: var(--FontH5);
+    }
+    #ContactMe #address #addressB span {
+        font-size: var(--FontH5);
+    }
     /*-------------/ContactMe (max-width: 1080px)------------- */
 }
 
@@ -1122,13 +1148,6 @@ body {
         --FontSubtitle: 3.3333vw;
         --IconSize: calc(var(--FontSubtitle) * 2);
         --FontBG: 29.9072vw;
-        /*-------------WhiteColors------------- */
-        --ColorDark1: #f2f2f2;
-        --ColorDark2: #ebebeb;
-        --ColorDark3: #e3e3e3;
-        --ColorLight3: #1f1f1f;
-        --ColorLight2: #121212;
-        --ColorLight1: #0d0d0d;
         /*-------------GoldenRatio H (1.618) (Viewport Hight 829px)------------- */
         --GoldenRatioH1: 172.7083vw;
         --GoldenRatioH2: 106.7416vw;
