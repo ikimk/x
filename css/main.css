@@ -1114,6 +1114,12 @@ body {
     #ContactMe #ContactMeBG h1 .char {
         line-height: calc(var(--FontBG)*1.3);
     }
+    #ContactMe #logo {
+        height: calc(((var(--FontH3) * 1.3 )) + 0);
+    }
+    #ContactMe #logo a {
+        font-size: calc(var(--FontH3) * 1.3);
+    }
     #ContactMe #EmailPhoneNoSocial #Email a span {
         font-size: var(--FontH5);
     }
