@@ -158,12 +158,13 @@ function HomePage() {
             opacity: 0, yPercent: 100, ease: 'power2.out', duration: 2.2,
         }, 3)
 }
+
 function HomePageX() {
     // Update Nav MyWorks To MyWorksX
     $("#HomePage nav li:nth-child(1) a").attr("href", "#MyWorksX");
     // /Update Nav MyWorks To MyWorksX
 }
-//---------------------/MyWorksX---------------------
+//---------------------/HomePage---------------------
 
 //---------------------MyWorks---------------------
 function MyWorks() {
@@ -247,6 +248,38 @@ function MyWorks() {
     // /ProjectSlidesAnimation
 }
 //---------------------/MyWorks---------------------
+
+//---------------------MyWorksX---------------------
+function MyWorksX() {
+    let MyWorksXTL = gsap.timeline({
+        defaults: { ease: "power3.out", duration: 1.3, },
+        scrollTrigger: {
+            trigger: "#MyWorksX",
+            toggleActions: "play reverse play reverse",
+            onToggle: self => self.animation.timeScale(self.isActive ? 1 : -1.3),
+            start: "0% 22%",
+            end: "100% 22%",
+            // markers: "true",
+        }
+    })
+    MyWorksXTL
+        .from("#MyWorksX #MyWorksXTitle h1 .word", {
+            yPercent: 100, stagger: 0.13,
+        }, 0)
+        .from("#MyWorksX #MyWorksXTitle", {
+            opacity: 0, yPercent: 82,
+        }, 0)
+        .from("#MyWorksX #ProjectSlide", {
+            opacity: 0, yPercent: 220, stagger: 0.13,
+        }, 0)
+        .from("#MyWorksX #ProjectSlide #ProjectTitle h4 .word", {
+            yPercent: 100, stagger: 0.061,
+        }, 0.31)
+        .from("#MyWorksX #ProjectSlide #ProjectTitle h2 .char", {
+            yPercent: 100, stagger: 0.031,
+        }, 0.31)
+}
+//---------------------/MyWorksX---------------------
 
 //---------------------ContactMe---------------------
 function ContactMe() {
