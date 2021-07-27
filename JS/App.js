@@ -1,3 +1,7 @@
+//---------------------/Splitting.js---------------------
+Splitting();
+//---------------------/Splitting.js---------------------
+
 gsap.registerPlugin(ScrollTrigger);
 
 //---------------------PageLoadingAnimation---------------------
@@ -479,7 +483,6 @@ window.onload = () => {
         // /TabView---------------------
     } else {
         // DesktopView---------------------
-        addEventListener('resize', function () { location.reload(); });
         PageLoadingAnimation()
         Cursor()
         HomePage()

@@ -128,8 +128,8 @@ body {
     font-weight: var(--Bold);
     color: var(--ColorDark2);
     cursor: default;
-    -webkit-animation: x 2.2s 0.4s steps(22, start) infinite alternate;
-    animation: x 2.2s 0.4s steps(22, start) infinite alternate;
+    -webkit-animation: x 2.2s 0.4s infinite ease-in-out alternate;
+    animation: x 2.2s 0.4s infinite ease-in-out alternate;
     -webkit-animation-play-state: running;
     animation-play-state: running;
     cursor: none;
@@ -629,9 +629,6 @@ body {
     position: absolute;
     top: var(--GoldenCannonH4);
     right: var(--GoldenCannonW6);
-    height: calc(var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2);
-    width: calc((var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2) * 1.7777);
-    overflow: hidden;
     user-select: none;
 }
 
@@ -641,10 +638,13 @@ body {
     width: calc((var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2) * 1.7777);
     overflow: hidden;
     border: var(--GoldenNumber) solid var(--ColorLight1);
-    background: var(--ColorLight1);
+    box-sizing: content-box;
 }
 
 #MyWorks #ProjectWrap #ProjectSlide #ProjectImageWrap span img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: calc(var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2);
     width: calc((var(--GoldenCannonH1) - var(--GoldenCannonH4) * 2) * 1.7777);
 }
@@ -1115,7 +1115,7 @@ body {
         line-height: calc(var(--FontBG)*1.3);
     }
     #ContactMe #logo {
-        height: calc(((var(--FontH3) * 1.3 )) + 0);
+        height: calc(((var(--FontH3) * 1.3)) + 0);
     }
     #ContactMe #logo a {
         font-size: calc(var(--FontH3) * 1.3);
