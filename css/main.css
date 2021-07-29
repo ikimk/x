@@ -1487,22 +1487,22 @@ body {
     }
     #ContactMe #EmailnAddressX #Address {
         display: flex;
-        white-space: pre;
+        align-items: center;
+        height: var(--FontH5);
         margin-top: var(--GoldenRatioH11);
     }
-    #ContactMe #EmailnAddressX #Address h1, #ContactMe #EmailnAddressX #Address h2 {
+    #ContactMe #EmailnAddressX #Address h1 {
         overflow: hidden;
-        line-height: var(--FontParagraph);
-    }
-    #ContactMe #EmailnAddressX #Address h1 span {
         font-size: var(--FontParagraph);
         font-weight: var(--SemiBold);
         color: var(--ColorLight1);
+        line-height: var(--FontH5);
     }
-    #ContactMe #EmailnAddressX #Address h2 span {
+    #ContactMe #EmailnAddressX #Address h1 #AddressB span {
         font-size: var(--FontParagraph);
         font-weight: var(--Light);
         color: var(--ColorLight2);
+        line-height: var(--FontH5);
     }
     /*-------------/ContactMe (max-width: 480px)------------- */
 }
